@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Blogging with Python, Anaconda, and Pelican on Windows - </title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+<style type="text/css">
+
+/*some stuff for output/input prompts*/
+div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.cell.selected{border-radius:4px;border:thin #ababab solid}
+div.cell.edit_mode{border-radius:4px;border:thin #008000 solid}
+div.cell{width:100%;padding:5px 5px 5px 0;margin:0;outline:none}
+div.prompt{min-width:11ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}
+@media (max-width:480px){div.prompt{text-align:left}}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
+div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;line-height:1.21429em}
+div.prompt:empty{padding-top:0;padding-bottom:0}
+div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
+div.inner_cell{width:90%;}
+div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
+div.input_prompt{color:navy;border-top:1px solid transparent;}
+div.output_wrapper{margin-top:5px;position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
+div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:4px;-webkit-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);-moz-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);}
+div.output_collapsed{margin:0px;padding:0px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
+div.out_prompt_overlay{height:100%;padding:0px 0.4em;position:absolute;border-radius:4px;}
+div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-shadow:inset 0 0 1px #000000;box-shadow:inset 0 0 1px #000000;background:rgba(240, 240, 240, 0.5);}
+div.output_prompt{color:darkred;}
+
+a.anchor-link:link{text-decoration:none;padding:0px 20px;visibility:hidden;}
+h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible;}
+/* end stuff for output/input prompts*/
+
+
+.highlight-ipynb .hll { background-color: #ffffcc }
+.highlight-ipynb  { background: #f8f8f8; }
+.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
+.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
+.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight-ipynb .o { color: #666666 } /* Operator */
+.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
+.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
+.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
+.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
+.highlight-ipynb .go { color: #888888 } /* Generic.Output */
+.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
+.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
+.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
+.highlight-ipynb .m { color: #666666 } /* Literal.Number */
+.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
+.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
+.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
+.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight-ipynb .no { color: #880000 } /* Name.Constant */
+.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
+.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
+.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
+.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
+.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
+.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
+.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
+.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
+.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+div.entry-content {
+  overflow: visible;
+  padding: 8px;
+}
+.input_area {
+  padding: 0.2em;
+}
+
+a.heading-anchor {
+ white-space: normal;
+}
+
+.rendered_html
+code {
+ font-size: .8em;
+}
+
+pre.ipynb {
+  color: black;
+  background: #f7f7f7;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0px;
+  font-size: 13px;
+}
+
+/* remove the prompt div from text cells */
+div.text_cell .prompt {
+    display: none;
+}
+
+/* remove horizontal padding from text cells, */
+/* so it aligns with outer body text */
+div.text_cell_render {
+    padding: 0.5em 0em;
+}
+
+img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+</style>
+
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+    <link href="./images/fav.png" rel="icon">
+
+<link rel="canonical" href="./python-anaconda-and-pelican-on-windows.html">
+
+        <meta name="author" content="Marcel Patek" />
+        <meta name="keywords" content="Python,Pelican,Anaconda" />
+
+        <meta property="og:site_name" content="" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Blogging with Python, Anaconda, and Pelican on Windows"/>
+        <meta property="og:url" content="./python-anaconda-and-pelican-on-windows.html"/>
+        <meta property="og:description" content=""/>
+        <meta property="article:published_time" content="2015-08-10" />
+            <meta property="article:section" content="Blogging" />
+            <meta property="article:tag" content="Python" />
+            <meta property="article:tag" content="Pelican" />
+            <meta property="article:tag" content="Anaconda" />
+            <meta property="article:author" content="Marcel Patek" />
+
+
+    <!-- Bootstrap -->
+     <link rel="stylesheet" href="./theme/css/bootstrap.cerulean.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/default.css" rel="stylesheet">
+    <link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link href="./extras/custom.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+Home            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/archives.html">All</a></li>
+                         <li><a href="./pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="./pages/contact.html">
+                             Contacts
+                          </a></li>
+                        <li class="active">
+                            <a href="./category/blogging.html">Blogging</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="./search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<style>
+	#banner{
+	    background-image:url("./images/header_img.png");
+	}
+</style>
+
+<div id="banner">
+	<div class="container">
+		<div class="copy">
+			<h1></h1>
+		</div>
+	</div>
+</div><!-- End Banner -->
+<!-- PROFILE_IMG-->
+<style>
+	#profile_img{
+	    background-image:url("./images/headim.png");
+	}
+</style>
+
+<div id="profile_img">
+</div><!-- CONTAINER -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./python-anaconda-and-pelican-on-windows.html"
+                       rel="bookmark"
+                       title="Permalink to Blogging with Python, Anaconda, and Pelican on Windows">
+                        Blogging with Python, Anaconda, and Pelican on Windows
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-08-10T18:00:00-06:00"> 2015-08-10</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="./tag/python.html">Python</a>
+        /
+	<a href="./tag/pelican.html">Pelican</a>
+        /
+	<a href="./tag/anaconda.html">Anaconda</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                
+<p><strong>Table of contents</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#requirements">Requirements</a><ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#set-up-a-virtual-environment">Set up a virtual environment</a></li>
+<li><a href="#pelican">Pelican</a></li>
+<li><a href="#other-python-packages">Other Python packages</a></li>
+</ul>
+</li>
+<li><a href="#pelican-blog">Pelican blog</a></li>
+<li><a href="#building-the-site">Building the site</a><ul>
+<li><a href="#markdown-md-file">Markdown .md file</a></li>
+<li><a href="#rendering-and-uploading-the-site">Rendering and uploading the site</a></li>
+</ul>
+</li>
+<li><a href="#and-we-are-done">And we are done</a></li>
+</ul>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>With so many blogs and descriptive how-to's out there<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup><sup>,</sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup><sup>,</sup> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup><sup>,</sup> <sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup>, one may be wondering as to why another post on <strong>Pelican</strong> static site generator. The purpose of this blog is to document building a static web site in Windows environment with Anaconda Python distribution.<br/>
+This tutorial assumes very little, so we will cover each step in a little more details. Chances are that you have already heard about the the Python-powered micro web frameworks, static page generators, and even about <a href="https://pypi.python.org/pypi/pelican/#downloads"><em>Pelican</em></a>, <a href="https://getnikola.com/"><em>Nikola</em></a>, or <a href="http://www.fullstackpython.com/flask.html"><em>Flask</em></a>. If not, this blog<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup> has a nice introduction.</p>
+<div class="note">
+<div class="notetip">
+<b>Pelican</b> is a static web page generator that delivers web pages to the user exactly as they are stored on the server. There is no user-interaction possible once the pages are rendered. In contrast, dynamic web pages are generated and updated by a web application. Pelican is written in Python and it is platform independent. 
+</div>
+</div>
+<h2 id="requirements">Requirements</h2>
+<p>Before we can get started, we’ll need to have a functioning installation of <strong>Python</strong>, and of course, <strong>Pelican</strong>. The following are the minimum requirements:</p>
+<ol>
+<li><a href="https://www.python.org/download/releases/2.7">Python 2.7.x</a> or Python 3</li>
+<li><a href="https://pypi.python.org/pypi/pelican/#downloads">Pelican</a> package</li>
+<li>Text editor (e.g., <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="http://markdownpad.com/">Markdown Pad</a>, <a href="http://www.sublimetext.com/">Sublime Text</a>)</li>
+<li>Web server for the web hosting</li>
+</ol>
+<h3 id="python">Python</h3>
+<p>First, we need a Python installation. I recommend <a href="http://repo.continuum.io/archive/">Anaconda</a> Python Distribution from the <a href="https://store.continuum.io/cshop/anaconda/">Continuum Analytics</a>. <code>Anaconda</code> itself is free and it comes with many pre-installed Python packages and libraries such as Pandas, NumPy, matplotlib, and others. However, the default packages do not include Pelican site generator.</p>
+<p>If you already have <code>Python</code> installed, <a href="#sec-env">skip to the section</a> <strong>Virtual Environment</strong>.</p>
+<p>To get Anaconda installed under the Windows, download the latest <a href="http://repo.continuum.io/archive/.winzip/">Anaconda</a> and install the executable. </p>
+<div class="note">
+<div class="notewarning">
+Version 1.9.1 worked best for me under the Windows 7 system (Python 2.7.6 with the IPython Notebook). 
+</div>
+</div>
+<p>The typical path to install <strong>Anaconda</strong> on Windows is: <code>C:\Anaconda</code>. For more details on installation steps, see this <a href="https://www.youtube.com/watch?v=FL7Hf4eVjKo">YouTube video</a>.</p>
+<p>When installation completes, append the following string (without the quotes) into your system <strong>PATH</strong>: </p>
+<div class="highlight"><pre><span class="s2">" C:\Anaconda;C:\Anaconda\Lib;C:\Anaconda\DLLs;C:\Anaconda\Lib\lib-tk;C:\Anaconda\Scripts; "</span>
+</pre></div>
+<div class="note">
+<div class="notetip">
+To access the <b>PATH</b> variable, right-click on Computer ⇒ Advanced system settings ⇒ Advance tab ⇒ Environment Variables ⇒ System variables ⇒ Path.
+</div>
+</div>
+<p>To check that <strong>Anaconda</strong> has installed successfully, launch the Windows command shell (cmd.exe) and execute the command:  </p>
+<div class="highlight"><pre>    <span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+<p>A typical output follows:</p>
+<div class="highlight"><pre><span class="x">Current conda install:</span>
+
+<span class="x">             platform : win-32</span>
+<span class="x">        conda version : 3.11.0-dirty</span>
+<span class="x">  conda-build version : 1.2.0</span>
+<span class="x">       python version : 2.7.6.final.0</span>
+<span class="x">     requests version : 2.7.0</span>
+<span class="x">     root environment : C:\Anaconda  (writable)</span>
+<span class="x">  default environment : C:\Anaconda</span>
+<span class="x">     envs directories : C:\Anaconda\envs</span>
+<span class="x">        package cache : C:\Anaconda\pkgs</span>
+<span class="x">         channel URLs : http://repo.continuum.io/pkgs/gpl/win-32/</span>
+<span class="x">                        http://repo.continuum.io/pkgs/gpl/noarch/</span>
+<span class="x">                        http://repo.continuum.io/pkgs/free/win-32/</span>
+<span class="x">                        http://repo.continuum.io/pkgs/free/noarch/</span>
+<span class="x">          config file : </span><span class="p">$</span><span class="nv">HOME</span><span class="x">\.condarc</span>
+<span class="x">    is foreign system : False</span>
+
+<span class="x"> conda environments:</span>
+
+<span class="x">       - envs listed here-</span>
+<span class="x">root                  *  C:\Anaconda</span>
+
+<span class="x">sys.version: 2.7.6 |Anaconda 1.9.1 (32-bit)| (default...</span>
+<span class="x">sys.prefix: C:\Anaconda</span>
+<span class="x">sys.executable: C:\Anaconda\python.exe</span>
+<span class="x">conda location: C:\Anaconda\lib\site-packages\conda</span>
+<span class="x">conda-build: C:\Anaconda\Scripts\conda-build.bat</span>
+<span class="x">conda-convert: C:\Anaconda\Scripts\conda-convert.bat</span>
+<span class="x">conda-env: C:\Anaconda\Scripts\conda-env.exe</span>
+<span class="x">conda-index: C:\Anaconda\Scripts\conda-index.bat</span>
+<span class="x">conda-skeleton: C:\Anaconda\Scripts\conda-skeleton.bat</span>
+</pre></div>
+<p>Next, install the <code>pip</code> package installer and manager from the command shell (cmd.exe) as:  </p>
+<div class="highlight"><pre>conda install pip 
+</pre></div>
+<h3 id="set-up-a-virtual-environment">Set up a virtual environment</h3>
+<p><a name="sec-env"></a>
+To avoid potential Python library/package dependency conflicts, it is a good practice to install new projects into their own development environment. Such environment includes a fresh copy of the Python binary together with a copy of the entire Python standard library. Let's create a virtual environment called <code>pelican1</code>.</p>
+<div class="highlight"><pre>conda create -n pelican1 python=2
+</pre></div>
+<p>The expected response is shown in <strong>Figure 1</strong> and <strong>Figure 2</strong>.  </p>
+<p><img alt="venv pelican1" src="../images/img-code/venv1.png" title="Fig 1."/><br/>
+<p style="margin: -20px 0 30px 125px;"><em>Fig. 1. Creating virtual environment <code>pelican1</code>.</em> </p> </p>
+<p><img alt="virt env2" src="../images/img-code/venv2.png" title="Fig 2."/><br/>
+<p style="margin: -20px 0 30px 110px;"><em>Fig. 2. Packages installed in the virt env <code>pelican1</code>.</em> </p> </p>
+<p>Add the following string (without the quotes) into your <strong>PATH</strong>:</p>
+<div class="highlight"><pre><span class="s2">"  C:\Anaconda\envs\pelican1;C:\Anaconda\envs\pelican1\Lib;C:\Anaconda\envs\pelican1\DLLs;</span>
+<span class="s2">C:\Anaconda\envs\pelican1\Lib\lib-tk;C:\Anaconda\envs\pelican1\Scripts;  "</span>
+</pre></div>
+<p>and activate the new environment as:  </p>
+<div class="highlight"><pre>&gt; activate pelican1
+</pre></div>
+<p>if everything went as expected, you should see the following text at the command prompt:</p>
+<div class="highlight"><pre>[pelican1] c:\Anaconda
+</pre></div>
+<p>Install <code>pip</code> into the new <code>pelican1</code> environment as:</p>
+<div class="highlight"><pre>cd envs
+cd pelican1
+[pelican1] c:\Anaconda\envs\pelican1 &gt;conda install pip 
+</pre></div>
+<h3 id="pelican">Pelican</h3>
+<p><a name="sec-pel"></a>
+Finally, we proceed with the installation of <strong>Pelican</strong> package. In your terminal, execute:</p>
+<div class="highlight"><pre>[pelican1] c:\Anaconda &gt;pip install pelican
+</pre></div>
+<p>The progress will look similar to the following output.</p>
+<div class="highlight"><pre> Downloading pelican-3.6.2-py2.py3-none-any.whl (129kB)
+ Downloading Pygments-2.0.2-py2-none-any.whl (672kB)
+ Downloading feedgenerator-1.7.tar.gz
+ Downloading Unidecode-0.04.18.tar.gz (206kB)
+ Downloading pytz-2015.4-py2.py3-none-any.whl (475kB)
+ Downloading python_dateutil-2.4.2-py2.py3-none-any.whl (188kB)
+ Downloading six-1.9.0-py2.py3-none-any.whl
+ Downloading Jinja2-2.8-py2.py3-none-any.whl (263kB)
+ Downloading docutils-0.12.tar.gz (1.6MB)
+ Downloading blinker-1.4.tar.gz (111kB)
+ Downloading MarkupSafe-0.23.tar.gz
+Installing collected packages: pygments, pytz, six, feedgenerator, unidecode, py
+thon-dateutil, markupsafe, jinja2, docutils, blinker, pelican
+</pre></div>
+<h3 id="other-python-packages">Other Python packages</h3>
+<p>Following are packages that I found useful when developing and publishing <strong>Pelican</strong> blog site. To make their installation easier, we will use the <code>Requirements.txt</code> file.</p>
+<p>Open a text editor and type (copy/paste) the following content.</p>
+<div class="highlight"><pre>beautifulsoup4~=4.3.2
+feedgenerator~=1.7
+html5lib~=0.999
+Markdown~=2.5.2
+Pygments~=2.0.2
+pyreadline~=2.0
+smartypants~=1.8.6
+typogrify~=2.0.7
+gitpython
+</pre></div>
+<p>Save the file as <code>Requirements.txt</code> into the folder <code>C:\Anaconda\env\pelican1\</code>.
+Next, from the shell, issue the following command:</p>
+<div class="highlight"><pre>[pelican1] c:\Anaconda&gt;pip install -r c:\Anaconda\envs\pelican1\requirements.txt
+</pre></div>
+<p>To build, publish, and maintain the site, I use the <strong>Fabric</strong> Python library. To avoid complications with C++ compiler on Windows, use the Binstar package:</p>
+<div class="highlight"><pre>[pelican1] c:\Anaconda&gt;conda install -c https://conda.binstar.org/binstar fabric
+</pre></div>
+<p>The following packages will be installed.</p>
+<div class="highlight"><pre>    ecdsa:    0.11-py27_0
+    fabric:   1.10.1-py27_0
+    paramiko: 1.15.2-py27_0
+    pycrypto: 2.6.1-py27_3
+</pre></div>
+<p><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> At this point, the size of <code>pelican1</code> environment is about 100Mb.</p>
+<h2 id="pelican-blog">Pelican blog</h2>
+<p>So far, all packages were installed in the <code>C:\Anaconda\env\pelican1\</code> folder. The actual blog files require different drive/folder location from which the site is managed. Let's create such directory, for example, <code>C:\demo\pelicanblog</code>.
+Now, while still in the <code>pelican1</code> virtual environment, <em>cd</em> into this directory:  </p>
+<div class="highlight"><pre> [pelican1] c:\Anaconda\envs\pelican1 &gt;cd c:\demo\pelicanblog
+</pre></div>
+<p>To initiate this new blog/web site, run the <em>quickstart</em> script and answer the setup questions. Note that I have chosen not to use GitHub Pages and secure SSH protocol for upload. The latter will be addressed below.  </p>
+<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt; pelican-quickstart
+</pre></div>
+<div class="highlight"><pre>&gt; Where do you want to create your new web site? [.]  (just press enter; it will be in the /pelicalblog directory; in this case c:\demo\pelicanblog)
+&gt; What will be the title of this web site? Blogging with Pelican
+&gt; Who will be the author of this web site? your name
+&gt; What will be the default language of this web site? [en]
+&gt; Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) y
+&gt; What is your URL prefix? (see above example; no trailing slash) http://www.yourdomain.com/blog
+&gt; Do you want to enable article pagination? (Y/n) y
+&gt; How many articles per page do you want? [10] 8
+&gt; What is your time zone? [Europe/Paris] America/Phoenix
+&gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y (create fabfile.py)
+&gt; Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n) y
+&gt; Do you want to upload your website using FTP? (y/N) y
+&gt; What is the hostname of your FTP server? [localhost] ftp.yourdomain.com
+&gt; What is your username on that server? [anonymous] username
+&gt; Where do you want to put your web site on that server? [/] /blog
+&gt; Do you want to upload your website using SSH? (y/N) n
+&gt; Do you want to upload your website using Dropbox? (y/N) n
+&gt; Do you want to upload your website using S3? (y/N) n
+&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N) n
+&gt; Do you want to upload your website using GitHub Pages? (y/N) n
+</pre></div>
+<p>A little more explanation on the "URL prefix" question. Answer <strong><em>yes</em></strong> and enter URL in the next step only if you have external web hosting site.</p>
+<p>Let’s take a look at the just created folder structure within the <code>c:\demo\pelicanblog</code> directory. Now if you type the <strong>tree</strong> command within your blog's main directory, you should see a directory tree similar to this one:</p>
+<div class="highlight"><pre>pelicanblog/
+├── content
+│    └── firstblog.md
+├── output
+│    ├── author/
+│    ├── category/
+│    ├── tag/
+│    ├── theme/
+│    ├── archives.html
+│    ├── authors.html
+│    ├── Blogging with Pelican.html
+│    ├── categories.html
+│    ├── index.html
+│    └── tags.html
+├── fabfile.py
+├── pelicanconf.py
+└── publishconf.py
+</pre></div>
+<p>Breaking down each of these files:  </p>
+<ul>
+<li><span aria-hidden="true" class="glyphicon glyphicon-folder-open" style="margin-right: 10px"></span> <strong>content/firstblog.md</strong>: A content file in Markdown syntax. This is where you start writing your blog. <span aria-hidden="true" class="glyphicon glyphicon-pencil" style="margin-right: 10px"></span></li>
+<li><span aria-hidden="true" class="glyphicon glyphicon-folder-open" style="margin-right: 10px"></span> <strong>output/</strong>: Content of this folder is automatically generated and later uploaded to a server.  <span aria-hidden="true" class="glyphicon glyphicon-cloud-upload" style="margin-right: 10px"></span></li>
+<li><strong>fabfile.py</strong>: Is a configuration file for <code>Fabric</code>, which allows you to generate your site using the <a href="http://blog.osteel.me/posts/2015/03/02/install-and-deploy-a-pelican-blog-using-fabric-part-3-fabric.html">fab command</a>.</li>
+<li><strong>pelicanconf.py</strong>: Is a Pelican configuration file containing the site <a href="http://docs.getpelican.com/en/3.3.0/settings.html">settings</a>.</li>
+<li><strong>publishconf.py</strong>: Similar to <em>pelicanconfig.py</em> file, but is not intended to be used for local development.</li>
+</ul>
+<h2 id="building-the-site">Building the site</h2>
+<p>Now let's build the default look of the blog. In your terminal, type the <code>fab</code> command after the <strong>&gt;</strong> character:</p>
+<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt;fab build
+</pre></div>
+<p>Then</p>
+<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt;fab serve
+</pre></div>
+<p>We've just launched a local webserver on the port 8000. Open your browser and navigate to <a href="http://localhost:8000">http://localhost:8000</a> the default skeleton and template should display in your browser.</p>
+<p><img alt="final view" src="../images/img-code/pelican-result.png" title="Fig 3."/><br/>
+<p style="margin: -20px 0 30px 5px;"><em>Fig. 3. Final view of the site.</em> </p> </p>
+<p>To avoid repetitive typing in the terminal, set up a batch file, which will get you directly to the [pelican1] C:\demo\pelican environment and directory.
+Save the following script as <code>pelican.bat</code>and place the file into C:\Windows\System32 directory.</p>
+<div class="highlight"><pre>@echo off
+REM add this batch file into C:/windows/system32
+REM run upon opening cmd as &gt;pelican.bat
+set SERVE=C:\demo\pelicanblog
+cd /D %SERVE%
+activate pelican1
+</pre></div>
+<p>Next time, upon launching the command line terminal (<strong>cmd.exe</strong>), just type <code>pelican.bat</code> and the script will execute.</p>
+<p>To change or tweak the site settings, edit files <code>pelicanconf.py</code> and <code>fabfile.py</code> created in the main <code>pelicanblog/</code> directory. </p>
+<div class="highlight"><pre><span class="c">#  pelicanconf.py</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">u'yourname'</span>  <span class="c">#  Change it here</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">u'Blogging with Pelican'</span>  <span class="c">#  Change it here</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">''</span>
+
+<span class="n">PATH</span> <span class="o">=</span> <span class="s">'output'</span>  <span class="c"># This is where you write blogs, keep images, css, ..</span>
+
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">'America/Phoenix'</span>  <span class="c">#  Change it here</span>
+
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">u'en'</span>
+
+<span class="c"># other functions (default)</span>
+</pre></div>
+<div class="highlight"><pre><span class="c">#  fabfile.py</span>
+<span class="c"># default variables and functions follow</span>
+<span class="c"># ...</span>
+
+<span class="c"># Added site upload function to circumvent setup of rsync on Windows</span>
+<span class="n">env</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">'ftp.yourdomain.com'</span><span class="p">]</span>
+<span class="n">env</span><span class="o">.</span><span class="n">user</span>   <span class="o">=</span> <span class="s">"username"</span>
+<span class="n">env</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="s">"serverpassword"</span> <span class="c"># or just entered it when connecting</span>
+
+<span class="kn">from</span> <span class="nn">fabric.context_managers</span> <span class="kn">import</span> <span class="n">cd</span>
+
+<span class="k">def</span> <span class="nf">sftp</span><span class="p">():</span>
+    <span class="c"># run from the parent directory /pelicanblog/</span>
+    <span class="k">with</span> <span class="n">lcd</span><span class="p">(</span><span class="s">'output'</span><span class="p">):</span>  <span class="c"># cd into output directory</span>
+        <span class="n">local</span><span class="p">(</span><span class="s">"dir"</span><span class="p">)</span> <span class="c"># list files and directories to be uploaded</span>
+        <span class="n">put</span><span class="p">(</span><span class="s">'*'</span><span class="p">,</span> <span class="s">'./public_html/yourblogdirectory/'</span><span class="p">)</span>  <span class="c"># change here</span>
+</pre></div>
+<p>Note the <code>sftp()</code> function added at the end of the <code>fabfile.py</code>. The default <code>publish()</code> function is based on <code>rsync</code> utility that is not that easy to install on Windows. Instead, we can use the <em>SSH File Transfer Protocol (sftp)</em> protocol, which is also secure an simple to implement.
+<div class="note">
+<div class="notetip">
+In order to use <i>sftp</i> protocol to safely upload your site to a web-hosting server, you will need to enable SSH/Shell access on your hosted account. Major web-hosting sites support both <b>ftp</b> and <b>sftp</b> protocols.
+</div>
+</div>
+Now, let's move on and start working on the first blog.</p>
+<h3 id="markdown-md-file">Markdown .md file</h3>
+<p>To create the content of our new web site, we will use the <code>Markdown</code> syntax<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup><sup>,</sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6" rel="footnote">6</a></sup>. Let's create our first markdown file name it <code>firstblog.md</code>. Save it into the /pelicanblog/content folder.</p>
+<div class="highlight"><pre>Title: First Blog Post
+Date: 2015-8-08 13:10
+Category: Blogging
+Tags: blogging, markup
+Slug: Blogging with Pelican
+Author: yourname
+Summary: Collection of notes related to programming and scripting.
+Latex:
+
+# Work in progress #
+Following are examples of Pelican markup.
+
+This is a **first** attempt to create static page with the help of _Pelican_.
+</pre></div>
+<h3 id="rendering-and-uploading-the-site">Rendering and uploading the site</h3>
+<p>At this point, we will move back to the terminal and issue the following commands.</p>
+<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt;fab build
+[pelican1] C:\demo\pelicanblog&gt;fab serve
+</pre></div>
+<p>Now, in the browser type  <a href="http://localhost:8000">http://localhost:8000</a> and our modified (local) site should load. </p>
+<p>To upload it to a web-server, make sure that you create your blog directory at the remote site first. Note the path to it, e.g. /public_html/yourblogdirectory. Enter your host name and user name into the <code>fabfile.py</code> file. In your terminal, enter:</p>
+<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt;fab sftp
+</pre></div>
+<p>Upload process should start immediately with a list of files to be uploaded and a prompt for your password. After the upload is done, head to the site and check its accessibility. </p>
+<h2 id="and-we-are-done">And we are done</h2>
+<p>This concludes the process of setting up a simple Pelican site on Windows and Python Anaconda environment. We have built the skeleton of Pelican static web-site in Python virtual environment, modified its configuration files, and uploaded the site to our hosting server. This blog is built with Pelican as well and it is styled with customized Pelican-bootstrap3 theme.</p>
+<hr>
+<h4 id="ref">References</h4>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="http://nafiulis.me/making-a-static-blog-with-pelican.html?utm_source=Python+Weekly+Newsletter&amp;utm_campaign=5b2cdb02e2-Python_Weekly_Issue_174_January_15_2015&amp;utm_medium=email&amp;utm_term=0_9e26887fc5-5b2cdb02e2-312707597">Making a Static Blog with Pelican</a>.   <a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="http://spapas.github.io/2013/10/07/pelican-static-windows/">Using pelican to generate static sites on windows</a>   <a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p><a href="http://seanazlin.com/creating-a-blog-on-GitHub-dot-io-with-Python.html">Creating a Blog on GitHub.io with Python</a>   <a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p><a href="http://chdoig.github.io/create-pelican-blog.html">Creating your blog with Pelican</a>   <a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a> <a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p><a href="http://daringfireball.net/projects/markdown/syntax">from Darin Fireball</a> <a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+</ol>
+</div></hr>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+		<div id="photo">
+		</div>
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://www.google.com/+MarcelPatek"><i class="fa fa-google-plus-square fa-lg"></i> Google+</a></li>
+                <li class="list-group-item"><a href="http://www.linkedin.com/in/marcelpatek"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+              </ul>
+            </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="./python-anaconda-and-pelican-on-windows.html">
+                            Blogging with Python, Anaconda, and Pelican on Windows
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="list-group-item"><a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-4">
+                        <a href="./tag/anaconda.html">
+                            Anaconda
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="./tag/python.html">
+                            Python
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="./tag/pelican.html">
+                            Pelican
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4></li>
+    <div id="twitter_timeline">
+        <a class="twitter-timeline" data-chrome="noheader" href="https://twitter.com/mpatek_" data-widget-id="561339678725382144">Tweets by mpatek_</a>
+    </div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://nbo.marcelpatek.com/" target="_blank">
+                NBO
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://chemgplus.blogspot.com" target="_blank">
+                OrgMedChem - NBO Blogger
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://script-orgmedchem.blogspot.com" target="_blank">
+                OrgMedChem - scripts
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://github.com/marpat/" target="_blank">
+                Github
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.youtube.com/user/orgmedchem" target="_blank">
+                YouTube
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.marcelpatek.com/" target="_blank">
+                Digital Photography
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Marcel Patek
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+<!-- Custom js-->
+<script src="./extras/js/emailshow.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+    <script src="./theme/js/bodypadding.js"></script>
+
+</body>
+</html>

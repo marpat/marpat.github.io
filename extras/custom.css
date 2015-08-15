@@ -1,0 +1,336 @@
+﻿
+  /* Typography */
+@import url(http://fonts.googleapis.com/css?family=Vibur);
+
+@font-face {	
+	font-family: 'Scribe Font';
+	src: url('../fonts/windsong-webfont.eot');
+	src: local('☺'), url('../fonts/windsong-webfont.woff') format('woff'), url('../fonts/windsong-webfont.ttf') format('truetype'), url('../fonts/windsong-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal; }
+
+@font-face {	
+	font-family: 'TrajanPro';
+	src: url('../fonts/TrajanPro-Regular.otf');
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal; }
+	
+/* Overide font size*/
+body {
+	font-size: 1.55em !important;
+	}
+	
+h1, .h1, h2, .h2 {
+	margin: 30px 0px 30px 0px; 
+	padding-bottom: 5px;
+}
+
+h1, .h1 {
+font-size: 32px !important;
+}
+
+.entry-content h2, .h2 {
+	margin: 30px 0px 30px 0px; 
+	display: inline-block !important;
+	padding-bottom: 5px;
+	padding-right: 70%;
+    	border-bottom: 1px solid #317eac ;
+}
+
+
+h3 {
+	display: inline-block;
+	padding-bottom: 7px;
+	margin: 30px 0px 20px 30px;
+	color: rgba(192,0,0,1);
+	padding-right: 1.8em;
+	border-bottom: 1px solid rgba(192,0,0,1) ;
+}
+
+blockquote p {
+	color: blueviolet !important;
+	font-size: 0.8em !important;
+	font-weight: 600 !important;
+}
+
+pre {
+	margin: 25px 0 25px !important;
+}
+.navbar {
+	background-image: linear-gradient(#4084AB,#1B5474 60%, #11547B);
+	border-bottom: #0D5177;
+}
+
+/*
+.col-sm-9 .col-sm-3 a, .col-sm-9 col-sm-3 a:link, .entry-content a { color: #4377BE!important; } 
+.page-header h1 a:link, .page-header h1 a:visited {color: #4377BE!important; text-decoration:none;background-color: white} */
+/* a:hover { color: inherit!important; } */
+
+.entry-content a { color: #198FB2!important; } 
+.entry-content a:hover, .entry-content a:active {
+	background-color: #C74350;
+	color: #fff!important;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #333;
+}
+
+
+
+#banner .copy {
+/*	display: none; */
+	background: none repeat scroll 0 0 rgba(0,0,0,0.0); /* change transparency of banner text background */
+	margin-left: 130px;
+	padding: 0px !important;
+	}
+	
+/* #banner h1 {
+       @import url(http://fonts.googleapis.com/css?family=Dancing+Script);
+       @import url(http://fonts.googleapis.com/css?family=Vibur);
+       font-family:'Vibur';
+} */
+#banner {
+	background-position: 0 0 !important;
+	background-color: #FFFFFF !important;
+	background-size: 1900px 140px;
+	height:141px;
+	margin: 0px;
+	}
+#banner h1 {
+	/*font-weight: inherit;
+	font-family: 'TrajanPro', Fallback, sans-serif;
+	font-size: 86px !important;
+	color: rgba(255,214,5,1.0);
+	text-transform: none;
+	line-height: 0.2; */
+	width: 680px;
+	height: 141px;
+	margin: -70px 0 0 -250px;	
+	background: url("../images/h1banner.png") no-repeat;
+	}
+
+#profile_img {
+        display: none;
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 0px;
+	top: 50px;
+	width: 140px;
+	height: 140px;
+}
+
+#profile_img .copy {
+	display: none;
+	background: none repeat scroll 0 0 rgba(0,0,0,0.0); /* change transparency of banner text background */
+	margin-left: 150px;
+	padding: 0px !important;
+	}
+
+#photo {
+	width: 108px;
+	height: 105px;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	background: url("../images/photosm.png") no-repeat;
+	background-color: rgba(211,211,211,0.23);
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	position: relative;
+	left: 145px;
+  	top: -5px;
+    	z-index: +200;
+	margin-bottom: -120px;
+}
+
+
+		
+#sidebar {
+	padding-top: 30px;
+}	
+/* Text styles */
+.clear {
+	clear: both;
+}
+
+em {
+	text-decoration: none;
+}
+
+/*IMAGE DEFAULTS*/
+img, a img{
+	border: 5px solid #e8e8e8;
+	-ms-interpolation-mode: bicubic;
+}	
+/* Overide image positioning for notebooks */
+img {
+	display: block !important;
+	margin: 0 auto !important;
+	}
+
+img.left_img {
+	float: left;
+	margin: 0px 15px 15px 10px !important;
+}
+div.cell {
+	width: 800px !important;
+	}
+	
+.logoim {
+	position: absolute;
+	left: 480px;
+	top: -139px;
+	margin 0 0;
+}
+
+div.cell.code_cell {
+	margin-left: 0px !important;
+	}
+		
+div.text_cell_render {
+	font-size: 100% !important;
+	}
+	
+.MathJax_Display {
+	text-align: center !important;
+	}
+	
+.list-group-item {
+	padding: 5px 15px;
+}
+.list-group-item > .list-group {
+	margin-bottom: 5px;
+}
+
+.navbar-nav {
+	margin: 0 0 0 200px;
+}
+
+ul, ol {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+ul li {
+	line-height: 2em;
+}
+
+.list-group-item .list-group-item:last-child {
+	line-height: 22px;
+}
+
+.footnote {
+	background: whitesmoke;
+	line-height: 1em;
+	margin-top: 50px;
+	padding: 20px 0 10px 20px;
+	font-size: 0.95em;
+	font-family: -webkit-pictograph;
+	color: rgb(197,4,19);
+	border: 1px solid rgb(224,223,223);
+}
+
+#ref {
+	margin: 50px 0 -85px 20px!important;
+	font-size:24px;
+	font-weight: 600;
+	font-family: -webkit-pictograph;
+	color: rgb(84,117,161);
+	
+}
+
+/* email-button */
+#imgname {
+       display:none;
+}
+
+#wrap-2 {
+	margin-top: 30px;
+	margin-left: 150px;
+}
+
+img.imghide {
+	margin: 15px 0px 0px 10px!important;
+}
+
+/* *********************************************************
+Description: WP-Note CSS File
+Author: Luke
+Author URI: http://geeklu.com
+Date:2009-01-02
+Syntax: .noteclassic (bookmark), .noteimportant (keys), .notewarning (triangle exclamaion mark)
+.notetip (bulb), .notehelp (questionmark)
+<div class="note">
+<div class="notetip">
+Your note here.
+</div>
+</div> 
+*/
+
+.note
+{
+    text-align: center;
+}
+
+
+.noteclassic, .noteimportant, .notewarning, .notetip,.notehelp{
+     width: 80%;
+     margin: 3em auto 2em auto !important;
+     font-size: 0.9em;
+    border-radius: 10px 10px;
+    -moz-border-radius: 10px 10px;
+    -webkit-border-radius: 10px 10px;
+    padding: 15px 20px 15px 80px;
+    margin: 0px 0px 0px 0px;
+    -webkit-box-shadow: 2px 2px 3px #999;
+    -moz-box-shadow: 2px 2px 3px #999;
+    /*IE min-height hack*/
+    min-height:40px;
+    height:auto !important;
+    height:40px;
+    overflow:visible;
+    
+	position:relative;
+	bottom:6px;
+	right: 6px;
+	border: 1px solid #999999;
+    /*Set the position of the background image*/
+    background-position: 20px 50%;
+    background-repeat: no-repeat;
+    text-align: justify;
+    line-height: 1.5em;
+}
+.noteclassic, .noteimportant, .notewarning, .notetip,.notehelp{
+	/* IE5 hack */
+	\margin: 0px 0px -3px 0px;
+	ma\rgin:  0px 0px 0px 0px;
+	margin: 20px 0px 10px 25px;
+}
+
+.noteclassic {
+  background-color: #EEF;
+  background-image: url(../images/note.png);
+}
+
+.noteimportant {
+  background-color: #FFC;
+  background-image: url(../images/important.png);
+}
+
+.notewarning {
+  background-color: #FDD;
+  background-image: url(../images/warning.png);
+}
+
+.notetip {
+  background-color: #E4F6F8;
+  background-image: url(../images/tip.png);
+}
+
+.notehelp {
+  background-color: #D8F3C9;
+  background-image: url(../images/help.png);
+}
+
+/* End of notes */

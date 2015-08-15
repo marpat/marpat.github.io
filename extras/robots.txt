@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /.git/
+Disallow: /download/
+Disallow: /code/
+Disallow: /extras/
+Disallow: /fonts/
+Disallow: /notebook/
+Disallow: /pdfs/
+Disallow: /theme/
+Disallow: /tipuesearch_content.json

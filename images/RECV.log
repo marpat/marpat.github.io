@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Cache-Control: private, max-age=0
+Content-Length: 401
+Content-Type: text/xml; charset=utf-8
+Server: Microsoft-IIS/7.5
+X-AspNet-Version: 2.0.50727
+X-Powered-By: ASP.NET
+Date: Wed, 04 Mar 2015 02:08:11 GMT
+Connection: close
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><ConfirmResponse xmlns="http://tempuri.org/paws/ActivationService"><ConfirmResult>ERROR: Serial Number Not Found (-25001)</ConfirmResult></ConfirmResponse></soap:Body></soap:Envelope>

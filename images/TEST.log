@@ -1,0 +1,169 @@
+Initializing context
+Reinitializing context
+Free namespace stack
+Free any remaining temp blocks
+Free attribute storage
+Free pointer hashtable
+Free ID hashtable
+S:\stdsoap2.cpp(5407): malloc(24) = 303E5BA0
+S:\stdsoap2.cpp(5407): malloc(20) = 303E84E0
+Reinitializing context
+Free namespace stack
+Free any remaining temp blocks
+Free attribute storage
+Free pointer hashtable
+Free ID hashtable
+Lookup location=499AF6FC type=47: not found
+S:\stdsoap2.cpp(4820): malloc(772) = 303EB670
+Pointer enter location=499AF6FC array=00000000 size=0 dim=0 type=47 id=1
+Reference 499AF6FC type=47 (0 0)
+Lookup location=303E5BA0 type=3: not found
+Pointer enter location=303E5BA0 array=00000000 size=0 dim=0 type=3 id=2
+Reference 303E5BA0 type=3 (0 0)
+Lookup location=303E84E0 type=3: not found
+Pointer enter location=303E84E0 array=00000000 size=0 dim=0 type=3 id=3
+Reference 303E84E0 type=3 (0 0)
+S:\stdsoap2.cpp(6782): malloc(256) = 4A9AC048
+Begin count phase (socket=-1 mode=0x8008 count=0)
+Element begin tag='SOAP-ENV:Envelope' id='0' type=''
+Element begin tag='SOAP-ENV:Body' id='0' type=''
+Element begin tag='eas:Confirm' id='0' type=''
+Element begin tag='eas:inPublisherID' id='0' type=''
+Element ending tag='eas:inPublisherID'
+Element begin tag='eas:inSerialNumber' id='0' type=''
+Element ending tag='eas:inSerialNumber'
+Element ending tag='eas:Confirm'
+Element ending tag='SOAP-ENV:Body'
+Element ending tag='SOAP-ENV:Envelope'
+End of count phase
+Connect/reconnect to host='secure.esellerate.net' path='/activate/activationservice.asmx' port=80
+Opening socket 8132 to host='secure.esellerate.net' port=80
+Calculating the message size with attachments, current count=1288
+New count is 1288 bytes
+Initializing for output
+Begin send phase (socket=8132 mode=0x8001 count=1288)
+S:\stdsoap2.cpp(5407): malloc(60) = 4BB7AFE0
+Element begin tag='SOAP-ENV:Envelope' id='0' type=''
+Element begin tag='SOAP-ENV:Body' id='0' type=''
+Element begin tag='eas:Confirm' id='0' type=''
+Element begin tag='eas:inPublisherID' id='0' type=''
+Element ending tag='eas:inPublisherID'
+Element begin tag='eas:inSerialNumber' id='0' type=''
+Element ending tag='eas:inSerialNumber'
+Element ending tag='eas:Confirm'
+Element ending tag='SOAP-ENV:Body'
+Element ending tag='SOAP-ENV:Envelope'
+End send
+End of send phase
+Initializing for input
+Free namespace stack
+Free any remaining temp blocks
+Free attribute storage
+S:\stdsoap2.cpp(6182): free(4A9AC048)
+Free pointer hashtable
+S:\stdsoap2.cpp(4750): free(303EB670)
+Free ID hashtable
+S:\stdsoap2.cpp(6782): malloc(256) = 4A9AC048
+Free ID hashtable
+Read 650 bytes from socket 8132
+Waiting for HTTP request/response...
+HTTP status: HTTP/1.1 200 OK
+HTTP header: Cache-Control: private, max-age=0
+HTTP header: Content-Length: 401
+HTTP header: Content-Type: text/xml; charset=utf-8
+S:\stdsoap2.cpp(5407): malloc(36) = 4AB92F60
+HTTP header: Server: Microsoft-IIS/7.5
+HTTP header: X-AspNet-Version: 2.0.50727
+HTTP header: X-Powered-By: ASP.NET
+HTTP header: Date: Wed, 04 Mar 2015 02:08:11 GMT
+HTTP header: Connection: close
+Finished HTTP header parsing, status = 200
+Keep alive connection = 0
+XML PI <?xml version="1.0" encoding="utf-8"?>
+Switching to utf-8 encoding
+S:\stdsoap2.cpp(8048): malloc(30) = 4AB77D38
+Enlarging look-aside buffer to append data, old size=0, new size=256
+S:\stdsoap2.cpp(7870): malloc(256) = 4BB80290
+S:\stdsoap2.cpp(8102): malloc(256) = 4BB80398
+S:\stdsoap2.cpp(2636): malloc(24) = 4BB61E00
+Push namespace binding (level=0) 'soap' 'http://schemas.xmlsoap.org/soap/envelope/'
+Push OK ('soap' matches 'SOAP-ENV' in namespace table)
+S:\stdsoap2.cpp(8048): malloc(29) = 4AB77D60
+S:\stdsoap2.cpp(8102): malloc(256) = 4BB804A0
+S:\stdsoap2.cpp(2636): malloc(23) = 4BB61E80
+Push namespace binding (level=0) 'xsi' 'http://www.w3.org/2001/XMLSchema-instance'
+Push OK ('xsi' matches 'xsi' in namespace table)
+S:\stdsoap2.cpp(8048): malloc(29) = 4AB77C98
+S:\stdsoap2.cpp(8102): malloc(256) = 4BB805A8
+S:\stdsoap2.cpp(2636): malloc(23) = 4BB61F00
+Push namespace binding (level=0) 'xsd' 'http://www.w3.org/2001/XMLSchema'
+Push OK ('xsd' matches 'xsd' in namespace table)
+Tags and (default) namespaces match: 'soap:Envelope' 'SOAP-ENV:Envelope'
+Begin element found (level=1) 'soap:Envelope'='SOAP-ENV:Envelope'
+S:\stdsoap2.cpp(13308): malloc(42) = 4BB78BE0
+Tags and (default) namespaces match: 'soap:Body' 'SOAP-ENV:Body'
+Begin element found (level=2) 'soap:Body'='SOAP-ENV:Body'
+S:\stdsoap2.cpp(8048): malloc(25) = 4AB77CE8
+S:\stdsoap2.cpp(8102): malloc(256) = 4BB806B0
+S:\stdsoap2.cpp(2636): malloc(20) = 4BB61FA0
+Push namespace binding (level=2) '' 'http://tempuri.org/paws/ActivationService'
+Push OK ('' matches 'eas' in namespace table)
+Tags and (default) namespaces match: 'ConfirmResponse' 'eas:ConfirmResponse'
+Begin element found (level=3) 'ConfirmResponse'='eas:ConfirmResponse'
+Enter id='' type=48 loc=499AF6F0 size=12 level=0
+Tags and (default) namespaces match: 'ConfirmResult' 'eas:ConfirmResult'
+Begin element found (level=4) 'ConfirmResult'='eas:ConfirmResult'
+Reading string content
+S:\stdsoap2.cpp(5407): malloc(52) = 4AB9BB00
+Enter id='' type=3 loc=4AB9BB00 size=4 level=0
+End element found (level=4) 'ConfirmResult'='eas:ConfirmResult'
+End element found (level=3) 'ConfirmResponse'='eas:ConfirmResponse'
+End element found (level=2) 'soap:Body'='SOAP-ENV:Body'
+End element found (level=1) 'soap:Envelope'='SOAP-ENV:Envelope'
+End of receive message ok
+Resolving forwarded data
+Resolution phase
+Resolution done
+Free namespace stack
+S:\stdsoap2.cpp(6149): free(4BB61FA0)
+S:\stdsoap2.cpp(6149): free(4BB61F00)
+S:\stdsoap2.cpp(6149): free(4BB61E80)
+S:\stdsoap2.cpp(6149): free(4BB61E00)
+Free any remaining temp blocks
+Free attribute storage
+S:\stdsoap2.cpp(6159): free(4BB806B0)
+S:\stdsoap2.cpp(6160): free(4AB77CE8)
+S:\stdsoap2.cpp(6159): free(4BB80398)
+S:\stdsoap2.cpp(6160): free(4AB77D38)
+S:\stdsoap2.cpp(6159): free(4BB804A0)
+S:\stdsoap2.cpp(6160): free(4AB77D60)
+S:\stdsoap2.cpp(6159): free(4BB805A8)
+S:\stdsoap2.cpp(6160): free(4AB77C98)
+S:\stdsoap2.cpp(6165): free(4BB80290)
+S:\stdsoap2.cpp(6176): free(4BB78BE0)
+S:\stdsoap2.cpp(6182): free(4A9AC048)
+Free pointer hashtable
+Free ID hashtable
+Shutdown socket 8132 how=2
+Close socket 8132
+Free namespace stack
+Free any remaining temp blocks
+Free attribute storage
+Free pointer hashtable
+Free ID hashtable
+Free all soap_malloc() data
+S:\stdsoap2.cpp(5566): free(4AB9BB00)
+S:\stdsoap2.cpp(5566): free(4AB92F60)
+S:\stdsoap2.cpp(5566): free(4BB7AFE0)
+S:\stdsoap2.cpp(5566): free(303E84E0)
+S:\stdsoap2.cpp(5566): free(303E5BA0)
+Done with context
+Free namespace stack
+Free any remaining temp blocks
+Free attribute storage
+Free pointer hashtable
+Free ID hashtable
+Free logfiles
+S:\stdsoap2.cpp(3325): free(303C17E0)
+S:\stdsoap2.cpp(3325): free(303C17F8)
+S:\stdsoap2.cpp(3325): free(303C1810)

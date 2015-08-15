@@ -1,0 +1,10 @@
+POST /activate/activationservice.asmx HTTP/1.1
+Host: secure.esellerate.net
+User-Agent: gSOAP/2.7
+Content-Type: text/xml; charset=utf-8
+Content-Length: 1288
+Connection: close
+SOAPAction: "http://tempuri.org/paws/ActivationService/Confirm"
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:est="https://secure.esellerate.net/WebServices/V1/eSellerateTypes" xmlns:pReq="https://secure.esellerate.net/WebServices/V1/PurchaseRequest" xmlns:pRsp="https://secure.esellerate.net/WebServices/V1/PurchaseResponse" xmlns:cqReq="https://secure.esellerate.net/WebServices/V1/CurrencyQueryRequest" xmlns:cqRsp="https://secure.esellerate.net/WebServices/V1/CurrencyQueryResponse" xmlns:pqReq="https://secure.esellerate.net/WebServices/V1/PrepurchaseQueryRequest" xmlns:pqRsp="https://secure.esellerate.net/WebServices/V1/PrepurchaseQueryResponse" xmlns:eqReq="https://secure.esellerate.net/WebServices/V1/eSellerQueryRequest" xmlns:eqRsp="https://secure.esellerate.net/WebServices/V1/eSellerQueryResponse" xmlns:eas="http://tempuri.org/paws/ActivationService" xmlns:eps="https://secure.esellerate.net/WebServices/V1/PurchaseService"><SOAP-ENV:Body><eas:Confirm><eas:inPublisherID>PUB074165580</eas:inPublisherID><eas:inSerialNumber>PSHW200</eas:inSerialNumber></eas:Confirm></SOAP-ENV:Body></SOAP-ENV:Envelope>
