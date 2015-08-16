@@ -216,6 +216,17 @@ ul li {
 	line-height: 2em;
 }
 
+.toc {
+	background: rgba(197,208,213,0.3);
+	height: 110%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+.toc ul li { line-height: 1.5em}
+
 .list-group-item .list-group-item:last-child {
 	line-height: 22px;
 }
@@ -229,6 +240,9 @@ ul li {
 	font-family: -webkit-pictograph;
 	color: rgb(197,4,19);
 	border: 1px solid rgb(224,223,223);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 }
 
 #ref {
@@ -236,7 +250,7 @@ ul li {
 	font-size:24px;
 	font-weight: 600;
 	font-family: -webkit-pictograph;
-	color: rgb(84,117,161);
+	color: rgb(84,117,161)
 	
 }
 
