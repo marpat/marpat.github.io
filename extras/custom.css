@@ -104,6 +104,7 @@ pre {
 	color: rgba(255,214,5,1.0);
 	text-transform: none;
 	line-height: 0.2; */
+	display: none;
 	width: 680px;
 	height: 141px;
 	margin: -70px 0 0 -250px;	
