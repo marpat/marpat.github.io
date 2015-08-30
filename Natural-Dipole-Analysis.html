@@ -342,55 +342,214 @@ header of the notebook's HTML file. Other variants of .css files are in the ./cs
 
 </div>
 </div>
-</div></p>
-<div class="highlight"><pre><span class="o">%%</span><span class="n">capture</span>
-<span class="c"># suppress output; remove %% capture for debugging</span>
-<span class="c"># to (de)activate line numbering pres Esc while in the cell </span>
-<span class="c"># followed by l (lower L)</span>
-
-<span class="sd">&#39;&#39;&#39;Sanity check since we are changing directories and *.css file path</span>
-<span class="sd">would be incorrect after cell re-run&#39;&#39;&#39;</span>
-<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="kn">import</span> <span class="nn">string</span><span class="o">,</span><span class="nn">sys</span><span class="o">,</span><span class="nn">os</span><span class="o">,</span><span class="nn">os.path</span><span class="o">,</span><span class="nn">re</span>
-<span class="n">css_file</span> <span class="o">=</span> <span class="s">&#39;./css/blog.css&#39;</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">css_file</span><span class="p">):</span>
-    <span class="n">css_file</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="o">%</span><span class="n">cd</span> <span class="o">..</span>
-<span class="n">HTML</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">css_file</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</pre></div>
-
-
-<p>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Imports and settings</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">FancyArrowPatch</span>
-<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">capture</span>
+# suppress output; remove %% capture for debugging
+# to (de)activate line numbering pres Esc while in the cell 
+# followed by l (lower L)
 
-<span class="c"># Pandas options</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&#39;display.width&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
-<span class="c">#pd.set_option(&#39;display.mpl_style&#39;, &#39;default&#39;)  # enable for nicer plots</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&quot;max_columns&quot;</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&#39;chained_assignment&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>  <span class="c"># suppress warnings for web publishing</span>
-
-<span class="c"># Global parameters</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+&#39;&#39;&#39;Sanity check since we are changing directories and *.css file path
+would be incorrect after cell re-run&#39;&#39;&#39;
+from IPython.core.display import HTML
+import string,sys,os,os.path,re
+css_file = &#39;./css/blog.css&#39;
+if os.path.isfile(css_file):
+    css_file
+else:
+    %cd ..
+HTML(open(css_file, &quot;r&quot;).read())
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+@import url("custom.css");
+
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+<style>
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+
+em {	text-decoration: underline;
+	color: rgba(136,0,34,0.8);
+}
+
+#notebook_panel { /* main background */
+    background: inherit;
+    color: #f6f6f6;
+}
+
+div.cell { /* set cell width to about 80 chars */
+    width: 900px;
+}
+div #notebook { /* centre the content */
+    background: #fff; /* white background for content */
+    width: 1000px;
+    margin: auto;
+    padding-left: 1em;
+}
+#notebook li { /* More space between bullet points */
+margin-top:0.8em;
+}
+/* draw border around running cells */
+div.cell.border-box-sizing.code_cell.running {
+    border: 3px solid #887DA3;
+}
+/* draw border around last active cells */
+div.cell.selected {
+	border: thin solid #5E68D2 !important;
+}
+/* Put a solid color box around each cell and its output, visually linking them together */
+div.cell.code_cell {
+    background-color: rgba(235,235,235,1); /*171,165,131,0.3,  159,115,0, 0.3*/
+    border-radius: 10px; /* rounded borders */
+    padding: 1em;
+    margin-top: 1em;
+    margin-left: 2.5em;
+}
+/*the width, font, and size of text in Markdown cells*/
+div.text_cell_render{
+    font-family: 'Arvo' sans-serif;
+    line-height: 130%;
+    font-size: 115%;
+    width:800px; /* divider line */
+    margin-left:auto;
+    margin-right:auto;
+}
+/* Formatting for header cells */
+.text_cell_render h1 {
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 400;
+    font-size: 32pt;
+    line-height: 100%;
+    color: rgb(12,85,97);
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    display: block;
+}
+.text_cell_render h2 {
+    font-family: 'Philosopher', serif;
+    font-weight: 700;
+    font-size: 24pt;
+    line-height: 100%;
+    color: rgb(171,165,131);
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    display: block;
+}    
+
+.text_cell_render h3 {
+    font-family: 'Philosopher', serif;
+    margin-top:12px;
+    margin-bottom: 3px;
+    font-style: italic;
+    color: rgb(95,92,72);
+}
+
+.text_cell_render h4 {
+    font-family: 'Philosopher', serif;
+}
+
+.text_cell_render h5 {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16pt;
+    color: grey;
+    font-style: italic;
+    margin-bottom: .1em;
+    margin-top: 0.1em;
+    display: block;
+}
+
+.text_cell_render h6 {
+    font-family: 'PT Mono', sans-serif;
+    font-weight: 300;
+    font-size: 10pt;
+    color: grey;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+/*CodeMirror (a webservice) for syntax highlighting of code*/
+.CodeMirror{
+        font-family: "PT Mono";
+        font-size: 100%;
+}
+
+/*Tables*/
+table.grid {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.grid th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.grid td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+div.output_area .rendered_html table {
+margin: 20px auto 0 auto;
+}
+
+code {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: #c7254e!important;
+	background-color: #f9f2f4!important;
+	border-radius: 4px;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+/* Latex*/
+.MathJax_Display {
+color: rgba(0,0,255,1);
+padding: 10px;
+}
+/* Important to close style section in Jupyter notebook*/
+</style>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div></p>
+<p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -404,7 +563,7 @@ header of the notebook's HTML file. Other variants of .css files are in the ./cs
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">capture</span>
@@ -434,7 +593,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Input file can be generated in ReadNboDip.ipynb notebook</span>
@@ -472,7 +631,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Reassemble data table placing row0 at the top, followed by the rest</span>
@@ -487,7 +646,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="sd">&quot;&quot;&quot; Identify which column (coordinate) has constant values (orthogonal to the </span>
@@ -511,7 +670,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="sd">&#39;&#39;&#39;Assign X,Y coordinates only, Z=0. Any of the X,Y,Z can be constant or </span>
@@ -539,7 +698,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Append columns newX,newY to df2 (values are often same as the original X,Y)</span>
@@ -565,7 +724,7 @@ else:
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <table border="1" class="dataframe grid">
@@ -749,7 +908,7 @@ Let's try to build continuous vector graph from the original dataframe <strong>d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Test area running off the branch df2b1</span>
@@ -841,11 +1000,19 @@ Let's try to build continuous vector graph from the original dataframe <strong>d
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Anaconda\envs\notebook\lib\site-packages\matplotlib\text.py:1857: UserWarning: You have used the &#96;textcoords&#96; kwarg, but not the &#96;xytext&#96; kwarg.  This can lead to surprising results.
+  warnings.warn(&quot;You have used the &#96;textcoords&#96; kwarg, but not &quot;
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Annotation at 0xb09a1f0&gt;</pre>
+<pre>&lt;matplotlib.text.Annotation at 0x7751050&gt;</pre>
 </div>
 
 </div>
@@ -1202,7 +1369,7 @@ We will write a function that assigns each row an arbitrary quadrant depending o
 <p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Function to rank XY-points into quadrants 0-3</span>
@@ -1253,7 +1420,7 @@ We will write a function that assigns each row an arbitrary quadrant depending o
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Get the list of quadrant permutations</span>
@@ -1282,7 +1449,7 @@ We will write a function that assigns each row an arbitrary quadrant depending o
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">capture</span>
@@ -1544,7 +1711,7 @@ for i in range(len(permlist)):
 <p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Sort by distance stds and retrieve the first three results</span>
@@ -1595,7 +1762,7 @@ for i in range(len(permlist)):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Enter the best sequence of quadrants</span>
@@ -1725,7 +1892,7 @@ for i in range(len(permlist)):
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[50]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <table border="1" class="dataframe grid">
