@@ -450,7 +450,8 @@ Next, from the shell, issue the following command:</p>
 </pre></div>
 
 
-<p>The following packages will be installed.</p>
+<p>The following packages will be installed. </p>
+<p><em>Note that pycrypto package may require compilation of C++ source, on Windows use MinGW or search for pycrypto binaries for your Python version.</em></p>
 <div class="highlight"><pre><span></span>    ecdsa:    0.11-py27_0
     fabric:   1.10.1-py27_0
     paramiko: 1.15.2-py27_0
@@ -458,7 +459,6 @@ Next, from the shell, issue the following command:</p>
 </pre></div>
 
 
-<p>Note that pycrypto package may require compilation of C++ source, on Windows use MinGW or search for pycrypto binaries for your Python version.</p>
 <p><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> At this point, the size of <code>pelican1</code> environment is about 100Mb.</p>
 <h2>Pelican blog</h2>
 <p>So far, all packages were installed in the <code>C:\Anaconda\env\pelican1\</code> folder. The actual blog files require different drive/folder location from which the site is managed. Let's create such directory, for example, <code>C:\demo\pelicanblog</code>.
