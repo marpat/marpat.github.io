@@ -226,12 +226,6 @@ Home            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                     <li><a href="/archives.html">All</a></li>
-                         <li><a href="./pages/about.html">
-                             About
-                          </a></li>
-                         <li><a href="./pages/contact.html">
-                             Contacts
-                          </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><span>
@@ -303,133 +297,132 @@ Home            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                
+                <p>[TOC]  </p>
 <p><strong>Table of contents</strong></p>
-<div class="toc">
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#requirements">Requirements</a><ul>
-<li><a href="#python">Python</a></li>
-<li><a href="#set-up-a-virtual-environment">Set up a virtual environment</a></li>
-<li><a href="#pelican">Pelican</a></li>
-<li><a href="#other-python-packages">Other Python packages</a></li>
-</ul>
-</li>
-<li><a href="#pelican-blog">Pelican blog</a></li>
-<li><a href="#building-the-site">Building the site</a><ul>
-<li><a href="#markdown-md-file">Markdown .md file</a></li>
-<li><a href="#rendering-and-uploading-the-site">Rendering and uploading the site</a></li>
-</ul>
-</li>
-<li><a href="#and-we-are-done">And we are done</a></li>
-</ul>
-</div>
-<h2 id="introduction">Introduction</h2>
-<p>With so many blogs and descriptive how-to's out there<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup><sup>,</sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup><sup>,</sup> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup><sup>,</sup> <sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup>, one may be wondering as to why another post on <strong>Pelican</strong> static site generator. The purpose of this blog is to document building a static web site in Windows environment with Anaconda Python distribution.<br/>
-This tutorial assumes very little, so we will cover each step in a little more details. Chances are that you have already heard about the the Python-powered micro web frameworks, static page generators, and even about <a href="https://pypi.python.org/pypi/pelican/#downloads"><em>Pelican</em></a>, <a href="https://getnikola.com/"><em>Nikola</em></a>, or <a href="http://www.fullstackpython.com/flask.html"><em>Flask</em></a>. If not, this blog<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup> has a nice introduction.</p>
+<p>[TOC]</p>
+<h2>Introduction</h2>
+<p>With so many blogs and descriptive how-to's out there<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup><sup>,</sup> <sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup><sup>,</sup> <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup><sup>,</sup> <sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup>, one may be wondering as to why another post on <strong>Pelican</strong> static site generator. The purpose of this blog is to document building a static web site in Windows environment with Anaconda Python distribution.<br>
+This tutorial assumes very little, so we will cover each step in a little more details. Chances are that you have already heard about the the Python-powered micro web frameworks, static page generators, and even about <a href="https://pypi.python.org/pypi/pelican/#downloads"><em>Pelican</em></a>, <a href="https://getnikola.com/"><em>Nikola</em></a>, or <a href="http://www.fullstackpython.com/flask.html"><em>Flask</em></a>. If not, this blog<sup id="fnref2-4"><a class="footnote-ref" href="#fn-4">4</a></sup> has a nice introduction.</p>
 <div class="note">
 <div class="notetip">
 <b>Pelican</b> is a static web page generator that delivers web pages to the user exactly as they are stored on the server. There is no user-interaction possible once the pages are rendered. In contrast, dynamic web pages are generated and updated by a web application. Pelican is written in Python and it is platform independent. 
 </div>
 </div>
-<h2 id="requirements">Requirements</h2>
+
+<h2>Requirements</h2>
 <p>Before we can get started, we’ll need to have a functioning installation of <strong>Python</strong>, and of course, <strong>Pelican</strong>. The following are the minimum requirements:</p>
 <ol>
-<li><a href="https://www.python.org/download/releases/2.7">Python 2.7.x</a> or Python 3</li>
+<li><a href="https://www.python.org/download/releases/2.7">Python 2.7.x</a> or Python 3 (Python 2.7 is still preferred on Windows due to several dependencies, such as 'pycrypto', not available for Py3.6)</li>
 <li><a href="https://pypi.python.org/pypi/pelican/#downloads">Pelican</a> package</li>
 <li>Text editor (e.g., <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="http://markdownpad.com/">Markdown Pad</a>, <a href="http://www.sublimetext.com/">Sublime Text</a>)</li>
 <li>Web server for the web hosting</li>
 </ol>
-<h3 id="python">Python</h3>
-<p>First, we need a Python installation. I recommend <a href="http://repo.continuum.io/archive/">Anaconda</a> Python Distribution from the <a href="https://store.continuum.io/cshop/anaconda/">Continuum Analytics</a>. <code>Anaconda</code> itself is free and it comes with many pre-installed Python packages and libraries such as Pandas, NumPy, matplotlib, and others. However, the default packages do not include Pelican site generator.</p>
+<h3>Python</h3>
+<p>First, we need a Python installation. I recommend <a href="http://repo.continuum.io/archive/">Anaconda or miniconda</a> Python Distribution from the <a href="https://store.continuum.io/cshop/anaconda/">Continuum Analytics</a>. <code>Anaconda</code> and <code>miniconda</code> are free and the former comes with many pre-installed Python packages and libraries such as Pandas, NumPy, matplotlib, and others. However, the default packages do not include Pelican site generator.</p>
 <p>If you already have <code>Python</code> installed, <a href="#sec-env">skip to the section</a> <strong>Virtual Environment</strong>.</p>
-<p>To get Anaconda installed under the Windows, download the latest <a href="http://repo.continuum.io/archive/.winzip/">Anaconda</a> and install the executable. </p>
-<div class="note">
-<div class="notewarning">
-Version 1.9.1 worked best for me under the Windows 7 system for a long time (Python 2.7.6 with the IPython Notebook). I have confirmed that Anaconda 2.3.0 also works well with IPython notebooks. However, for Pelican to render notebooks successfully, Ipython and IPython notebook version needs to be kept at 2.4.1 in a virtual environment. 
-</div>
-</div>
-<p>The typical path to install <strong>Anaconda</strong> on Windows is: <code>C:\Anaconda</code>. For more details on installation steps, see this <a href="https://www.youtube.com/watch?v=FL7Hf4eVjKo">YouTube video</a>.</p>
+<p>To get Anaconda/Miniconda installed under the Windows, download the latest <a href="http://repo.continuum.io/archive/.winzip/">Anaconda</a> and install the executable. </p>
+<p>This tutorial is using Anaconda although steps with miniconda are the same. The typical path to install <strong>Anaconda</strong> on Windows is: <code>C:\Anaconda</code>. For more details on installation steps, see this <a href="https://www.youtube.com/watch?v=FL7Hf4eVjKo">YouTube video</a>.</p>
 <p>When installation completes, append the following string (without the quotes) into your system <strong>PATH</strong>: </p>
-<div class="highlight"><pre><span class="s2">" C:\Anaconda;C:\Anaconda\Lib;C:\Anaconda\DLLs;C:\Anaconda\Lib\lib-tk;C:\Anaconda\Scripts; "</span>
+<div class="highlight"><pre><span></span><span class="s2">&quot; C:\Anaconda;C:\Anaconda\Lib;C:\Anaconda\DLLs;C:\Anaconda\Lib\lib-tk;C:\Anaconda\Scripts; &quot;</span>
 </pre></div>
+
+
 <div class="note">
 <div class="notetip">
-To access the <b>PATH</b> variable, right-click on Computer ⇒ Advanced system settings ⇒ Advance tab ⇒ Environment Variables ⇒ System variables ⇒ Path.
+To access the <b>PATH</b> variable, right-click on Computer &#8658; Advanced system settings &#8658; Advance tab &#8658; Environment Variables &#8658; System variables &#8658; Path.
 </div>
 </div>
+
 <p>To check that <strong>Anaconda</strong> has installed successfully, launch the Windows command shell (cmd.exe) and execute the command:  </p>
-<div class="highlight"><pre>    <span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="nb">all</span>
+<div class="highlight"><pre><span></span>    <span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
+
+
 <p>A typical output follows:</p>
-<div class="highlight"><pre><span class="x">Current conda install:</span>
+<div class="highlight"><pre><span></span>Current conda install:
 
-<span class="x">             platform : win-32</span>
-<span class="x">        conda version : 3.11.0-dirty</span>
-<span class="x">  conda-build version : 1.2.0</span>
-<span class="x">       python version : 2.7.6.final.0</span>
-<span class="x">     requests version : 2.7.0</span>
-<span class="x">     root environment : C:\Anaconda  (writable)</span>
-<span class="x">  default environment : C:\Anaconda</span>
-<span class="x">     envs directories : C:\Anaconda\envs</span>
-<span class="x">        package cache : C:\Anaconda\pkgs</span>
-<span class="x">         channel URLs : http://repo.continuum.io/pkgs/gpl/win-32/</span>
-<span class="x">                        http://repo.continuum.io/pkgs/gpl/noarch/</span>
-<span class="x">                        http://repo.continuum.io/pkgs/free/win-32/</span>
-<span class="x">                        http://repo.continuum.io/pkgs/free/noarch/</span>
-<span class="x">          config file : </span><span class="p">$</span><span class="nv">HOME</span><span class="x">\.condarc</span>
-<span class="x">    is foreign system : False</span>
+             platform : win-32
+        conda version : 3.11.0-dirty
+  conda-build version : 1.2.0
+       python version : 2.7.6.final.0
+     requests version : 2.7.0
+     root environment : C:\Anaconda  (writable)
+  default environment : C:\Anaconda
+     envs directories : C:\Anaconda\envs
+        package cache : C:\Anaconda\pkgs
+         channel URLs : http://repo.continuum.io/pkgs/gpl/win-32/
+                        http://repo.continuum.io/pkgs/gpl/noarch/
+                        http://repo.continuum.io/pkgs/free/win-32/
+                        http://repo.continuum.io/pkgs/free/noarch/
+          config file : $HOME\.condarc
+    is foreign system : False
 
-<span class="x"> conda environments:</span>
+ conda environments:
 
-<span class="x">       - envs listed here-</span>
-<span class="x">root                  *  C:\Anaconda</span>
+       - envs listed here-
+root                  *  C:\Anaconda
 
-<span class="x">sys.version: 2.7.6 |Anaconda 1.9.1 (32-bit)| (default...</span>
-<span class="x">sys.prefix: C:\Anaconda</span>
-<span class="x">sys.executable: C:\Anaconda\python.exe</span>
-<span class="x">conda location: C:\Anaconda\lib\site-packages\conda</span>
-<span class="x">conda-build: C:\Anaconda\Scripts\conda-build.bat</span>
-<span class="x">conda-convert: C:\Anaconda\Scripts\conda-convert.bat</span>
-<span class="x">conda-env: C:\Anaconda\Scripts\conda-env.exe</span>
-<span class="x">conda-index: C:\Anaconda\Scripts\conda-index.bat</span>
-<span class="x">conda-skeleton: C:\Anaconda\Scripts\conda-skeleton.bat</span>
+sys.version: 2.7.6 |Anaconda 1.9.1 (32-bit)| (default...
+sys.prefix: C:\Anaconda
+sys.executable: C:\Anaconda\python.exe
+conda location: C:\Anaconda\lib\site-packages\conda
+conda-build: C:\Anaconda\Scripts\conda-build.bat
+conda-convert: C:\Anaconda\Scripts\conda-convert.bat
+conda-env: C:\Anaconda\Scripts\conda-env.exe
+conda-index: C:\Anaconda\Scripts\conda-index.bat
+conda-skeleton: C:\Anaconda\Scripts\conda-skeleton.bat
 </pre></div>
+
+
 <p>Next, install the <code>pip</code> package installer and manager from the command shell (cmd.exe) as:  </p>
-<div class="highlight"><pre>conda install pip 
+<div class="highlight"><pre><span></span>conda install pip 
 </pre></div>
-<h3 id="set-up-a-virtual-environment">Set up a virtual environment</h3>
+
+
+<h3>Set up a virtual environment</h3>
 <p><a name="sec-env"></a>
 To avoid potential Python library/package dependency conflicts, it is a good practice to install new projects into their own development environment. Such environment includes a fresh copy of the Python binary together with a copy of the entire Python standard library. Let's create a virtual environment called <code>pelican1</code>.</p>
-<div class="highlight"><pre>conda create -n pelican1 python=2
+<div class="highlight"><pre><span></span>conda create -n pelican1 python=2
 </pre></div>
+
+
 <p>The expected response is shown in <strong>Figure 1</strong> and <strong>Figure 2</strong>.  </p>
-<p><img alt="venv pelican1" src="../images/img-code/venv1.png" title="Fig 1."/><br/>
+<p><img alt="venv pelican1" src="../images/img-code/venv1.png" title="Fig 1."><br>
 <p style="margin: -20px 0 30px 125px;"><em>Fig. 1. Creating virtual environment <code>pelican1</code>.</em> </p> </p>
-<p><img alt="virt env2" src="../images/img-code/venv2.png" title="Fig 2."/><br/>
-<p style="margin: -20px 0 30px 110px;"><em>Fig. 2. Packages installed in the virt env <code>pelican1</code>.</em> </p> </p>
+<p><img alt="virt env2" src="../images/img-code/venv2.png" title="Fig 2."><br>
+<p style="margin: -20px 0 30px 110px;"><em>Fig. 2. Packages installed in the virt env <code>pelican1</code>.</em> </p>  </p>
 <p>Add the following string (without the quotes) into your <strong>PATH</strong>:</p>
-<div class="highlight"><pre><span class="s2">"  C:\Anaconda\envs\pelican1;C:\Anaconda\envs\pelican1\Lib;C:\Anaconda\envs\pelican1\DLLs;</span>
-<span class="s2">C:\Anaconda\envs\pelican1\Lib\lib-tk;C:\Anaconda\envs\pelican1\Scripts;  "</span>
+<div class="highlight"><pre><span></span><span class="s2">&quot;  C:\Anaconda\envs\pelican1;C:\Anaconda\envs\pelican1\Lib;C:\Anaconda\envs\pelican1\DLLs;</span>
+<span class="s2">C:\Anaconda\envs\pelican1\Lib\lib-tk;C:\Anaconda\envs\pelican1\Scripts;  &quot;</span>
 </pre></div>
+
+
 <p>and activate the new environment as:  </p>
-<div class="highlight"><pre>&gt; activate pelican1
+<div class="highlight"><pre><span></span>&gt; activate pelican1
 </pre></div>
+
+
 <p>if everything went as expected, you should see the following text at the command prompt:</p>
-<div class="highlight"><pre>[pelican1] c:\Anaconda
+<div class="highlight"><pre><span></span>[pelican1] c:\Anaconda
 </pre></div>
+
+
 <p>Install <code>pip</code> into the new <code>pelican1</code> environment as:</p>
-<div class="highlight"><pre>cd envs
+<div class="highlight"><pre><span></span>cd envs
 cd pelican1
 [pelican1] c:\Anaconda\envs\pelican1 &gt;conda install pip 
 </pre></div>
-<h3 id="pelican">Pelican</h3>
+
+
+<h3>Pelican</h3>
 <p><a name="sec-pel"></a>
 Finally, we proceed with the installation of <strong>Pelican</strong> package. In your terminal, execute:</p>
-<div class="highlight"><pre>[pelican1] c:\Anaconda &gt;pip install pelican
+<div class="highlight"><pre><span></span>[pelican1] c:\Anaconda &gt;pip install pelican
 </pre></div>
+
+
 <p>The progress will look similar to the following output.</p>
-<div class="highlight"><pre> Downloading pelican-3.6.2-py2.py3-none-any.whl (129kB)
+<div class="highlight"><pre><span></span> Downloading pelican-3.6.2-py2.py3-none-any.whl (129kB)
  Downloading Pygments-2.0.2-py2-none-any.whl (672kB)
  Downloading feedgenerator-1.7.tar.gz
  Downloading Unidecode-0.04.18.tar.gz (206kB)
@@ -443,10 +436,12 @@ Finally, we proceed with the installation of <strong>Pelican</strong> package. I
 Installing collected packages: pygments, pytz, six, feedgenerator, unidecode, py
 thon-dateutil, markupsafe, jinja2, docutils, blinker, pelican
 </pre></div>
-<h3 id="other-python-packages">Other Python packages</h3>
+
+
+<h3>Other Python packages</h3>
 <p>Following are packages that I found useful when developing and publishing <strong>Pelican</strong> blog site. To make their installation easier, we will use the <code>Requirements.txt</code> file.</p>
 <p>Open a text editor and type (copy/paste) the following content.</p>
-<div class="highlight"><pre>beautifulsoup4~=4.3.2
+<div class="highlight"><pre><span></span>beautifulsoup4~=4.3.2
 feedgenerator~=1.7
 html5lib~=0.999
 Markdown~=2.5.2
@@ -456,29 +451,41 @@ smartypants~=1.8.6
 typogrify~=2.0.7
 gitpython
 </pre></div>
+
+
 <p>Save the file as <code>Requirements.txt</code> into the folder <code>C:\Anaconda\env\pelican1\</code>.
 Next, from the shell, issue the following command:</p>
-<div class="highlight"><pre>[pelican1] c:\Anaconda&gt;pip install -r c:\Anaconda\envs\pelican1\requirements.txt
+<div class="highlight"><pre><span></span>[pelican1] c:\Anaconda&gt;pip install -r c:\Anaconda\envs\pelican1\requirements.txt
 </pre></div>
+
+
 <p>To build, publish, and maintain the site, I use the <strong>Fabric</strong> Python library. To avoid complications with C++ compiler on Windows, use the Binstar package:</p>
-<div class="highlight"><pre>[pelican1] c:\Anaconda&gt;conda install -c https://conda.binstar.org/binstar fabric
+<div class="highlight"><pre><span></span>[pelican1] c:\Anaconda&gt;conda install -c https://conda.binstar.org/binstar fabric
 </pre></div>
+
+
 <p>The following packages will be installed.</p>
-<div class="highlight"><pre>    ecdsa:    0.11-py27_0
+<div class="highlight"><pre><span></span>    ecdsa:    0.11-py27_0
     fabric:   1.10.1-py27_0
     paramiko: 1.15.2-py27_0
     pycrypto: 2.6.1-py27_3
 </pre></div>
-<p><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> At this point, the size of <code>pelican1</code> environment is about 100Mb.</p>
-<h2 id="pelican-blog">Pelican blog</h2>
+
+
+<p><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> At this point, the size of <code>pelican1</code> environment is about 100Mb.</p>
+<h2>Pelican blog</h2>
 <p>So far, all packages were installed in the <code>C:\Anaconda\env\pelican1\</code> folder. The actual blog files require different drive/folder location from which the site is managed. Let's create such directory, for example, <code>C:\demo\pelicanblog</code>.
 Now, while still in the <code>pelican1</code> virtual environment, <em>cd</em> into this directory:  </p>
-<div class="highlight"><pre> [pelican1] c:\Anaconda\envs\pelican1 &gt;cd c:\demo\pelicanblog
+<div class="highlight"><pre><span></span> [pelican1] c:\Anaconda\envs\pelican1 &gt;cd c:\demo\pelicanblog
 </pre></div>
+
+
 <p>To initiate this new blog/web site, run the <em>quickstart</em> script and answer the setup questions. Note that I have chosen not to use GitHub Pages and secure SSH protocol for upload. The latter will be addressed below.  </p>
-<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt; pelican-quickstart
+<div class="highlight"><pre><span></span>[pelican1] C:\demo\pelicanblog&gt; pelican-quickstart
 </pre></div>
-<div class="highlight"><pre>&gt; Where do you want to create your new web site? [.]  (just press enter; it will be in the /pelicalblog directory; in this case c:\demo\pelicanblog)
+
+
+<div class="highlight"><pre><span></span>&gt; Where do you want to create your new web site? [.]  (just press enter; it will be in the /pelicalblog directory; in this case c:\demo\pelicanblog)
 &gt; What will be the title of this web site? Blogging with Pelican
 &gt; Who will be the author of this web site? your name
 &gt; What will be the default language of this web site? [en]
@@ -499,9 +506,11 @@ Now, while still in the <code>pelican1</code> virtual environment, <em>cd</em> i
 &gt; Do you want to upload your website using Rackspace Cloud Files? (y/N) n
 &gt; Do you want to upload your website using GitHub Pages? (y/N) n
 </pre></div>
+
+
 <p>A little more explanation on the "URL prefix" question. Answer <strong><em>yes</em></strong> and enter URL in the next step only if you have external web hosting site.</p>
 <p>Let’s take a look at the just created folder structure within the <code>c:\demo\pelicanblog</code> directory. Now if you type the <strong>tree</strong> command within your blog's main directory, you should see a directory tree similar to this one:</p>
-<div class="highlight"><pre>pelicanblog/
+<div class="highlight"><pre><span></span>pelicanblog/
 ├── content
 │    └── firstblog.md
 ├── output
@@ -519,67 +528,79 @@ Now, while still in the <code>pelican1</code> virtual environment, <em>cd</em> i
 ├── pelicanconf.py
 └── publishconf.py
 </pre></div>
+
+
 <p>Breaking down each of these files:  </p>
 <ul>
-<li><span aria-hidden="true" class="glyphicon glyphicon-folder-open" style="margin-right: 10px"></span> <strong>content/firstblog.md</strong>: A content file in Markdown syntax. This is where you start writing your blog. <span aria-hidden="true" class="glyphicon glyphicon-pencil" style="margin-right: 10px"></span></li>
-<li><span aria-hidden="true" class="glyphicon glyphicon-folder-open" style="margin-right: 10px"></span> <strong>output/</strong>: Content of this folder is automatically generated and later uploaded to a server.  <span aria-hidden="true" class="glyphicon glyphicon-cloud-upload" style="margin-right: 10px"></span></li>
+<li><span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="margin-right: 10px"></span> <strong>content/firstblog.md</strong>: A content file in Markdown syntax. This is where you start writing your blog. <span class="glyphicon glyphicon-pencil" aria-hidden="true" style="margin-right: 10px"></span></li>
+<li><span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="margin-right: 10px"></span> <strong>output/</strong>: Content of this folder is automatically generated and later uploaded to a server.  <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true" style="margin-right: 10px"></span></li>
 <li><strong>fabfile.py</strong>: Is a configuration file for <code>Fabric</code>, which allows you to generate your site using the <a href="http://blog.osteel.me/posts/2015/03/02/install-and-deploy-a-pelican-blog-using-fabric-part-3-fabric.html">fab command</a>.</li>
 <li><strong>pelicanconf.py</strong>: Is a Pelican configuration file containing the site <a href="http://docs.getpelican.com/en/3.3.0/settings.html">settings</a>.</li>
 <li><strong>publishconf.py</strong>: Similar to <em>pelicanconfig.py</em> file, but is not intended to be used for local development.</li>
 </ul>
-<h2 id="building-the-site">Building the site</h2>
+<h2>Building the site</h2>
 <p>Now let's build the default look of the blog. In your terminal, type the <code>fab</code> command after the <strong>&gt;</strong> character:</p>
-<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt;fab build
+<div class="highlight"><pre><span></span>[pelican1] C:\demo\pelicanblog&gt;fab build
 </pre></div>
+
+
 <p>Then</p>
-<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt;fab serve
+<div class="highlight"><pre><span></span>[pelican1] C:\demo\pelicanblog&gt;fab serve
 </pre></div>
+
+
 <p>We've just launched a local webserver on the port 8000. Open your browser and navigate to <a href="http://localhost:8000">http://localhost:8000</a> the default skeleton and template should display in your browser.</p>
-<p><img alt="final view" src="../images/img-code/pelican-result.png" title="Fig 3."/><br/>
+<p><img alt="final view" src="../images/img-code/pelican-result.png" title="Fig 3."><br>
 <p style="margin: -20px 0 30px 5px;"><em>Fig. 3. Final view of the site.</em> </p> </p>
 <p>To avoid repetitive typing in the terminal, set up a batch file, which will get you directly to the [pelican1] C:\demo\pelican environment and directory.
 Save the following script as <code>pelican.bat</code>and place the file into C:\Windows\System32 directory.</p>
-<div class="highlight"><pre>@echo off
+<div class="highlight"><pre><span></span>@echo off
 REM add this batch file into C:/windows/system32
 REM run upon opening cmd as &gt;pelican.bat
 set SERVE=C:\demo\pelicanblog
 cd /D %SERVE%
 activate pelican1
 </pre></div>
+
+
 <p>Next time, upon launching the command line terminal (<strong>cmd.exe</strong>), just type <code>pelican.bat</code> and the script will execute.</p>
 <p>To change or tweak the site settings, edit files <code>pelicanconf.py</code> and <code>fabfile.py</code> created in the main <code>pelicanblog/</code> directory. </p>
-<div class="highlight"><pre><span class="c">#  pelicanconf.py</span>
+<div class="highlight"><pre><span></span><span class="c1">#  pelicanconf.py</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
 
-<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">u'yourname'</span>  <span class="c">#  Change it here</span>
-<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">u'Blogging with Pelican'</span>  <span class="c">#  Change it here</span>
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;yourname&#39;</span>  <span class="c1">#  Change it here</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;Blogging with Pelican&#39;</span>  <span class="c1">#  Change it here</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
-<span class="n">PATH</span> <span class="o">=</span> <span class="s">'output'</span>  <span class="c"># This is where you write blogs, keep images, css, ..</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;output&#39;</span>  <span class="c1"># This is where you write blogs, keep images, css, ..</span>
 
-<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">'America/Phoenix'</span>  <span class="c">#  Change it here</span>
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;America/Phoenix&#39;</span>  <span class="c1">#  Change it here</span>
 
-<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">u'en'</span>
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;en&#39;</span>
 
-<span class="c"># other functions (default)</span>
+<span class="c1"># other functions (default)</span>
 </pre></div>
-<div class="highlight"><pre><span class="c">#  fabfile.py</span>
-<span class="c"># default variables and functions follow</span>
-<span class="c"># ...</span>
 
-<span class="c"># Added site upload function to circumvent setup of rsync on Windows</span>
-<span class="n">env</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">'ftp.yourdomain.com'</span><span class="p">]</span>
-<span class="n">env</span><span class="o">.</span><span class="n">user</span>   <span class="o">=</span> <span class="s">"username"</span>
-<span class="n">env</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="s">"serverpassword"</span> <span class="c"># or just entered it when connecting</span>
+
+<div class="highlight"><pre><span></span><span class="c1">#  fabfile.py</span>
+<span class="c1"># default variables and functions follow</span>
+<span class="c1"># ...</span>
+
+<span class="c1"># Added site upload function to circumvent setup of rsync on Windows</span>
+<span class="n">env</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ftp.yourdomain.com&#39;</span><span class="p">]</span>
+<span class="n">env</span><span class="o">.</span><span class="n">user</span>   <span class="o">=</span> <span class="s2">&quot;username&quot;</span>
+<span class="n">env</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;serverpassword&quot;</span> <span class="c1"># or just entered it when connecting</span>
 
 <span class="kn">from</span> <span class="nn">fabric.context_managers</span> <span class="kn">import</span> <span class="n">cd</span>
 
 <span class="k">def</span> <span class="nf">sftp</span><span class="p">():</span>
-    <span class="c"># run from the parent directory /pelicanblog/</span>
-    <span class="k">with</span> <span class="n">lcd</span><span class="p">(</span><span class="s">'output'</span><span class="p">):</span>  <span class="c"># cd into output directory</span>
-        <span class="n">local</span><span class="p">(</span><span class="s">"dir"</span><span class="p">)</span> <span class="c"># list files and directories to be uploaded</span>
-        <span class="n">put</span><span class="p">(</span><span class="s">'*'</span><span class="p">,</span> <span class="s">'./public_html/yourblogdirectory/'</span><span class="p">)</span>  <span class="c"># change here</span>
+    <span class="c1"># run from the parent directory /pelicanblog/</span>
+    <span class="k">with</span> <span class="n">lcd</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">):</span>  <span class="c1"># cd into output directory</span>
+        <span class="n">local</span><span class="p">(</span><span class="s2">&quot;dir&quot;</span><span class="p">)</span> <span class="c1"># list files and directories to be uploaded</span>
+        <span class="n">put</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;./public_html/yourblogdirectory/&#39;</span><span class="p">)</span>  <span class="c1"># change here</span>
 </pre></div>
+
+
 <p>Note the <code>sftp()</code> function added at the end of the <code>fabfile.py</code>. The default <code>publish()</code> function is based on <code>rsync</code> utility that is not that easy to install on Windows. Instead, we can use the <em>SSH File Transfer Protocol (sftp)</em> protocol, which is also secure an simple to implement.
 <div class="note">
 <div class="notetip">
@@ -587,9 +608,9 @@ In order to use <i>sftp</i> protocol to safely upload your site to a web-hosting
 </div>
 </div>
 Now, let's move on and start working on the first blog.</p>
-<h3 id="markdown-md-file">Markdown .md file</h3>
-<p>To create the content of our new web site, we will use the <code>Markdown</code> syntax<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup><sup>,</sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6" rel="footnote">6</a></sup>. Let's create our first markdown file name it <code>firstblog.md</code>. Save it into the /pelicanblog/content folder.</p>
-<div class="highlight"><pre>Title: First Blog Post
+<h3>Markdown .md file</h3>
+<p>To create the content of our new web site, we will use the <code>Markdown</code> syntax<sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup><sup>,</sup><sup id="fnref-6"><a class="footnote-ref" href="#fn-6">6</a></sup>. Let's create our first markdown file name it <code>firstblog.md</code>. Save it into the /pelicanblog/content folder.</p>
+<div class="highlight"><pre><span></span>Title: First Blog Post
 Date: 2015-8-08 13:10
 Category: Blogging
 Tags: blogging, markup
@@ -603,43 +624,51 @@ Following are examples of Pelican markup.
 
 This is a **first** attempt to create static page with the help of _Pelican_.
 </pre></div>
-<h3 id="rendering-and-uploading-the-site">Rendering and uploading the site</h3>
+
+
+<h3>Rendering and uploading the site</h3>
 <p>At this point, we will move back to the terminal and issue the following commands.</p>
-<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt;fab build
+<div class="highlight"><pre><span></span>[pelican1] C:\demo\pelicanblog&gt;fab build
 [pelican1] C:\demo\pelicanblog&gt;fab serve
 </pre></div>
+
+
 <p>Now, in the browser type  <a href="http://localhost:8000">http://localhost:8000</a> and our modified (local) site should load. </p>
 <p>To upload it to a web-server, make sure that you create your blog directory at the remote site first. Note the path to it, e.g. /public_html/yourblogdirectory. Enter your host name and user name into the <code>fabfile.py</code> file. In your terminal, enter:</p>
-<div class="highlight"><pre>[pelican1] C:\demo\pelicanblog&gt;fab sftp
+<div class="highlight"><pre><span></span>[pelican1] C:\demo\pelicanblog&gt;fab sftp
 </pre></div>
+
+
 <p>Upload process should start immediately with a list of files to be uploaded and a prompt for your password. After the upload is done, head to the site and check its accessibility. </p>
-<h2 id="and-we-are-done">And we are done</h2>
+<h2>And we are done</h2>
 <p>This concludes the process of setting up a simple Pelican site on Windows and Python Anaconda environment. We have built the skeleton of Pelican static web-site in Python virtual environment, modified its configuration files, and uploaded the site to our hosting server. Pelicanblog files can be downloaded from <a href="./download/pelicanblog.zip">here</a>. This blog is built with Pelican as well and it is styled with customized Pelican-bootstrap3 theme.</p>
 <hr>
+
 <h4 id="ref">References</h4>
+
 <div class="footnote">
-<hr/>
+<hr>
 <ol>
-<li id="fn:1">
-<p><a href="http://nafiulis.me/making-a-static-blog-with-pelican.html?utm_source=Python+Weekly+Newsletter&amp;utm_campaign=5b2cdb02e2-Python_Weekly_Issue_174_January_15_2015&amp;utm_medium=email&amp;utm_term=0_9e26887fc5-5b2cdb02e2-312707597">Making a Static Blog with Pelican</a>.   <a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">↩</a></p>
+<li id="fn-1">
+<p><a href="http://nafiulis.me/making-a-static-blog-with-pelican.html?utm_source=Python+Weekly+Newsletter&amp;utm_campaign=5b2cdb02e2-Python_Weekly_Issue_174_January_15_2015&amp;utm_medium=email&amp;utm_term=0_9e26887fc5-5b2cdb02e2-312707597">Making a Static Blog with Pelican</a>.  &#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
-<p><a href="http://spapas.github.io/2013/10/07/pelican-static-windows/">Using pelican to generate static sites on windows</a>   <a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">↩</a></p>
+<li id="fn-2">
+<p><a href="http://spapas.github.io/2013/10/07/pelican-static-windows/">Using pelican to generate static sites on windows</a>  &#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn:3">
-<p><a href="http://seanazlin.com/creating-a-blog-on-GitHub-dot-io-with-Python.html">Creating a Blog on GitHub.io with Python</a>   <a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">↩</a></p>
+<li id="fn-3">
+<p><a href="http://seanazlin.com/creating-a-blog-on-GitHub-dot-io-with-Python.html">Creating a Blog on GitHub.io with Python</a>  &#160;<a class="footnote-backref" href="#fnref-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
-<li id="fn:4">
-<p><a href="http://chdoig.github.io/create-pelican-blog.html">Creating your blog with Pelican</a>   <a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">↩</a></p>
+<li id="fn-4">
+<p><a href="http://chdoig.github.io/create-pelican-blog.html">Creating your blog with Pelican</a>  &#160;<a class="footnote-backref" href="#fnref-4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
-<li id="fn:5">
-<p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a> <a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">↩</a></p>
+<li id="fn-5">
+<p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a>&#160;<a class="footnote-backref" href="#fnref-5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
-<li id="fn:6">
-<p><a href="http://daringfireball.net/projects/markdown/syntax">from Darin Fireball</a> <a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 6 in the text">↩</a></p>
+<li id="fn-6">
+<p><a href="http://daringfireball.net/projects/markdown/syntax">from Darin Fireball</a>&#160;<a class="footnote-backref" href="#fnref-6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
-</div></hr>
+</div>
             </div>
             <!-- /.entry-content -->
     <hr/>
