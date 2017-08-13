@@ -19,7 +19,8 @@
 	
 /* Overide font size*/
 body {
-	font-size: 1.55em !important;
+	font-size: 1.65em !important;
+	line-height: 1.7em!important;
 	}
 	
 h1, .h1, h2, .h2 {
@@ -49,10 +50,13 @@ h3 {
 	border-bottom: 1px solid rgba(192,0,0,1) ;
 }
 
-blockquote p {
-	color: blueviolet !important;
-	font-size: 0.8em !important;
+blockquote {
+	padding: 10px 20px!important;
+	margin: 30px!important;
+	color: rgba(153,153,153, 0.91);
+	font-size: 1.2em !important;
 	font-weight: 600 !important;
+	font-style: italic;
 }
 
 pre {
