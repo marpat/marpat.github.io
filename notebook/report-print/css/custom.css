@@ -1,0 +1,154 @@
+@import url("custom.css");
+
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+<style>
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+body {
+    margin: 0;
+    font-family: Helvetica;
+}
+em {	text-decoration: underline;
+	color: rgba(136,0,34,0.8);
+}
+
+/*the width, font, and size of text in Markdown cells*/
+div.text_cell_render{
+    font-family: 'Arvo' sans-serif;
+    line-height: 130%;
+    font-size: 115%;
+/*    width:800px;  /* Divider line */
+/*    margin-left:auto;
+    margin-right:auto; 
+*/
+}
+/* Formatting for header cells */
+.text_cell_render h1 {
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 400;
+    font-size: 32pt;
+    line-height: 100%;
+    color: rgb(12,85,97);
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    display: block;
+}
+.text_cell_render h2 {
+    font-family: 'Philosopher', serif;
+    font-weight: 700;
+    font-size: 24pt;
+    line-height: 100%;
+    color: rgb(171,165,131);
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    display: block;
+}    
+
+.text_cell_render h3 {
+    font-family: 'Philosopher', serif;
+    margin-top:12px;
+    margin-bottom: 3px;
+    font-style: italic;
+    color: rgb(95,92,72);
+}
+
+.text_cell_render h4 {
+    font-family: 'Philosopher', serif;
+}
+
+.text_cell_render h5 {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16pt;
+    color: grey;
+    font-style: italic;
+    margin-bottom: .1em;
+    margin-top: 0.1em;
+    display: block;
+}
+
+.text_cell_render h6 {
+    font-family: 'PT Mono', sans-serif;
+    font-weight: 300;
+    font-size: 10pt;
+    color: grey;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+div.output_area .rendered_html table {
+/*  margin: 20px auto 0 auto; */
+}
+
+/* tables */
+.rendered_html table {
+font-size: 14px !important;
+font-family: monospace;
+}
+
+table.dataframe thead:first-child > tr:first-child > th {
+font-weight: bold;
+text-align:center;
+}
+
+table.dataframe {
+    border-collapse: collapse;
+    border: none;
+}
+table.dataframe thead{
+background-color: #fec;
+}
+
+table.dataframe tr {
+    border: none;
+}
+table.dataframe td, table.dataframe th {
+    margin: 0;
+    border: 1px solid white;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+table.dataframe th:not(:empty) {
+    background-color: #fec;
+    text-align: left;
+    font-weight: normal;
+}
+table.dataframe tr:nth-child(2) th:empty {
+    border-left: none;
+    border-right: 1px dashed #888;
+}
+table.dataframe td {
+    border: 2px solid #ccf;
+    background-color: #f4f4ff;
+}
+
+.widget-select {
+    width: 500px;
+}
+code {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: #c7254e!important;
+	background-color: #f9f2f4!important;
+	border-radius: 4px;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+pre,
+blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+.indent {
+   text-indent: 50px;
+   margin-top: 30px!important;
+}
+/* Important to close style section in Jupyter notebook*/
+</style>

@@ -12112,7 +12112,7 @@ Home            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2>Introduction</h2>
+                <h2 id="introduction">Introduction</h2>
 <p>With so many blogs and descriptive how-to's out there<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup><sup>,</sup> <sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup><sup>,</sup> <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup><sup>,</sup> <sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup><sup>,</sup> <sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup>, one may be wondering as to why another post on <strong>Pelican</strong> static site generator. The purpose of this blog is to document building a static web site in Windows environment with Anaconda Python distribution.<br>
 This tutorial assumes very little, so we will cover each step in a little more details. Chances are that you have already heard about the the Python-powered micro web frameworks, static page generators, and even about <a href="https://pypi.python.org/pypi/pelican/#downloads"><em>Pelican</em></a>, <a href="https://getnikola.com/"><em>Nikola</em></a>, or <a href="http://www.fullstackpython.com/flask.html"><em>Flask</em></a>. If not, this blog<sup id="fnref2-4"><a class="footnote-ref" href="#fn-4">4</a></sup> has a nice introduction.</p>
 <div class="note">
@@ -12121,7 +12121,7 @@ This tutorial assumes very little, so we will cover each step in a little more d
 </div>
 </div>
 
-<h2>Requirements</h2>
+<h2 id="requirements">Requirements</h2>
 <p>Before we can get started, we’ll need to have a functioning installation of <strong>Python</strong>, and of course, <strong>Pelican</strong>. The following are the minimum requirements:</p>
 <ol>
 <li><a href="https://www.python.org/download/releases/2.7">Python 2.7.x</a> or Python 3 (Python 2.7 is still preferred on Windows due to several dependencies, such as 'pycrypto', not available for Py3.6)</li>
@@ -12129,7 +12129,7 @@ This tutorial assumes very little, so we will cover each step in a little more d
 <li>Text editor (e.g., <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="http://markdownpad.com/">Markdown Pad</a>, <a href="http://www.sublimetext.com/">Sublime Text</a>)</li>
 <li>Web server for the web hosting</li>
 </ol>
-<h3>Python</h3>
+<h3 id="python">Python</h3>
 <p>First, we need a Python installation. I recommend <a href="http://repo.continuum.io/archive/">Anaconda or Miniconda</a> Python Distribution from the <a href="https://store.continuum.io/cshop/anaconda/">Continuum Analytics</a>. <code>Anaconda</code> and <code>Miniconda</code> are free and the former comes with many pre-installed Python packages and libraries such as Pandas, NumPy, matplotlib, and others. However, the default packages do not include Pelican site generator.</p>
 <p>If you already have <code>Python</code> installed, <a href="#sec-env">skip to the section</a> <strong>Virtual Environment</strong>.</p>
 <p>To get Anaconda/Miniconda installed under the Windows, download the latest <a href="http://repo.continuum.io/archive/.winzip/">Anaconda</a> and install the executable. </p>
@@ -12187,7 +12187,7 @@ conda-skeleton: C:\Anaconda\Scripts\conda-skeleton.bat
 </pre></div>
 
 
-<h3>Set up a virtual environment</h3>
+<h3 id="set-up-a-virtual-environment">Set up a virtual environment</h3>
 <p><a name="sec-env"></a>
 To avoid potential Python library/package dependency conflicts, it is a good practice to install new projects into their own development environment. Such environment includes a fresh copy of the Python binary together with a copy of the entire Python standard library. Let's create a virtual environment called <code>pelican1</code>.</p>
 <div class="highlight"><pre><span></span>conda create -n pelican1 python=2
@@ -12209,7 +12209,7 @@ To avoid potential Python library/package dependency conflicts, it is a good pra
 </pre></div>
 
 
-<h3>Pelican</h3>
+<h3 id="pelican">Pelican</h3>
 <p><a name="sec-pel"></a>
 Finally, we proceed with the installation of <strong>Pelican</strong> package. In your terminal, execute:</p>
 <div class="highlight"><pre><span></span>[pelican1] c:\Anaconda &gt;pip install pelican
@@ -12233,7 +12233,7 @@ thon-dateutil, markupsafe, jinja2, docutils, blinker, pelican
 </pre></div>
 
 
-<h3>Other Python packages</h3>
+<h3 id="other-python-packages">Other Python packages</h3>
 <p>Following are packages that I found useful when developing and publishing <strong>Pelican</strong> blog site. To make their installation easier, we will use the <code>Requirements.txt</code> file.</p>
 <p>Open a text editor and type (copy/paste) the following content.</p>
 <div class="highlight"><pre><span></span>beautifulsoup4~=4.3.2
@@ -12269,7 +12269,7 @@ Next, from the shell, issue the following command:</p>
 
 
 <p><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> At this point, the size of <code>pelican1</code> environment is about 100Mb.</p>
-<h2>Pelican blog</h2>
+<h2 id="pelican-blog">Pelican blog</h2>
 <p>So far, all packages were installed in the <code>C:\Anaconda\env\pelican1\</code> folder. The actual blog files require different drive/folder location from which the site is managed. Let's create such directory, for example, <code>C:\demo\pelicanblog</code>.
 Now, while still in the <code>pelican1</code> virtual environment, <em>cd</em> into this directory:  </p>
 <div class="highlight"><pre><span></span> [pelican1] c:\Anaconda\envs\pelican1 &gt;cd c:\demo\pelicanblog
@@ -12334,7 +12334,7 @@ Now, while still in the <code>pelican1</code> virtual environment, <em>cd</em> i
 <li><strong>pelicanconf.py</strong>: Is a Pelican configuration file containing the site <a href="http://docs.getpelican.com/en/3.3.0/settings.html">settings</a>.</li>
 <li><strong>publishconf.py</strong>: Similar to <em>pelicanconfig.py</em> file, but is not intended to be used for local development.</li>
 </ul>
-<h2>Building the site</h2>
+<h2 id="building-the-site">Building the site</h2>
 <p>Now let's build the default look of the blog. In your terminal, type the <code>fab</code> command after the <strong>&gt;</strong> character:</p>
 <div class="highlight"><pre><span></span>[pelican1] C:\demo\pelicanblog&gt;fab build
 </pre></div>
@@ -12404,7 +12404,7 @@ In order to use <i>sftp</i> protocol to safely upload your site to a web-hosting
 </div>
 </div>
 Now, let's move on and start working on the first blog.</p>
-<h3>Markdown .md file</h3>
+<h3 id="markdown-md-file">Markdown .md file</h3>
 <p>To create the content of our new web site, we will use the <code>Markdown</code> syntax<sup id="fnref2-5"><a class="footnote-ref" href="#fn-5">5</a></sup><sup>,</sup><sup id="fnref-6"><a class="footnote-ref" href="#fn-6">6</a></sup>. Let's create our first markdown file name it <code>firstblog.md</code>. Save it into the /pelicanblog/content folder.</p>
 <div class="highlight"><pre><span></span>Title: First Blog Post
 Date: 2015-8-08 13:10
@@ -12422,7 +12422,7 @@ This is a **first** attempt to create static page with the help of _Pelican_.
 </pre></div>
 
 
-<h3>Rendering and uploading the site</h3>
+<h3 id="rendering-and-uploading-the-site">Rendering and uploading the site</h3>
 <p>At this point, we will move back to the terminal and issue the following commands.</p>
 <div class="highlight"><pre><span></span>[pelican1] C:\demo\pelicanblog&gt;fab build
 [pelican1] C:\demo\pelicanblog&gt;fab serve
@@ -12436,7 +12436,7 @@ This is a **first** attempt to create static page with the help of _Pelican_.
 
 
 <p>Upload process should start immediately with a list of files to be uploaded and a prompt for your password. After the upload is done, head to the site and check its accessibility. </p>
-<h2>And we are done</h2>
+<h2 id="and-we-are-done">And we are done</h2>
 <p>This concludes the process of setting up a simple Pelican site on Windows and Python Anaconda environment. We have built the skeleton of Pelican static web-site in Python virtual environment, modified its configuration files, and uploaded the site to our hosting server. Pelicanblog files can be downloaded from <a href="./download/pelicanblog.zip">here</a>. This blog is built with Pelican as well and it is styled with customized Pelican-bootstrap3 theme.</p>
 <hr>
 
@@ -12525,6 +12525,11 @@ This is a **first** attempt to create static page with the help of _Pelican_.
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="./category/jupyter.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Jupyter
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="./category/nbo.html">
                             <i class="fa fa-folder-open fa-lg"></i> NBO
                         </a>
@@ -12534,7 +12539,7 @@ This is a **first** attempt to create static page with the help of _Pelican_.
 
             <li class="list-group-item"><a href="./tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-1">
                         <a href="./tag/anaconda.html">
                             Anaconda
                         </a>
@@ -12550,11 +12555,16 @@ This is a **first** attempt to create static page with the help of _Pelican_.
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="./tag/jupyter.html">
+                            Jupyter
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="./tag/pelican.html">
                             Pelican
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-1">
                         <a href="./tag/python.html">
                             Python
                         </a>
@@ -12618,7 +12628,7 @@ This is a **first** attempt to create static page with the help of _Pelican_.
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2015 Marcel Patek
+         <div class="col-xs-10">&copy; 2017 Marcel Patek
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>

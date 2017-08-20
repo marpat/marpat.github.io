@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>NBO - </title>
+    <title>Sample_ipynb - </title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -167,16 +167,16 @@ init_mathjax();
 </script>
     <link href="../images/fav.png" rel="icon">
 
+<link rel="canonical" href="../pages/sample_ipynb">
 
-    <meta name="author" content="Marcel Patek" />
-    <meta name="keywords" content="NBO" />
+        <meta name="author" content="Marcel Patek" />
+        <meta name="description" content="Processing Sales Data from Company 1 FIRTS LAST NAMEThis Jupyter notebook &#39;Sample_ipynb.ipynb&#39; processes .csv files from Company 1 to comma delimited file used for upload to Customer datasystem. Local results are placed into .\dataout directory. Run from Python environment Py36 or main. \* Notebook is writen in Python 3 …" />
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content=""/>
-        <meta property="og:url" content=".."/>
-        <meta property="og:description" content=""/>
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Sample_ipynb"/>
+    <meta property="og:url" content="../pages/sample_ipynb"/>
+    <meta property="og:description" content="Processing Sales Data from Company 1 FIRTS LAST NAMEThis Jupyter notebook &#39;Sample_ipynb.ipynb&#39; processes .csv files from Company 1 to comma delimited file used for upload to Customer datasystem. Local results are placed into .\dataout directory. Run from Python environment Py36 or main. \* Notebook is writen in Python 3 …" />
 
 
     <!-- Bootstrap -->
@@ -12026,11 +12026,11 @@ Home            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                     <li><a href="/archives.html">All</a></li>
-                         <li><a href="../pages/about.html">
-                             About
+                         <li class="active"><a href="../pages/sample_ipynb">
+                             Sample_ipynb
                           </a></li>
-                         <li><a href="../pages/contact.html">
-                             Contacts
+                         <li><a href="../pages/sample_ipynb">
+                             Sample_ipynb
                           </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -12072,14 +12072,371 @@ Home            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="../Natural-Dipole-Analysis.html">Natural Dipole Analysis</a></h2>
-                <div class="summary"><p>Processing NBO output for NLMO molecular dipole moment and plotting results.</p>
-<p><small><a href="../Natural-Dipole-Analysis.html#disqus_thread" data-disqus-identifier="Natural-Dipole-Analysis">View comments</a>.</small></p>                    <a class="btn btn-default btn-xs" href="../Natural-Dipole-Analysis.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+    <section id="content" class="body">
+        <h1 class="entry-title">Sample_ipynb</h1>
+        <span class="label label-default">Lang</span>
+	<a href="../pages/sample_ipynb">en</a>
 
+        <div class="entry-content">
+            
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="./jupyter-sq-text.png" alt="Jupyter_logo" class="img-rounded img-responsive" height="60" width="60" align="left">
+<span><br><br><br></span></p>
+<p><h1 align="center" style="margin-bottom: 0px">Processing Sales Data from Company 1</h1></p>
+<h4 align="center" style="margin-top: 0px"> FIRTS LAST NAME</h4><p>This <span style="color:rgba(255,100,0,1)"><b>Jupyter</b></span> notebook <code>'Sample_ipynb.ipynb'</code> processes .csv files from Company 1 to comma delimited file used for upload to <b>Customer datasystem</b>. Local results are placed into .\dataout directory. Run from Python environment <code>Py36</code> or <code>main</code>.</p>
+<p><span style="font-size: small">\* Notebook is writen in Python 3.6</span></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="General-imports-and-styling">General imports and styling<a class="anchor-link" href="#General-imports-and-styling">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[28]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+@import url("custom.css");
+
+<link href="http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Arvo:400,700,400italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+<style>
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+body {
+    margin: 0;
+    font-family: Helvetica;
+}
+em {	text-decoration: underline;
+	color: rgba(136,0,34,0.8);
+}
+
+/*the width, font, and size of text in Markdown cells*/
+div.text_cell_render{
+    font-family: 'Arvo' sans-serif;
+    line-height: 130%;
+    font-size: 115%;
+/*    width:800px;  /* Divider line */
+/*    margin-left:auto;
+    margin-right:auto; 
+*/
+}
+/* Formatting for header cells */
+.text_cell_render h1 {
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 400;
+    font-size: 32pt;
+    line-height: 100%;
+    color: rgb(12,85,97);
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    display: block;
+}
+.text_cell_render h2 {
+    font-family: 'Philosopher', serif;
+    font-weight: 700;
+    font-size: 24pt;
+    line-height: 100%;
+    color: rgb(171,165,131);
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    display: block;
+}    
+
+.text_cell_render h3 {
+    font-family: 'Philosopher', serif;
+    margin-top:12px;
+    margin-bottom: 3px;
+    font-style: italic;
+    color: rgb(95,92,72);
+}
+
+.text_cell_render h4 {
+    font-family: 'Philosopher', serif;
+}
+
+.text_cell_render h5 {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16pt;
+    color: grey;
+    font-style: italic;
+    margin-bottom: .1em;
+    margin-top: 0.1em;
+    display: block;
+}
+
+.text_cell_render h6 {
+    font-family: 'PT Mono', sans-serif;
+    font-weight: 300;
+    font-size: 10pt;
+    color: grey;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+div.output_area .rendered_html table {
+/*  margin: 20px auto 0 auto; */
+}
+
+/* tables */
+.rendered_html table {
+font-size: 14px !important;
+font-family: monospace;
+}
+
+table.dataframe thead:first-child > tr:first-child > th {
+font-weight: bold;
+text-align:center;
+}
+
+table.dataframe {
+    border-collapse: collapse;
+    border: none;
+}
+table.dataframe thead{
+background-color: #fec;
+}
+
+table.dataframe tr {
+    border: none;
+}
+table.dataframe td, table.dataframe th {
+    margin: 0;
+    border: 1px solid white;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+table.dataframe th:not(:empty) {
+    background-color: #fec;
+    text-align: left;
+    font-weight: normal;
+}
+table.dataframe tr:nth-child(2) th:empty {
+    border-left: none;
+    border-right: 1px dashed #888;
+}
+table.dataframe td {
+    border: 2px solid #ccf;
+    background-color: #f4f4ff;
+}
+
+.widget-select {
+    width: 500px;
+}
+code {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: #c7254e!important;
+	background-color: #f9f2f4!important;
+	border-radius: 4px;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+pre,
+blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+.indent {
+   text-indent: 50px;
+   margin-top: 30px!important;
+}
+/* Important to close style section in Jupyter notebook*/
+</style>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>Run once for Notebook html-js output <span class="label label-default">NOTE</span></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_html rendered_html output_subarea ">
+<script>jQuery(function() {if (jQuery("body.notebook_app").length == 0) { jQuery(".input_area, .output_stderr").toggle(); jQuery(".prompt").toggle();}});</script>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_html rendered_html output_subarea ">
+<button onclick="jQuery('.input_area').toggle(); jQuery('.prompt').toggle();">Click in rendered .html output only, toggles the code</button>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Process-raw-csv-file-and-format-columns">Process raw csv file and format columns<a class="anchor-link" href="#Process-raw-csv-file-and-format-columns">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Figure 1. Lists and Dictionary.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[29]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Person</th>
+      <th>Hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>30-Apr-17</td>
+      <td>Schmidt, Jack</td>
+      <td>40.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>31-May-17</td>
+      <td>Green, Paul</td>
+      <td>30.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Jun-30-17</td>
+      <td>O'Connell, Nick</td>
+      <td>20.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<p><span style="font-size: 12px"><i>Jupyter Notebook **Sample_ipynb.ipynb**:<br>
+version 1.0 created on Aug 11, 2017<br>
+</i></span></p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+        </div>
+    </section>
         </div>
         <div class="col-sm-3" id="sidebar">
 		<div id="photo">
@@ -12207,7 +12564,7 @@ Home            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2015 Marcel Patek
+         <div class="col-xs-10">&copy; 2017 Marcel Patek
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>

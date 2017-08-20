@@ -210,7 +210,9 @@ img {
 	display: block !important;
 	margin: 0 auto !important;
 	}
-
+.frameimg {
+        border: 1px solid #ddd !important
+        }
 img.left_img {
 	float: left;
 	margin: 0px 15px 15px 10px !important;
@@ -278,10 +280,10 @@ ul li {
 
 .footnote {
 	background: whitesmoke;
-	line-height: 1em;
+	line-height: 2em;
 	margin-top: 50px;
 	padding: 20px 0 10px 20px;
-	font-size: 0.95em;
+	font-size: 1em;
 	font-family: -webkit-pictograph;
 	color: rgb(197,4,19);
 	border: 1px solid rgb(224,223,223);
