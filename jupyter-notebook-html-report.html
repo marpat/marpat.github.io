@@ -12120,14 +12120,15 @@ Let's start with an illustration of sample Jupyter notebook as rendered by Jupyt
 <p><img class="img-thumbnail" src="./notebook/report-print/img/original_notebook.png" alt="Original notebook" title="Original notebook"</><br>
 <p style="margin: -20px 0 30px 125px;"><em>Fig. 1. Rendering of the original Jupyter notebook.</em> </p></p>
 <p>Alternatively, the complete Jupyter notebook is at this link: <a href="./notebook/report-print/Sample_ipynb.ipynb">Sample_ipynb.ipynb</a> First, we export the notebook as <code>html</code> file:</p>
-<div class="frameimg">
-<p><img alt="Printing from File menu" src="./notebook/report-print/img/dwnld_html.png" title="Fig 2."></p>
-</div>
-<p><p style="margin: 20px 0 30px 125px;"><em>Fig. 2. Exporting notebook as .html file.</em> </p>
+<p><br/>
+<div class="frameimg" markdown='1'>
+<img alt="Printing from File menu" src="./notebook/report-print/img/dwnld_html.png" title="Fig 2.">
+</div><br>
+<p style="margin: 20px 0 30px 125px;"><em>Fig. 2. Exporting notebook as .html file.</em> </p>
 <br/></p>
 <h3 id="color-rendering">Color rendering</h3>
-<p>Printing notebook directly (File -&gt; Print Preview -&gt; print (Ctrl+P)) to a printer device renders the notebook in black and white <sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup>. 
-<br/>
+<p>Printing notebook directly (File -&gt; Print Preview -&gt; print (Ctrl+P)) to a printer device renders the notebook in black and white <sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup>.</p>
+<p><br/>
 <div style="border: 1px solid #ddd" markdown='1'>
 <img alt="Black and White print" src="./notebook/report-print/img/print_printer.png" title="Fig 3."></div><br>
 <p style="margin: 20px 0 30px 125px;"><em>Fig. 3. B&amp;W rendering of html file at the print.</em> </p>
@@ -12140,8 +12141,8 @@ Let's start with an illustration of sample Jupyter notebook as rendered by Jupyt
 <p>This offending line is coming from the Bootstrap 3 <code>.less</code> template, which is part of the Jupyter notebook styling. There are two solutions: one is to edit out this line in the <code>.less</code> file and recompile the new default <code>css</code> file for notebooks. The second solution is to remove this line from the embedded style section in the <code>html</code> file. The latter approach is demonstrated here with one extra cell added to the end of Jupyter notebook.</p>
 <p><br/></p>
 <h3 id="code-cells">Code Cells</h3>
-<p>Since notebooks are often used in education and collaborative projects, output of code cells has been often a desired feature. On the other hand, should the ultimate result be a report for the customer, code cells could be quite distracting. 
-<br/>
+<p>Since notebooks are often used in education and collaborative projects, output of code cells has been often a desired feature. On the other hand, should the ultimate result be a report for the customer, code cells could be quite distracting.</p>
+<p><br/>
 <div class="img-thumbnail" markdown='1'>
 <img alt="code cell withing the report" src="./notebook/report-print/img/original_notebook_code.png" title="Fig 5."></div><br>
 <p style="margin: 20px 0 30px 125px;"><em>Fig. 5. Report with visible code cell.</em> </p>
@@ -12224,8 +12225,8 @@ your_Python_path/Lib/site-packages/nbconvert/templates/html
 
 
 <p><br/>
-Here is the rendered version of the notebook just before printing with link to complete <code>html</code> file: <a href="./notebook/report-print/08_19_2017_sample_report_print.html">sample_report_print</a>
-<br/>
+Here is the rendered version of the notebook just before printing with link to complete <code>html</code> file: <a href="./notebook/report-print/08_19_2017_sample_report_print.html">sample_report_print</a></p>
+<p><br/>
 <div style="border: 1px solid #ddd" markdown='1'>
 <img alt="fixed style in html file" src="./notebook/report-print/img/print_printer_css_mod.png" title="Fig 6."> </div> 
 <p style="margin: 20px 0 30px 125px;"><em>Fig. 6. Final report at the <code>print</code> stage.</em> </p>
@@ -12235,7 +12236,7 @@ Here is the rendered version of the notebook just before printing with link to c
 <p>Style of paragraphs and tables can be tweaked.</p>
 <p>At this point, we should be very close to the final report style with a much improved visual appeal.</p>
 <p><br/>
-References:</p>
+<strong>References:</strong></p>
 <div class="footnote">
 <hr>
 <ol>
