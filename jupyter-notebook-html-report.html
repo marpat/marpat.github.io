@@ -12138,8 +12138,9 @@ Let's start with an illustration of sample Jupyter notebook as rendered by Jupyt
 <img alt="css setting black font" src="./notebook/report-print/img/notebook_css.png" title="Fig 4."><br>
 <p style="margin: -20px 0 30px 125px;"><em>Fig. 4. css/style instructions to overwrite colors.</em> </p>
 <br/></p>
-<p>This offending line is coming from the Bootstrap 3 <code>.less</code> template, which is part of the Jupyter notebook styling. There are three solutions: one is to edit out this line in the <code>.less</code> file and recompile the new default <code>css</code> file for notebooks. The second solution is to comment out the <code>color: #000 !important</code> line in the <code>style.min.css</code> file <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup> and the third approach is to remove the same line from the embedded style section in exported <code>html</code> file. Last two approaches are demonstrated here.</p>
-<h4 id="editing-mincss-file">Editing min.css file</h4>
+<p>This offending line is coming from the Bootstrap 3 <code>.less</code> template, which is part of the Jupyter notebook styling. There are three solutions: one is to edit out this line in the <code>.less</code> file and recompile the new default <code>css</code> file for notebooks. The second solution is to comment out the <code>color: #000 !important</code> line in the <code>style.min.css</code> file <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup> and the third approach is to remove the same line from the embedded style section in exported <code>html</code> file. Last two approaches are demonstrated here.
+<br/></p>
+<p><font color=magenta><strong><em>Editing min.css file:</em></strong></font></p>
 <p>Locate the Jupyter default style sheet <code>style.min.css</code> in:
 minconda3\Lib\site-packages\notebook\static\style\style.min.css
 or
@@ -12157,7 +12158,8 @@ and search for phrase <code>#000 !im</code>. Comment out the line shown below an
 </pre></div>
 
 
-<h4 id="editing-rendered-html-file-file">Editing rendered .html file file</h4>
+<p><br/>
+<font color=magenta><strong><em>Editing rendered .html file file</em></strong></font></p>
 <p>After creating <code>html</code> file in Jupyter notebook like so:
 File -&gt; Download as -&gt; HTML (html),</p>
 <p>comment out the same line as above and save.</p>
