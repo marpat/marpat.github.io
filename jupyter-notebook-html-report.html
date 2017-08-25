@@ -12139,6 +12139,7 @@ Let's start with an illustration of sample Jupyter notebook as rendered by Jupyt
 <p style="margin: -20px 0 30px 125px;"><em>Fig. 4. css/style instructions to overwrite colors.</em> </p>
 <br/></p>
 <p>This offending line is coming from the Bootstrap 3 <code>.less</code> template, which is part of the Jupyter notebook styling. There are three solutions: one is to edit out this line in the <code>.less</code> file and recompile the new default <code>css</code> file for notebooks. The second solution is to comment out the <code>color: #000 !important</code> line in the <code>style.min.css</code> file <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup> and the third approach is to remove the same line from the embedded style section in exported <code>html</code> file. Last two approaches are demonstrated here.
+<br/>
 <br/></p>
 <p><font color=magenta><strong><em>Editing min.css file:</em></strong></font></p>
 <p>Locate the Jupyter default style sheet <code>style.min.css</code> in:
