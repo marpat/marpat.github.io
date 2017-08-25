@@ -12111,7 +12111,7 @@ Home            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h2 id="introduction">Introduction</h2>
-<p>While <a href="https://jupyter.org/">Jupyter notebook</a> has a built-in facility for multiple output formats, its use depends on OS platform and requirements on the output file. Perhaps the most requested output is <code>pdf</code> format currently done in two-steps: html to latex to pdf <sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>. Unfortunately for those working on Windows, <code>Latex</code> rendering requires installation of <font color=orange>MiKTexT</font> and/or <font color=orange>TeXstudio</font>. The process of getting output similar to the original notebook is quite convoluted and impractical. An alternative solution is to print notebook directly to pdf format, assuming that one has installed the pdf writer (driver) on Windows. Print-to-pdf is the done by choosing the <code>pdf</code> as a printer.</p>
+<p>While <a href="https://jupyter.org/">Jupyter notebook</a> has a built-in facility for multiple output formats, its use depends on OS platform and requirements on the output file. Perhaps the most requested output is <code>pdf</code> format currently done in two-steps: html to latex to pdf <sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>. Unfortunately for those working on Windows, <code>Latex</code> rendering requires installation of <font color=orange>MiKTexT</font>, <font color=orange>Tex Live</font> preferred by Jupyter and Latex editor, such as <font color=orange>TeXstudio</font>. The process of getting output similar to the original notebook is quite convoluted and impractical. An alternative solution is to print notebook directly to pdf format, assuming that one has installed the pdf writer (driver) on Windows. Print-to-pdf is the done by choosing the <code>pdf</code> as a printer.</p>
 <p><br/>
 <div class="alert alert-block alert-warning">There are two issues that one may face should the desired report preserve <font color=red><strong>color</strong></font> and be without the <font color=magenta><strong>code cells</strong></font>.</div> </p>
 <p><br/>
@@ -12138,7 +12138,29 @@ Let's start with an illustration of sample Jupyter notebook as rendered by Jupyt
 <img alt="css setting black font" src="./notebook/report-print/img/notebook_css.png" title="Fig 4."><br>
 <p style="margin: -20px 0 30px 125px;"><em>Fig. 4. css/style instructions to overwrite colors.</em> </p>
 <br/></p>
-<p>This offending line is coming from the Bootstrap 3 <code>.less</code> template, which is part of the Jupyter notebook styling. There are two solutions: one is to edit out this line in the <code>.less</code> file and recompile the new default <code>css</code> file for notebooks. The second solution is to remove this line from the embedded style section in the <code>html</code> file. The latter approach is demonstrated here with one extra cell added to the end of Jupyter notebook.</p>
+<p>This offending line is coming from the Bootstrap 3 <code>.less</code> template, which is part of the Jupyter notebook styling. There are three solutions: one is to edit out this line in the <code>.less</code> file and recompile the new default <code>css</code> file for notebooks. The second solution is to comment out the <code>color: #000 !important</code> line in the <code>style.min.css</code> file <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup> and the third approach is to remove the same line from the embedded style section in exported <code>html</code> file. Last two approaches are demonstrated here.</p>
+<h4 id="editing-mincss-file">Editing min.css file</h4>
+<p>Locate the Jupyter default style sheet <code>style.min.css</code> in:
+minconda3\Lib\site-packages\notebook\static\style\style.min.css
+or
+minconda3\envs\your_environment\Lib\site-packages\notebook\static\style\style.min.css
+and search for phrase <code>#000 !im</code>. Comment out the line shown below and save:</p>
+<div class="highlight"><pre><span></span><span class="p">@</span><span class="k">media</span> <span class="nt">print</span> <span class="p">{</span>
+<span class="o">*,</span>
+<span class="o">*</span><span class="p">:</span><span class="nd">before</span><span class="o">,</span>
+<span class="o">*</span><span class="p">:</span><span class="nd">after</span> <span class="p">{</span>
+<span class="k">background</span><span class="p">:</span> <span class="kc">transparent</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="c">/*color: #000 !important;*/</span>
+<span class="k">box-shadow</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="k">text-shadow</span><span class="p">:</span> <span class="kc">none</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h4 id="editing-rendered-html-file-file">Editing rendered .html file file</h4>
+<p>After creating <code>html</code> file in Jupyter notebook like so:
+File -&gt; Download as -&gt; HTML (html),</p>
+<p>comment out the same line as above and save.</p>
 <p><br/></p>
 <h3 id="code-cells">Code Cells</h3>
 <p>Since notebooks are often used in education and collaborative projects, output of code cells has been often a desired feature. On the other hand, should the ultimate result be a report for the customer, code cells could be quite distracting.</p>
@@ -12147,7 +12169,7 @@ Let's start with an illustration of sample Jupyter notebook as rendered by Jupyt
 <img alt="code cell withing the report" src="./notebook/report-print/img/original_notebook_code.png" title="Fig 5."></div><br>
 <p style="margin: 20px 0 30px 125px;"><em>Fig. 5. Report with visible code cell.</em> </p>
 <br/></p>
-<p>One way to suppress visibility of code cell is to use <code>JQuery</code> (javascript) in the separate Jupyter cell as per <sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup><sup>,</sup><sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup>:</p>
+<p>One way to suppress visibility of code cell is to use <code>JQuery</code> (javascript) in the separate Jupyter cell as per <sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup><sup>,</sup><sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup>:</p>
 <div class="highlight"><pre><span></span><span class="c1">#  Run (once) to allow nice html output as report (optional) </span>
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -12169,7 +12191,7 @@ Let's start with an illustration of sample Jupyter notebook as rendered by Jupyt
 
 
 <p>We can toggle visibility of the code in html report displayed in  the browser. </p>
-<p>To remove the code completely, one can add a <font color=red>Jinja2</font> template into nbconvert-templates directory. For example, create file <code>report.tpl</code> with the following content and place it into the html directory under template folder <sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup>. </p>
+<p>To remove the code completely, one can add a <font color=red>Jinja2</font> template into nbconvert-templates directory. For example, create file <code>report.tpl</code> with the following content and place it into the html directory under template folder <sup id="fnref2-5"><a class="footnote-ref" href="#fn-5">5</a></sup>. </p>
 <div class="highlight"><pre><span></span>{%- extends &#39;full.tpl&#39; -%}
 
 {%-block input_group scoped-%}
@@ -12206,7 +12228,7 @@ your_Python_path/Lib/site-packages/nbconvert/templates/html
 
 
 <p>In this particular case, a file called <font color=blue><em>sample_report.html</em></font> with prepended date-stamp will be created in your notebook directory.</p>
-<p>Now, for the completeness, we can add one more cell with code removing <code>color: #000 !important</code> line from the html file:</p>
+<p>Now, for the completeness, we can add one more cell with code to remove <code>color: #000 !important</code> line from the html file:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Delete &#39;print B&amp;W&#39; instruction in css/style section </span>
 
 <span class="n">program</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">new_fnm</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
@@ -12244,16 +12266,19 @@ Here is the rendered version of the notebook just before printing with link to c
 <p><a href="http://www.jessicayung.com/converting-jupyter-notebooks-to-pdfs-debugging-pdflatex-errors/">Jessica Yung, Converting Jupyter Notebooks to PDFs</a>.  &#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn-2">
-<p><a href="https://github.com/jupyter/notebook/issues/840">GitHub, Color printing should be an option</a> &#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://github.com/jupyter/notebook/issues/840">GitHub, Color printing should be an option</a>&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn-3">
-<p><a href="http://stackoverflow.com/questions/27934885/how-to-hide-code-from-cells-in-ipython-notebook-visualized-with-nbviewer">Max Masnick, how-to-hide-code-from-cells-in-ipython-notebook-visualized-with-nbviewer</a> &#160;<a class="footnote-backref" href="#fnref-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><a href="https://ilhosong.wordpress.com/2016/12/13/388/">Ilho Song, Mid the Gap</a> &#160;<a class="footnote-backref" href="#fnref-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn-4">
-<p><a href="http://joergdietrich.github.io/notebook-collapse-input.html">Jörg Dietrich, Blogging with IPython and Collapsible Input Cells </a> &#160;<a class="footnote-backref" href="#fnref-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="http://stackoverflow.com/questions/27934885/how-to-hide-code-from-cells-in-ipython-notebook-visualized-with-nbviewer">Max Masnick, how-to-hide-code-from-cells-in-ipython-notebook-visualized-with-nbviewer</a> &#160;<a class="footnote-backref" href="#fnref-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn-5">
-<p><a href="https://ga7g08.github.io/2015/06/25/ipython-nbconvert-latex-template-to-hide-code/">Gregory Ashton, Ipython NBConvert latex template to hide code</a>&#160;<a class="footnote-backref" href="#fnref-5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p><a href="http://joergdietrich.github.io/notebook-collapse-input.html">Jörg Dietrich, Blogging with IPython and Collapsible Input Cells </a> &#160;<a class="footnote-backref" href="#fnref-5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2-5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn-6">
+<p><a href="https://ga7g08.github.io/2015/06/25/ipython-nbconvert-latex-template-to-hide-code/">Gregory Ashton, Ipython NBConvert latex template to hide code</a>&#160;<a class="footnote-backref" href="#fnref-6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
