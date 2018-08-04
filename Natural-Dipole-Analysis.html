@@ -12133,7 +12133,7 @@ Weinhold, F. and Landis, C.R. in <a href="http://www.amazon.com/Discovering-Chem
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Electric-Dipole">Electric Dipole<a class="anchor-link" href="#Electric-Dipole">&#194;&#182;</a></h2><p>Electric dipole moment is the most fundamental quantity related to the charge distribution in a molecule. It reflects the degree to which positive and negative charge is distributed relative to one another. Dipole moment is a vector quantity characterized by its scalar magnitude, sign, and direction. Accordingly, the dipole can be described by its vector <strong>μ</strong> directed from the negative to the positive charge. Magnitude of the dipole moment is defined as: $$\mu = |q|*R,$$ where <strong>q</strong> is charge and <strong>R</strong> is the displacement vector pointing from the <strong>negative</strong> to <strong>positive</strong> charge. The net dipole moment of a molecule can be conceptually described as a vector sum of the individual moments.<br>
+<h2 id="Electric-Dipole">Electric Dipole<a class="anchor-link" href="#Electric-Dipole">&#182;</a></h2><p>Electric dipole moment is the most fundamental quantity related to the charge distribution in a molecule. It reflects the degree to which positive and negative charge is distributed relative to one another. Dipole moment is a vector quantity characterized by its scalar magnitude, sign, and direction. Accordingly, the dipole can be described by its vector <strong>μ</strong> directed from the negative to the positive charge. Magnitude of the dipole moment is defined as: $$\mu = |q|*R,$$ where <strong>q</strong> is charge and <strong>R</strong> is the displacement vector pointing from the <strong>negative</strong> to <strong>positive</strong> charge. The net dipole moment of a molecule can be conceptually described as a vector sum of the individual moments.<br>
 This is what we will attempt to do in the following cells.</p>
 
 </div>
@@ -12143,7 +12143,7 @@ This is what we will attempt to do in the following cells.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Styling-and-Imports">Styling and Imports<a class="anchor-link" href="#Styling-and-Imports">&#194;&#182;</a></h3><p>First the custom styling. File <code>*.css</code> inserts contents of custom .css file into the 
+<h3 id="Styling-and-Imports">Styling and Imports<a class="anchor-link" href="#Styling-and-Imports">&#182;</a></h3><p>First the custom styling. File <code>*.css</code> inserts contents of custom .css file into the 
 header of the notebook's HTML file. Other variants of .css files are in the ./css directory and differ only in color decoration of iPython notebook cells. This step is optional and the <code>if ... else</code> statement can be commented out.</p>
 
 </div>
@@ -12184,7 +12184,7 @@ HTML(open(css_file, &quot;r&quot;).read())
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="csv-to-Dataframe">csv to Dataframe<a class="anchor-link" href="#csv-to-Dataframe">&#194;&#182;</a></h3><p>In the next step, coordinates of NLMO dipoles are read from *.csv file. This file was generated earlier using the KNIME "Dipole_v2/3" <a href="http://bit.ly/1GzVcFV">workflow</a>. Alternatively, iPython notebook <span style="color:rgba(255,100,0,1)">ReadNboDip.ipynb</span> at this <a href="http://bit.ly/1ztVa1C">Github repository</a> creates the identical input file. "Plain" Python script (<span style="color:rgba(255,100,0,1)">ReadNboDip.py</span>) that parses NBO output files for the same <i>Dipole moment summary</i> can be downloaded from <a href="http://bit.ly/142ZKWZ">this Github repository</a>.</p>
+<h3 id="csv-to-Dataframe">csv to Dataframe<a class="anchor-link" href="#csv-to-Dataframe">&#182;</a></h3><p>In the next step, coordinates of NLMO dipoles are read from *.csv file. This file was generated earlier using the KNIME "Dipole_v2/3" <a href="http://bit.ly/1GzVcFV">workflow</a>. Alternatively, iPython notebook <span style="color:rgba(255,100,0,1)">ReadNboDip.ipynb</span> at this <a href="http://bit.ly/1ztVa1C">Github repository</a> creates the identical input file. "Plain" Python script (<span style="color:rgba(255,100,0,1)">ReadNboDip.py</span>) that parses NBO output files for the same <i>Dipole moment summary</i> can be downloaded from <a href="http://bit.ly/142ZKWZ">this Github repository</a>.</p>
 <p>In this example, this file is available from the ./dipole directory.<br></p>
 
 </div>
@@ -12529,7 +12529,7 @@ else:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h3 id="First-Plot">First Plot<a class="anchor-link" href="#First-Plot">&#194;&#182;</a></h3><p>Now, to have dipole vectors continue from one to another (as opposed to all starting at the zero), we have to <em>transpose coordinates</em> in a way that the origin of new vector starts at the end of the previous vector. In Python, use the function <code>cumsum()</code>.
+<h3 id="First-Plot">First Plot<a class="anchor-link" href="#First-Plot">&#182;</a></h3><p>Now, to have dipole vectors continue from one to another (as opposed to all starting at the zero), we have to <em>transpose coordinates</em> in a way that the origin of new vector starts at the end of the previous vector. In Python, use the function <code>cumsum()</code>.
 Let's try to build continuous vector graph from the original dataframe <strong>df2</strong>. This is equivalent to a vector decomposition.</p>
 <p><span style="color:rgba(217,0,126,1)">**The following cell is just a test case**</span> (can be removed later). It generates plot of <span style="color: orange"><b>Table 1</b></span> as continuing vector segments. You can <a href="#Cleaning-up-the-Vector-Path">skip it and go to section "Cleaning up the Vector Path"</a>.</p>
 
@@ -13085,7 +13085,7 @@ We will write a function that assigns each row an arbitrary quadrant depending o
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Plot-Survey">Plot Survey<a class="anchor-link" href="#Plot-Survey">&#194;&#182;</a></h3><p>For each set of qudrants, the code below will sort the dataframe by the quadrant and slope. The corresponding plot will be created and saved as .png image. Quadrant sequence is part of the filename.</p>
+<h3 id="Plot-Survey">Plot Survey<a class="anchor-link" href="#Plot-Survey">&#182;</a></h3><p>For each set of qudrants, the code below will sort the dataframe by the quadrant and slope. The corresponding plot will be created and saved as .png image. Quadrant sequence is part of the filename.</p>
 
 </div>
 </div>
@@ -13402,7 +13402,7 @@ for i in range(len(permlist)):
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Final-Plot">Final Plot<a class="anchor-link" href="#Final-Plot">&#194;&#182;</a></h3><p>To make the final plot, enter the quadrant sequence of the best looking plot above (0,3,2,1) and replace the sequence in variable <code>quad</code>. The plot image will be saved in directory ./dipole.</p>
+<h3 id="Final-Plot">Final Plot<a class="anchor-link" href="#Final-Plot">&#182;</a></h3><p>To make the final plot, enter the quadrant sequence of the best looking plot above (0,3,2,1) and replace the sequence in variable <code>quad</code>. The plot image will be saved in directory ./dipole.</p>
 <p><strong><span style="color:blue">Enter the quadrant sequence  (to line 2) and re-run the last part to get the graph.</span></strong></p>
 
 </div>
