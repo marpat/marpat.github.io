@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Blogging with Python, Miniconda, and Pelican on Windows - </title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="./images/fav.png" rel="icon">
+
+<link rel="canonical" href="./python-miniconda-and-pelican-on-windows.html">
+
+        <meta name="author" content="Marcel Patek" />
+        <meta name="keywords" content="Pelican,miniconda" />
+        <meta name="description" content="Setting up the conda environment and Pelican static website generator." />
+
+        <meta property="og:site_name" content="" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Blogging with Python, Miniconda, and Pelican on Windows"/>
+        <meta property="og:url" content="./python-miniconda-and-pelican-on-windows.html"/>
+        <meta property="og:description" content="Setting up the conda environment and Pelican static website generator."/>
+        <meta property="article:published_time" content="2020-05-06" />
+            <meta property="article:section" content="Blogging" />
+            <meta property="article:tag" content="Pelican" />
+            <meta property="article:tag" content="miniconda" />
+            <meta property="article:author" content="Marcel Patek" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.cerulean.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/default.css" rel="stylesheet">
+    <link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link href="./extras/custom.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+ Home
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/archives.html">Archives</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<style>
+@media screen and (min-width: 1024px){
+  #banner{
+	    background-image:url("./images/header_img.png");
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+        #banner {
+            background-image: url(../images/header_img_767.png);
+                }
+       }
+
+@media screen and (min-width: 415px) and (max-width: 767px) {
+        #banner {
+            background-image: url(../images/header_img_479.png);
+                 }
+       }
+@media screen and (max-width: 414px) {
+        #banner {
+            background-image: url(../images/header_img_412.png);
+                 }
+      }
+</style>
+
+    <!-- Custom header image (banner) -->
+    <div id="banner"></div><!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./python-miniconda-and-pelican-on-windows.html"
+                       rel="bookmark"
+                       title="Permalink to Blogging with Python, Miniconda, and Pelican on Windows">
+                        Blogging with Python, Miniconda, and Pelican on Windows
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-05-06T11:00:00-06:00"> 2020-05-06</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="./tag/pelican.html">Pelican</a>
+        /
+	<a href="./tag/miniconda.html">miniconda</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Introduction</h2>
+<p>With so many blogs and descriptive how-to's out there
+<sup id=sf-python-miniconda-and-pelican-on-windows-1-back><a href=#sf-python-miniconda-and-pelican-on-windows-1 class=simple-footnote title="How I built this site">1</a></sup>
+<sup>,</sup>
+<sup id=sf-python-miniconda-and-pelican-on-windows-2-back><a href=#sf-python-miniconda-and-pelican-on-windows-2 class=simple-footnote title="Blog migrated to Pelican and GitHub pages">2</a></sup>
+<sup>,</sup>
+<sup id=sf-python-miniconda-and-pelican-on-windows-3-back><a href=#sf-python-miniconda-and-pelican-on-windows-3 class=simple-footnote title="Making a Static Blog with Pelican">3</a></sup>
+<sup>,</sup>
+<sup id=sf-python-miniconda-and-pelican-on-windows-4-back><a href=#sf-python-miniconda-and-pelican-on-windows-4 class=simple-footnote title="Using pelican to generate static sites on windows">4</a></sup>
+<sup>,</sup>
+<sup id=sf-python-miniconda-and-pelican-on-windows-5-back><a href=#sf-python-miniconda-and-pelican-on-windows-5 class=simple-footnote title="Creating your blog with Pelican">5</a></sup><sup>,</sup>
+<sup id=sf-python-miniconda-and-pelican-on-windows-6-back><a href=#sf-python-miniconda-and-pelican-on-windows-6 class=simple-footnote title="How to Create Your First Static Site with Pelican and Jinja2">6</a></sup>
+, one may be wondering why another post on <strong>Pelican</strong> static site generator. The purpose of this blog is to provide an entry level document for building a static web site in Windows environment with Miniconda Python distribution.<br>
+This tutorial assumes very little, so we will cover each step in a little more details. Chances are that you have already heard about the the Python-powered micro web frameworks, static page generators, and even about <a href="https://pypi.python.org/pypi/pelican/#downloads"><em>Pelican</em></a>, <a href="https://getnikola.com/"><em>Nikola</em></a>, or <a href="http://www.fullstackpython.com/flask.html"><em>Flask</em></a>. If not, this blog<sup id=sf-python-miniconda-and-pelican-on-windows-7-back><a href=#sf-python-miniconda-and-pelican-on-windows-7 class=simple-footnote title="Creating a Blog on GitHub.io with Python">7</a></sup> has a nice introduction.</p>
+<div class=note>
+<div class=notetip>
+<b>Pelican</b> is a static web page generator that delivers web pages to the user exactly as they are stored on the server. There is no user-interaction possible once the pages are rendered. In contrast, dynamic web pages are generated and updated by a web application. Pelican is written in Python (2 or 3) and it is platform independent. 
+</div>
+</div>
+
+<h2>Requirements</h2>
+<p>Before we get started, we’ll need a base installation of <strong>Python</strong>, and of course, the <strong>Pelican</strong>. The following are the minimum requirements:</p>
+<ol>
+<li><a href="https://docs.conda.io/en/latest/miniconda.html">Python 3.5 or higher</a>  (aka Python 3), but Python 2.7 (aka Python 2) works also</li>
+<li><a href="https://pypi.python.org/pypi/pelican/#downloads">Pelican</a> package (v4 +)</li>
+<li>Text editor (e.g., <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="http://markdownpad.com/">Markdown Pad2</a>, <a href="http://www.sublimetext.com/">Sublime Text</a>, or <a href="https://typora.io/">Typora</a>)</li>
+<li>Web server for the web hosting</li>
+</ol>
+<h3>Python</h3>
+<p>First, we need a Python installation. I recommend <a href="https://www.anaconda.com/products/individual">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>, both being a distribution of Python from the company <a href="https://www.anaconda.com/">Anaconda</a>. <code>Anaconda</code> and <code>Miniconda</code> are free and the former comes with many pre-installed Python packages and libraries such as Pandas, NumPy, matplotlib, and others. The latter, is a minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including pip, zlib and a few others. However, neither installation includes Pelican site generator.</p>
+<p>If you already have <code>Python</code> installed, <a href=#sec-env>skip to the section</a> <strong>Virtual Environment</strong>.</p>
+<p>To get Anaconda/Miniconda installed under the Windows, download the latest binary package [ <a href="https://www.anaconda.com/products/individual">Anaconda</a> | <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> ] and install the executable. </p>
+<p>This tutorial is using Miniconda although steps with Anaconda are the same. The typical (and default) path to install <strong>Miniconda</strong> on Windows is: <code>C:\Miniconda3</code>. </p>
+<p>When installation completes, append the following string into your system <strong>PATH</strong> or make sure that it is written there by the installer: </p>
+<div class=highlight><pre><span></span><code><span class=c>C:\Miniconda3;C:\Miniconda3\Lib;C:\Miniconda3\DLLs;C:\Miniconda3\Lib\lib-tk;C:\Miniconda3\Scripts;</span>
+</code></pre></div>
+
+
+<div class=note>
+<div class=notetip>
+To access the <b>PATH</b> variable, right-click on Computer ⇒ Advanced system settings ⇒ Advance tab ⇒ Environment Variables ⇒ System variables ⇒ Path. 
+    Note that the latest Anaconda/Miniconda installation binaries set the correct path <i>if checked</i> during the install.
+</div>
+</div>
+
+<p>To check that <strong>Miniconda</strong> has installed successfully, launch the Windows command shell (cmd.exe) and execute the command:  </p>
+<div class=highlight><pre><span></span><code>    <span class=n>conda</span> <span class=n>info</span> <span class=o>--</span><span class=nb>all</span>
+</code></pre></div>
+
+
+<p>A typical (shortened) output follows:</p>
+<div class=highlight><pre><span></span><code><span class=x>Current miniconda install:</span>
+
+<span class=x>             platform : win-64</span>
+<span class=x>       python version : 3.6.7.final.0</span>
+<span class=x>     user config file : $HOME.condarc</span>
+</code></pre></div>
+
+
+<h3>Set up a virtual environment</h3>
+<p><a name=sec-env></a>
+To avoid potential Python library/package dependency conflicts, it is a good practice to install new projects into their own development environment. Such environment includes a fresh copy of the Python binary together with a copy of the entire Python standard library. Most importantly, if any file gets corrupted, one can simple remove and re-install the environment. Let's create a virtual environment called <code>pelican1</code>.</p>
+<div class=highlight><pre><span></span><code><span class=n>conda</span> <span class=n>create</span> <span class=o>-</span><span class=n>n</span> <span class=n>pelican1</span> <span class=n>python</span><span class=o>=</span><span class=mf>3.6</span>
+</code></pre></div>
+
+
+<p>The expected response is shown in <strong>Figure 1</strong> and <strong>Figure 2</strong>.  </p>
+<p><img alt="venv pelican1" src="../images/img-code/venv1a.png" title="Fig 1."><br>
+</p><p style="margin: -20px 0 30px 125px;"><em>Fig. 1. Creating virtual environment <code>pelican1</code>.</em> </p> <p></p>
+<p><img alt="virt env2" src="../images/img-code/venv2a.png" title="Fig 2."><br>
+</p><p style="margin: -20px 0 30px 110px;"><em>Fig. 2. Packages installed in the virt env <code>pelican1</code>.</em> </p>  <p></p>
+<p>Anywhere on your computer, make a new folder for your blog items (e.g., blog) and activate the new environment as:  </p>
+<div class=highlight><pre><span></span><code><span class=x>&gt; cd path\to\blog</span>
+<span class=x>&gt; conda activate pelican1</span>
+</code></pre></div>
+
+
+<p>if everything went as expected, you should see the following text at the command prompt:</p>
+<div class=highlight><pre><span></span><code><span class=x>(pelican1) drive:\\path\to\blog</span>
+</code></pre></div>
+
+
+<h3>Pelican</h3>
+<p><a name=sec-pel></a>
+Finally, we proceed with the installation of the <strong>Pelican</strong> package. In your terminal, execute:</p>
+<div class=highlight><pre><span></span><code><span class=x>(pelican1) drive:\\path\to\blog &gt;conda install pelican</span>
+</code></pre></div>
+
+
+<p>The progress will look similar to the following output.</p>
+<div class=highlight><pre><span></span><code> <span class=n>Downloading</span> <span class=n>pelican</span><span class=o>-</span><span class=mf>3.6</span><span class=o>.</span><span class=mi>2</span><span class=o>-</span><span class=n>py2</span><span class=o>.</span><span class=n>py3</span><span class=o>-</span><span class=n>none</span><span class=o>-</span><span class=nb>any</span><span class=o>.</span><span class=n>whl</span> <span class=p>(</span><span class=mi>129</span><span class=n>kB</span><span class=p>)</span>
+ <span class=n>Downloading</span> <span class=n>Pygments</span><span class=o>-</span><span class=mf>2.0</span><span class=o>.</span><span class=mi>2</span><span class=o>-</span><span class=n>py2</span><span class=o>-</span><span class=n>none</span><span class=o>-</span><span class=nb>any</span><span class=o>.</span><span class=n>whl</span> <span class=p>(</span><span class=mi>672</span><span class=n>kB</span><span class=p>)</span>
+ <span class=n>Downloading</span> <span class=n>feedgenerator</span><span class=o>-</span><span class=mf>1.7</span><span class=o>.</span><span class=n>tar</span><span class=o>.</span><span class=n>gz</span>
+ <span class=n>Downloading</span> <span class=n>Unidecode</span><span class=o>-</span><span class=mf>0.04</span><span class=o>.</span><span class=mf>18.</span><span class=n>tar</span><span class=o>.</span><span class=n>gz</span> <span class=p>(</span><span class=mi>206</span><span class=n>kB</span><span class=p>)</span>
+ <span class=n>Downloading</span> <span class=n>pytz</span><span class=o>-</span><span class=mf>2015.4</span><span class=o>-</span><span class=n>py2</span><span class=o>.</span><span class=n>py3</span><span class=o>-</span><span class=n>none</span><span class=o>-</span><span class=nb>any</span><span class=o>.</span><span class=n>whl</span> <span class=p>(</span><span class=mi>475</span><span class=n>kB</span><span class=p>)</span>
+ <span class=n>Downloading</span> <span class=n>python_dateutil</span><span class=o>-</span><span class=mf>2.4</span><span class=o>.</span><span class=mi>2</span><span class=o>-</span><span class=n>py2</span><span class=o>.</span><span class=n>py3</span><span class=o>-</span><span class=n>none</span><span class=o>-</span><span class=nb>any</span><span class=o>.</span><span class=n>whl</span> <span class=p>(</span><span class=mi>188</span><span class=n>kB</span><span class=p>)</span>
+ <span class=n>Downloading</span> <span class=n>six</span><span class=o>-</span><span class=mf>1.9</span><span class=o>.</span><span class=mi>0</span><span class=o>-</span><span class=n>py2</span><span class=o>.</span><span class=n>py3</span><span class=o>-</span><span class=n>none</span><span class=o>-</span><span class=nb>any</span><span class=o>.</span><span class=n>whl</span>
+ <span class=n>Downloading</span> <span class=n>Jinja2</span><span class=o>-</span><span class=mf>2.8</span><span class=o>-</span><span class=n>py2</span><span class=o>.</span><span class=n>py3</span><span class=o>-</span><span class=n>none</span><span class=o>-</span><span class=nb>any</span><span class=o>.</span><span class=n>whl</span> <span class=p>(</span><span class=mi>263</span><span class=n>kB</span><span class=p>)</span>
+ <span class=n>Downloading</span> <span class=n>docutils</span><span class=o>-</span><span class=mf>0.12</span><span class=o>.</span><span class=n>tar</span><span class=o>.</span><span class=n>gz</span> <span class=p>(</span><span class=mf>1.6</span><span class=n>MB</span><span class=p>)</span>
+ <span class=n>Downloading</span> <span class=n>blinker</span><span class=o>-</span><span class=mf>1.4</span><span class=o>.</span><span class=n>tar</span><span class=o>.</span><span class=n>gz</span> <span class=p>(</span><span class=mi>111</span><span class=n>kB</span><span class=p>)</span>
+ <span class=n>Downloading</span> <span class=n>MarkupSafe</span><span class=o>-</span><span class=mf>0.23</span><span class=o>.</span><span class=n>tar</span><span class=o>.</span><span class=n>gz</span>
+<span class=n>Installing</span> <span class=n>collected</span> <span class=n>packages</span><span class=p>:</span> <span class=n>pygments</span><span class=p>,</span> <span class=n>pytz</span><span class=p>,</span> <span class=n>six</span><span class=p>,</span> <span class=n>feedgenerator</span><span class=p>,</span> <span class=n>unidecode</span><span class=p>,</span> <span class=n>py</span>
+<span class=n>thon</span><span class=o>-</span><span class=n>dateutil</span><span class=p>,</span> <span class=n>markupsafe</span><span class=p>,</span> <span class=n>jinja2</span><span class=p>,</span> <span class=n>docutils</span><span class=p>,</span> <span class=n>blinker</span><span class=p>,</span> <span class=n>pelican</span>
+</code></pre></div>
+
+
+<h3>Other Python package</h3>
+<p>Following are packages that I found useful when developing and publishing <strong>Pelican</strong> blog site using Jupyter notebooks. To make their installation easier, we will use the <code>packages.yml</code> file.</p>
+<p>Open a text editor and type (copy/paste) the following content.</p>
+<div class=highlight><pre><span></span><code><span class=x>name: pelican1</span>
+<span class=x>channels:</span>
+<span class=x>  - conda-forge</span>
+<span class=x>  - defaults</span>
+<span class=x>dependencies:</span>
+<span class=x>  - bs4</span>
+<span class=x>  - html5lib</span>
+<span class=x>  - Markdown</span>
+<span class=x>  - fabric3</span>
+<span class=x>  - typogrify</span>
+<span class=x>  - invoke</span>
+<span class=x>  - MarkupSafe</span>
+<span class=x>  - livereload</span>
+<span class=x>  - pybtex</span>
+<span class=x>  - jupyter</span>
+<span class=x>prefix: C:\Miniconda3\envs\pelican1</span>
+</code></pre></div>
+
+
+<p>Save the file as <code>packages.yml</code> into the folder <code>C:\Miniconda3\envs</code>.
+Next, from the shell, issue the following command:</p>
+<div class=highlight><pre><span></span><code><span class=x>(pelican1) c:\Miniconda3\envs &gt; conda env update --file packages.yml</span>
+</code></pre></div>
+
+
+<p>To build, publish, and maintain the site, I use the <strong>Fabric</strong> Python library. </p>
+<p><span class="glyphicon glyphicon-hand-right" aria-hidden=true></span> At this point, the size of <code>pelican1</code> environment is about 100Mb.</p>
+<h2>Pelican blog</h2>
+<p>So far, all packages were installed in the <code>C:\Miniconda3\env\pelican1\</code> folder. The actual blog files require different drive/folder location from which the site is managed. Let's create such directory, for example, <code>F:\Blog\pelican</code>.
+Now, while still in the <code>pelican1</code> virtual environment, <em>cd</em> into this directory:  </p>
+<div class=highlight><pre><span></span><code><span class=x> (pelican1) c:\Miniconda3\envs\pelican1 &gt;cd F:\Blog\pelican</span>
+</code></pre></div>
+
+
+<p>To initiate this new blog/web site, run the <em>quickstart</em> script and answer the setup questions. Note that I have chosen not to use GitHub Pages and secure SSH protocol for upload. The latter will be addressed below.  </p>
+<div class=highlight><pre><span></span><code><span class=x>(pelican1) F:\Blog\pelican&gt; pelican-quickstart</span>
+</code></pre></div>
+
+
+<div class=highlight><pre><span></span><code><span class=x>&gt; Where do you want to create your new web site? [.]  (just press enter; it will be in the /pelicalblog directory; in this case F:\Blog\pelican)</span>
+<span class=x>&gt; What will be the title of this web site? Blogging with Pelican</span>
+<span class=x>&gt; Who will be the author of this web site? your name</span>
+<span class=x>&gt; What will be the default language of this web site? [en]</span>
+<span class=x>&gt; Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) y</span>
+<span class=x>&gt; What is your URL prefix? (see above example; no trailing slash) http://www.yourdomain.com/blog</span>
+<span class=x>&gt; Do you want to enable article pagination? (Y/n) y</span>
+<span class=x>&gt; How many articles per page do you want? [10] 8</span>
+<span class=x>&gt; What is your time zone? [Europe/Paris] America/Phoenix</span>
+<span class=x>&gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y (create fabfile.py)</span>
+<span class=x>&gt; Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n) y</span>
+<span class=x>&gt; Do you want to upload your website using FTP? (y/N) y</span>
+<span class=x>&gt; What is the hostname of your FTP server? [localhost] ftp.yourdomain.com</span>
+<span class=x>&gt; What is your username on that server? [anonymous] username</span>
+<span class=x>&gt; Where do you want to put your web site on that server? [/] /blog</span>
+<span class=x>&gt; Do you want to upload your website using SSH? (y/N) n</span>
+<span class=x>&gt; Do you want to upload your website using Dropbox? (y/N) n</span>
+<span class=x>&gt; Do you want to upload your website using S3? (y/N) n</span>
+<span class=x>&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N) n</span>
+<span class=x>&gt; Do you want to upload your website using GitHub Pages? (y/N) n</span>
+</code></pre></div>
+
+
+<p>A little more explanation on the "URL prefix" question. Answer <strong><em>yes</em></strong> and enter URL in the next step only if you have external web hosting site.</p>
+<p>Let’s take a look at the just created folder structure within the <code>F:\Blog\pelican</code> directory. Now if you type the <strong>tree</strong> command within your blog's main directory, you should see a directory tree similar to this one:</p>
+<div class=highlight><pre><span></span><code><span class=x>pelican/</span>
+<span class=x>├── content</span>
+<span class=x>│    └── firstblog.md</span>
+<span class=x>├── output</span>
+<span class=x>│    ├── author/</span>
+<span class=x>│    ├── category/</span>
+<span class=x>│    ├── tag/</span>
+<span class=x>│    ├── theme/</span>
+<span class=x>│    ├── archives.html</span>
+<span class=x>│    ├── authors.html</span>
+<span class=x>│    ├── Blogging with Pelican.html</span>
+<span class=x>│    ├── categories.html</span>
+<span class=x>│    ├── index.html</span>
+<span class=x>│    └── tags.html</span>
+<span class=x>├── fabfile.py</span>
+<span class=x>├── pelicanconf.py</span>
+<span class=x>└── publishconf.py</span>
+</code></pre></div>
+
+
+<p>Breaking down each of these files:  </p>
+<ul>
+<li><span class="glyphicon glyphicon-folder-open" aria-hidden=true style="margin-right: 10px"></span> <strong>content/firstblog.md</strong>: A content file in Markdown syntax. This is where you start writing your blog. <span class="glyphicon glyphicon-pencil" aria-hidden=true style="margin-right: 10px"></span></li>
+<li><span class="glyphicon glyphicon-folder-open" aria-hidden=true style="margin-right: 10px"></span> <strong>output/</strong>: Content of this folder is automatically generated and later uploaded to a server.  <span class="glyphicon glyphicon-cloud-upload" aria-hidden=true style="margin-right: 10px"></span></li>
+<li><strong>fabfile.py</strong>: Is a configuration file for <code>Fabric</code>, which allows you to generate your site using the <a href="http://blog.osteel.me/posts/2015/03/02/install-and-deploy-a-pelican-blog-using-fabric-part-3-fabric.html">fab command</a>.</li>
+<li><strong>pelicanconf.py</strong>: Is a Pelican configuration file containing the site <a href="https://docs.getpelican.com/en/4.2.0/settings.html">settings</a>.</li>
+<li><strong>publishconf.py</strong>: Similar to <em>pelicanconfig.py</em> file, but is not intended to be used for local development.</li>
+</ul>
+<h2>Building the site</h2>
+<p>Now let's build the default look of the blog. In your terminal, type the <code>fab</code> command after the <strong>&gt;</strong> character:</p>
+<div class=highlight><pre><span></span><code><span class=x>(pelican1) F:\Blog\pelican&gt;fab build</span>
+</code></pre></div>
+
+
+<p>Then</p>
+<div class=highlight><pre><span></span><code><span class=x>(pelican1) F:\Blog\pelican&gt;fab serve</span>
+</code></pre></div>
+
+
+<p>We've just launched a local webserver on the port 8000. Open your browser and navigate to <a href="http://localhost:8000">http://localhost:8000</a> the default skeleton and template should display in your browser.</p>
+<p><img alt="final view" src="../images/img-code/pelican-result.png" title="Fig 3."><br>
+</p><p style="margin: -20px 0 30px 5px;"><em>Fig. 3. Final view of the site.</em> </p> <p></p>
+<p>To avoid repetitive typing in the terminal, set up a batch file, which will get you directly to the (pelican1) F:\Blog\pelican environment and directory.
+Save the following script as <code>pelican.bat</code>and place the file into C:\Windows\System32 directory.</p>
+<div class=highlight><pre><span></span><code><span class=x>@echo off</span>
+<span class=x>REM add this batch file into C:/windows/system32</span>
+<span class=x>REM run upon opening cmd as &gt;pelican.bat</span>
+<span class=x>REM 'path\to\blog' example F:\Blog\pelican</span>
+<span class=x>set SERVE=path\to\blog</span>
+<span class=x>cd /D %SERVE%</span>
+<span class=x>conda activate pelican1</span>
+</code></pre></div>
+
+
+<p>Next time, upon launching the command line terminal (<strong>cmd.exe</strong>), just type <code>pelican.bat</code> and the script will execute.</p>
+<p>To change or tweak the site settings, edit files <code>pelicanconf.py</code> and <code>fabfile.py</code> created in the main <code>path\to\blog</code> directory. </p>
+<div class=highlight><pre><span></span><code><span class=c1>#  pelicanconf.py</span>
+<span class=kn>from</span> <span class=nn>__future__</span> <span class=kn>import</span> <span class=n>unicode_literals</span>
+
+<span class=n>AUTHOR</span> <span class=o>=</span> <span class=sa>u</span><span class=s1>'yourname'</span>  <span class=c1>#  Change it here</span>
+<span class=n>SITENAME</span> <span class=o>=</span> <span class=sa>u</span><span class=s1>'Blogging with Pelican'</span>  <span class=c1>#  Change it here</span>
+<span class=n>SITEURL</span> <span class=o>=</span> <span class=s1>''</span>
+
+<span class=n>PATH</span> <span class=o>=</span> <span class=s1>'output'</span>  <span class=c1># This is where you write blogs, keep images, css, ..</span>
+
+<span class=n>TIMEZONE</span> <span class=o>=</span> <span class=s1>'America/Phoenix'</span>  <span class=c1>#  Change it here</span>
+
+<span class=n>DEFAULT_LANG</span> <span class=o>=</span> <span class=sa>u</span><span class=s1>'en'</span>
+
+<span class=c1># other functions (default)</span>
+</code></pre></div>
+
+
+<div class=highlight><pre><span></span><code><span class=c1>#  fabfile.py</span>
+<span class=c1># default variables and functions follow</span>
+<span class=c1># ...</span>
+
+<span class=c1># Added site upload function to circumvent setup of rsync on Windows</span>
+<span class=n>env</span><span class=o>.</span><span class=n>hosts</span> <span class=o>=</span> <span class=p>[</span><span class=s1>'ftp.yourdomain.com'</span><span class=p>]</span>
+<span class=n>env</span><span class=o>.</span><span class=n>user</span>   <span class=o>=</span> <span class=s2>"username"</span>
+<span class=n>env</span><span class=o>.</span><span class=n>password</span> <span class=o>=</span> <span class=s2>"serverpassword"</span> <span class=c1># or just entered it when connecting</span>
+
+<span class=kn>from</span> <span class=nn>fabric.context_managers</span> <span class=kn>import</span> <span class=n>cd</span>
+
+<span class=k>def</span> <span class=nf>sftp</span><span class=p>():</span>
+    <span class=c1># run from the parent directory /pelicanblog/</span>
+    <span class=k>with</span> <span class=n>lcd</span><span class=p>(</span><span class=s1>'output'</span><span class=p>):</span>  <span class=c1># cd into output directory</span>
+        <span class=n>local</span><span class=p>(</span><span class=s2>"dir"</span><span class=p>)</span> <span class=c1># list files and directories to be uploaded</span>
+        <span class=n>put</span><span class=p>(</span><span class=s1>'*'</span><span class=p>,</span> <span class=s1>'./public_html/yourblogdirectory/'</span><span class=p>)</span>  <span class=c1># change here</span>
+</code></pre></div>
+
+
+<p>Note the <code>sftp()</code> function added at the end of the <code>fabfile.py</code>. The default <code>publish()</code> function is based on <code>rsync</code> utility that is not that easy to install on Windows. Instead, we can use the <em>SSH File Transfer Protocol (sftp)</em> protocol, which is also secure an simple to implement.
+</p><div class=note>
+<div class=notetip>
+In order to use <i>sftp</i> protocol to safely upload your site to a web-hosting server, you will need to enable SSH/Shell access on your hosted account. Major web-hosting sites support both <b>ftp</b> and <b>sftp</b> protocols.
+</div>
+</div>
+Now, let's move on and start working on the first blog.<p></p>
+<h3>Markdown .md file</h3>
+<p>To create the content of our new web site, we will use the <code>Markdown</code> syntax<sup id=sf-python-miniconda-and-pelican-on-windows-8-back><a href=#sf-python-miniconda-and-pelican-on-windows-8 class=simple-footnote title="Markdown Cheatsheet">8</a></sup><sup>,</sup><sup id=sf-python-miniconda-and-pelican-on-windows-9-back><a href=#sf-python-miniconda-and-pelican-on-windows-9 class=simple-footnote title="from Darin Fireball">9</a></sup>. Let's create our first markdown file name it <code>firstblog.md</code>. Save it into the /pelican/content folder.</p>
+<div class=highlight><pre><span></span><code>Title: First Blog Post
+Date: 2020-4-5 13:10
+Category: Blogging
+Tags: blogging, markup
+Slug: blogging-with-pelican
+Author: yourname
+Summary: Collection of notes related to programming and scripting.
+Latex:
+
+<span class=gh>#</span> Work in progress
+Following are examples of Pelican markup.
+
+This is a <span class=gs>**first**</span> attempt to create static page with the help of <span class=ge>_Pelican_</span>.
+</code></pre></div>
+
+
+<h3>Rendering and uploading the site</h3>
+<p>At this point, we will move back to the terminal and issue the following commands.</p>
+<div class=highlight><pre><span></span><code><span class=x>(pelican1) F:\Blog\pelican&gt;fab build</span>
+<span class=x>(pelican1) F:\Blog\pelican&gt;fab serve</span>
+</code></pre></div>
+
+
+<p>Now, in the browser type  <a href="http://localhost:8000">http://localhost:8000</a> and our modified (local) site should load. </p>
+<p>To upload it to a web-server, make sure that you create your blog directory at the remote site first. Note the path to it, e.g. /public_html/yourblogdirectory. Enter your host name (e.g., https://my.site.com) and user name into the <code>fabfile.py</code> file as shown above. In your terminal, enter:</p>
+<div class=highlight><pre><span></span><code><span class=x>(pelican1) F:\Blog\pelican&gt;fab sftp</span>
+</code></pre></div>
+
+
+<p>Upload process should start immediately with a list of files to be uploaded and a prompt for your password. After the upload is done, head to the site and check its accessibility (e.g., https://my.site.com/yourblogdirectory/index.html). </p>
+<h2>What's been accomplished</h2>
+<p>This concludes the process of setting up a simple Pelican site on Windows and Python miniconda environment. We have built the skeleton of Pelican static web-site in Python virtual environment, modified its configuration files, and uploaded the site to our hosting server.</p>
+<hr>
+
+<p><br>
+<strong>References:</strong></p><ol class=simple-footnotes><li id=sf-python-miniconda-and-pelican-on-windows-1><a href="https://pythonforundergradengineers.com/how-i-built-this-site-1.html">How I built this site</a> <a href=#sf-python-miniconda-and-pelican-on-windows-1-back class=simple-footnote-back>↩</a></li><li id=sf-python-miniconda-and-pelican-on-windows-2><a href="https://dirtyhandscoding.github.io/posts/blog-migrated-to-pelican-and-github-pages.html">Blog migrated to Pelican and GitHub pages</a> <a href=#sf-python-miniconda-and-pelican-on-windows-2-back class=simple-footnote-back>↩</a></li><li id=sf-python-miniconda-and-pelican-on-windows-3><a href="http://nafiulis.me/making-a-static-blog-with-pelican.html?utm_source=Python+Weekly+Newsletter&amp;utm_campaign=5b2cdb02e2-Python_Weekly_Issue_174_January_15_2015&amp;utm_medium=email&amp;utm_term=0_9e26887fc5-5b2cdb02e2-312707597">Making a Static Blog with Pelican</a> <a href=#sf-python-miniconda-and-pelican-on-windows-3-back class=simple-footnote-back>↩</a></li><li id=sf-python-miniconda-and-pelican-on-windows-4><a href="http://spapas.github.io/2013/10/07/pelican-static-windows/">Using pelican to generate static sites on windows</a> <a href=#sf-python-miniconda-and-pelican-on-windows-4-back class=simple-footnote-back>↩</a></li><li id=sf-python-miniconda-and-pelican-on-windows-5><a href="http://chdoig.github.io/create-pelican-blog.html">Creating your blog with Pelican</a> <a href=#sf-python-miniconda-and-pelican-on-windows-5-back class=simple-footnote-back>↩</a></li><li id=sf-python-miniconda-and-pelican-on-windows-6><a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html">How to Create Your First Static Site with Pelican and Jinja2</a> <a href=#sf-python-miniconda-and-pelican-on-windows-6-back class=simple-footnote-back>↩</a></li><li id=sf-python-miniconda-and-pelican-on-windows-7><a href="http://seanazlin.com/creating-a-blog-on-GitHub-dot-io-with-Python.html">Creating a Blog on GitHub.io with Python</a> <a href=#sf-python-miniconda-and-pelican-on-windows-7-back class=simple-footnote-back>↩</a></li><li id=sf-python-miniconda-and-pelican-on-windows-8><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a> <a href=#sf-python-miniconda-and-pelican-on-windows-8-back class=simple-footnote-back>↩</a></li><li id=sf-python-miniconda-and-pelican-on-windows-9><a href="http://daringfireball.net/projects/markdown/syntax">from Darin Fireball</a> <a href=#sf-python-miniconda-and-pelican-on-windows-9-back class=simple-footnote-back>↩</a></li></ol>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ntlines'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2020-05-06-python-miniconda-and-pelican-on-windows';
+                        this.page.url = './python-miniconda-and-pelican-on-windows.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+       <!-- instert line here -->		
+                <div id="photo">
+		</div>            
+                <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://twitter.com/mpatek_"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+    <li class="list-group-item"><a href="http://www.linkedin.com/in/marcelpatek"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="./category/blogging.html"><i class="fa fa-folder-open fa-lg"></i>Blogging</a>
+    </li>
+    <li class="list-group-item">
+      <a href="./category/jupyter.html"><i class="fa fa-folder-open fa-lg"></i>Jupyter</a>
+    </li>
+    <li class="list-group-item">
+      <a href="./category/nbo.html"><i class="fa fa-folder-open fa-lg"></i>NBO</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="./tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="./tag/jupyter-style.html">Jupyter-style</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/miniconda.html">miniconda</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/nbo.html">NBO</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/pelican.html">Pelican</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://brightrockpath.com" target="_blank">BrightRockPath consulting</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://nbo.marcelpatek.com/" target="_blank">NBO</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://chemgplus.blogspot.com" target="_blank">OrgMedChem - NBO Blogger</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://script-orgmedchem.blogspot.com" target="_blank">OrgMedChem - scripts</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://github.com/marpat/" target="_blank">Github</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.youtube.com/user/orgmedchem" target="_blank">YouTube</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.marcelpatek.com/" target="_blank">Digital Photography</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Marcel Patek
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+    <script src="./theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ntlines'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-66366688-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
