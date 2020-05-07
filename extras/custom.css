@@ -245,6 +245,7 @@ div.cell {
 
 /*Jupyter*/
 
+div.cell {width:100!important;}
 /*Change size of the font in cells*/
 div.input_area > div.highlight > pre {
 font-size: 12px!important;
