@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Introduction to UCSF Chimera - </title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://marpat.github.io/images/fav.png" rel="icon">
+
+<link rel="canonical" href="https://marpat.github.io/chimera-intro.html">
+
+        <meta name="author" content="Marcel Patek" />
+        <meta name="keywords" content="molecular visualization,Chimera" />
+        <meta name="description" content="A general overview, installation, feature highlights, and several visual examples of UCSF Chimera." />
+
+        <meta property="og:site_name" content="" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Introduction to UCSF Chimera"/>
+        <meta property="og:url" content="https://marpat.github.io/chimera-intro.html"/>
+        <meta property="og:description" content="A general overview, installation, feature highlights, and several visual examples of UCSF Chimera."/>
+        <meta property="article:published_time" content="2020-05-30" />
+            <meta property="article:section" content="Structure visualization" />
+            <meta property="article:tag" content="molecular visualization" />
+            <meta property="article:tag" content="Chimera" />
+            <meta property="article:author" content="Marcel Patek" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://marpat.github.io/theme/css/bootstrap.cerulean.min.css" type="text/css"/>
+    <link href="https://marpat.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://marpat.github.io/theme/css/pygments/default.css" rel="stylesheet">
+    <link href="https://marpat.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://marpat.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://marpat.github.io/extras/custom.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://marpat.github.io/" class="navbar-brand">
+ Home
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="https://marpat.github.io/pages/about.html">About</a></li>
+                    <li><a href="https://marpat.github.io/pages/contact.html">Contact</a></li>
+                    <li><a href="https://marpat.github.io/archives.html">Archives</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<style>
+@media screen and (min-width: 1024px){
+  #banner{
+	    background-image:url("https://marpat.github.io/images/header_img.png");
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+        #banner {
+            background-image: url(../images/header_img_767.png);
+                }
+       }
+
+@media screen and (min-width: 415px) and (max-width: 767px) {
+        #banner {
+            background-image: url(../images/header_img_479.png);
+                 }
+       }
+@media screen and (max-width: 414px) {
+        #banner {
+            background-image: url(../images/header_img_412.png);
+                 }
+      }
+</style>
+
+    <!-- Custom header image (banner) -->
+    <div id="banner"></div><!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://marpat.github.io/chimera-intro.html"
+                       rel="bookmark"
+                       title="Permalink to Introduction to UCSF Chimera">
+                        Introduction to UCSF Chimera
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-05-30T10:40:00-06:00"> 2020-05-30</time>
+    </span>
+          <span class="label label-default">Modified</span>
+            <span class="modified">
+                <i class="fa fa-calendar"></i><time datetime="2020-05-30T10:50:00-06:00"> 2020-05-30</time>
+            </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://marpat.github.io/tag/molecular-visualization.html">molecular visualization</a>
+        /
+	<a href="https://marpat.github.io/tag/chimera.html">Chimera</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Molecular visualization</h2>
+<p>Molecular visualization and analysis of structural features are indispensable elements in the understanding 3D structure of proteins, peptides, and nucleotides. With proper and effective tools, the design of molecular complexes of the above biopolymers and small molecules or peptides (e.g., inhibitors) becomes significantly enabled. Such tools and methods thus form an essential part of structure-based drug design.</p>
+<p>While there are several excellent molecular visualization packages, this blog will focus on one such package called <code>UCSF Chimera</code> (<a href='#pettersen2004' id='ref-pettersen2004-1'>Pettersen et al. (2004)</a>; <a href='#goddard2007' id='ref-goddard2007-1'>Goddard and Ferrin (2007)</a>). </p>
+<p>However, in the interest of fairness, let's briefly mention other packages:</p>
+<ul>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymol-open-source">PyMOL</a> <sup id=sf-chimera-intro-1-back><a href=#sf-chimera-intro-1 class=simple-footnote title="DeLano, W. L. (2002) The PyMOL Molecular Graphics System, DeLano Scientific LLC, San Carlos, CA ">1</a></sup> and its <a href="https://github.com/schrodinger/pymol-open-source">maintained open-source version</a> <sup id=sf-chimera-intro-2-back><a href=#sf-chimera-intro-2 class=simple-footnote title="The PyMOL Molecular Graphics System,  Schrödinger, LLC.">2</a></sup> (*)</li>
+<li><a href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a> <sup id=sf-chimera-intro-3-back><a href=#sf-chimera-intro-3 class=simple-footnote title="Humphrey, W., Dalke, A., and Schulten, K. (1996) VMD: visual molecular dynamics. J. Mol. Graph. 14, 33–38, 27–28)">3</a></sup></li>
+<li><a href="https://www.3dsbiovia.com/products/collaborative-science/biovia-discovery-studio/">Biovia Discovery Studio</a> <sup id=sf-chimera-intro-4-back><a href=#sf-chimera-intro-4 class=simple-footnote title="Dassault Systèmes BIOVIA, ver. e.g. 2020, San Diego: Dassault Systèmes.">4</a></sup></li>
+<li><a href="http://jmol.sourceforge.net/">Jmol</a> <sup id=sf-chimera-intro-5-back><a href=#sf-chimera-intro-5 class=simple-footnote title="Jmol: an open-source Java viewer for chemical structures in 3D. http://www.jmol.org/">5</a></sup></li>
+</ul>
+<div class=note>
+<div class=notetip>
+<b>(*)</b> PyMOL is an open-source molecular visualization system built on an open-source foundation, which means that you get free access to 
+the source code. However, since the PyMOL 2.x, there is no binary installer available for Windows. <a href="https://www.schrodinger.com/pymol" target=_blank> Schrödinger</a> compiles and sells ready-to-run binaries for all major computer platforms (Windows, Linux, Mac). Still, you can download  (and compile) the open-source code from GitHub. To support the PyMOL community, Schrodinger provides access to some PyMOL legacy builds at no-cost.
+</div>
+</div>
+
+<p>Since the PyMOL is one of the top molecular visualization tools used in drug discovery, here are several links to resources that describe (more complex) installation of the latest open-source PyMOL on Windows:</p>
+<ul>
+<li><a href="https://sourceforge.net/projects/pymol/files/Legacy/">Legacy source and binaries</a> </li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymol-open-source">Unofficial Windows binaries</a> and <a href="https://www.biob.in/2016/09/installing-latest-pymol-software-for.html">how to install them a)</a> and <a href="https://chem.libretexts.org/Courses/Intercollegiate_Courses/Cheminformatics_OLCC_(2019)/1._Introduction/1.05%3A_Installing_Python">b)</a></li>
+<li><a href="https://omicx.cc/2019/05/26/install-pymol-windows/">Install Pymol v2+ under Python Conda environment</a></li>
+</ul>
+<h2>Chimera</h2>
+<p>Now, back to the heart of the topic, the <code>UCSF Chimera</code> - a feature-rich desktop application for interactive visual analysis. Since a picture is worth a thousand words, I included <a href=#surf>several screenshots</a> taken from Chimera's main graphical user interface (GUI). All visualizations were generated on Windows 10.
+<a name=render></a></p>
+<p>Let's start with a little more advanced representation of contact surfaces between two proteins, in this case, the SARS-CoV2 and ACE2 (<strong>Fig. 1</strong>). Image details like labels, colors, and rendering are fully customizable through scripts.</p>
+<div class=img-fluid style="max-width: 100%">
+<p><img alt="Chimera main interface" src="../images/chimera/main-window.png" title="Fig 1."></p>
+</div>
+<p></p><p style="margin: 10px 0 30px 160px; width:65%"><em>Fig. 1. An example of Chimera user interface. The image details the contact surface for an interaction between RBD of SARS-CoV2 and ACE2 (ribbon helices <span class=math>\(\alpha\)</span>1 and <span class=math>\(\alpha\)</span>2 in gold and blue, respectively.</em> </p><p></p>
+<p><br></p>
+<p><font color=magenta><strong><em>Features</em></strong></font></p>
+<p>Many features of the Chimera, such as direct access to <a href="http://www.rcsb.org/">PDB</a>, <a href="http://www.emdatabank.org/">EMDB</a>, <a href="http://ndbserver.rutgers.edu/index.html">NBD</a>, <a href="https://pubchemdocs.ncbi.nlm.nih.gov/pubchem3d">PubChem3D</a>, and <a href="http://www.uniprot.org/">UniProt</a>, are enabled by internet-based services.
+Examples of analytical services include <a href="https://www.rbvi.ucsf.edu/chimera/docs/UsersGuide/blast.html">BLAST Protein</a>, <a href="http://www.clustal.org/omega/">Clustal Omega</a>, <a href="http://drive5.com/muscle/">MUSCLE</a>, <a href="http://cactus.nci.nih.gov/translate/">SMILES Translator</a>, or smi23d.  The full list of web services utilized by Chimera is maintained at this <a href="https://www.rbvi.ucsf.edu/chimera/docs/webservices.html">link</a>. Interfaces to multiple sequence alignment (MSA) using Clustal omega or MUSCLE are now part of the Chimera package (<a href='#huang2014' id='ref-huang2014-1'>Huang et al. (2014)</a>). Additional services include <code>BLAST</code> sequence searching (<a href='#altschul1990' id='ref-altschul1990-1'>Altschul et al. (1990)</a>), <code>Modeller</code> comparative modeling (<a href='#webb2016' id='ref-webb2016-1'>Webb and Sali (2016)</a>, <a href='#yang2012' id='ref-yang2012-1'>Yang et al. (2012)</a>), calculation of <code>small-angle X-ray</code> scattering profiles (<a href='#schneidman-duhovny2010' id='ref-schneidman-duhovny2010-1'>SchneidmanDuhovny et al. (2010)</a>), <code>APBS</code> electrostatic calculations (<a href='#unni2011' id='ref-unni2011-1'>Unni et al. (2011)</a>), <code>PDB2PQR</code> preparation of structures for calculations involving electrostatics (<a href='#unni2011' id='ref-unni2011-2'>Unni et al. (2011)</a>, <a href='#dolinsky2007' id='ref-dolinsky2007-1'>Dolinsky et al. (2007)</a>), and <code>AutoDock Vina</code> molecular docking (<a href='#trott2010' id='ref-trott2010-1'>Trott and Olson (2010)</a>).</p>
+<p><strong>Figure 2</strong> illustrates many feature-rich menu items accessible from the top section of the Chimera's GUI. On the <code>Volume</code> menu, the frequently used modules include <code>Volume Viewer</code>, <code>Surface Color</code>, and <code>Measure Volume and Area</code>.</p>
+<p>The <code>Tools</code> menu offers a rich and expandable selection of multiple modules and panels. </p>
+<p><code>General Controls</code> menu offers several frequently used items, such as:</p>
+<ul>
+<li>Command Line (at the bottom in <strong>Fig. 1</strong> allowing to instruct Chimera by commands)</li>
+<li>Model Panel (an integrated view on opened models with shortcuts to model-modifying commands)</li>
+<li>Keyboard Shortcuts (enabling to modify rendering properties quickly. Activate in Command Line as Command: ac)</li>
+</ul>
+<p><code>Depiction</code> menu features items, such as:</p>
+<ul>
+<li>Color Secondary Structure (with customizable colors for helices and turns)</li>
+<li>PipesAndPlanks (an alternative to ribbons view)</li>
+<li>2D labels (useful for annotation)</li>
+<li>Surface Capping </li>
+<li>Per-Model Clipping (see <strong>Fig. 4</strong>)</li>
+</ul>
+<p>The <code>Surface/Binding Analysis</code> sub-menu has several groups of modules used in structural analysis and molecular docking (<strong>Fig. 2</strong>). The latter group features modules that allow the preparation of proteins and ligands for docking with <a href="http://vina.scripps.edu/">AutoDock Vina</a> (an open-source program that must be installed separately). Results can then be viewed and analyzed in the <code>ViewDock</code> module. </p>
+<p><br>
+</p><div class=img-fluid style="max-width: 100%" markdown=1>
+<img alt="Chimera features" src="../images/chimera/volume-tools.png" title="Fig 2.">
+</div><br>
+<p style="margin: 10px 0 30px 150px; width:68%"><em>Fig. 2. An example  of feature-rich options and modules accessible from the main menu of the UCSF Chimera.</em> </p><p></p>
+<p>With extensive support for rendering molecular surfaces and volumes, bonds and atoms, structure minimization, analysis of molecular dynamics trajectories, and scripting capabilities, the <font color=orange>Chimera</font> is a tool of choice for structure-based protein and drug design. How does it compare with PyMOL Viewer? There certainly is a steep learning curve when mastering Chimera. But in the end, Chimera has a broader scope, has more built-in modules, and due to the GUI menus, feels more comprehensive. I also use PyMOL in my work and think that protein rendering might be slightly better in some cases. For obvious reasons, it is visually closer to rendering in the Schrödinger suite, particularly the Maestro module.</p>
+<p>Chimera's primary programming language is Python, namely Python 2. By software architecture, Chimera is divided into core and extensions. The core provides basic services and visualization capabilities. All higher-level functionality is provided through extensions (<a href="https://www.cgl.ucsf.edu/chimera/plugins/plugins.html">plugins</a>).</p>
+<p>In another example, the binding pocket of HEME ligand is shown interacting with a bound molecule of oxygen in complex with oxymyoglobin.</p>
+<p><br>
+</p><div class=img-fluid style="max-width: 100%" markdown=1>
+<img alt="Chimera main interface" src="../images/chimera/heme-pocket.png" title="Fig 3.">
+</div><br>
+<p style="margin: 10px 0 30px 190px; width:60%"><em>Fig. 3. Details of ligand (HEME) binding surface in the hydrophobic pocket of oxymyoglobin (PDB code 1MBO).</em> </p><p></p>
+<p><br>
+<font color=magenta><strong><em>Licensing</em></strong></font></p>
+<p>The UCSF Chimera is available from <a href="http://www.cgl.ucsf.edu/chimera/">http://www.cgl.ucsf.edu/chimera/</a>, and it can be downloaded free of charge for academic, government, non­profit, and personal use. It can be licensed by commercial institutions for a fee. Extensions to Chimera developed by outside researchers can be redistributed freely.</p>
+<p>If publishing results obtained with Chimera, include an appropriate citation as described at: <a href="http://www.cgl.ucsf.edu/chimera/docs/credits.html">http://www.cgl.ucsf.edu/chimera/docs/credits.html</a>.</p>
+<p><br></p>
+<p><font color=magenta><strong><em>Installation</em></strong></font></p>
+<p>Since my main systems include Windows 10 and Linux Mint, I'll detail  the installation on those systems. For installation instructions on Mac OS X 10.8 or later, follow this <a href="https://www.cgl.ucsf.edu/chimera/data/downloads/1.14/mac64.html">link</a>.</p>
+<p><strong><em>Windows 10</em></strong>:</p>
+<ul>
+<li>Download Chimera distribution file from <a href="https://www.cgl.ucsf.edu/chimera/download.html">here</a> to a place like the <code>Downloads</code> folder, in this example, file <code>chimera-1.14-win64.exe</code>.</li>
+<li>In the <code>Downloads</code> folder, double-click the downloaded binary and follow installation instructions.</li>
+<li>Keep or change the drive ("C:", "D:", "E:", ...). Chimera should then be installed in <code>drive:\Program Files\Chimera 1.14</code></li>
+</ul>
+<p><strong><em>Linux</em></strong>:</p>
+<ul>
+<li>Download Chimera distribution file from <a href="https://www.cgl.ucsf.edu/chimera/download.html">here</a> to a place like ~/Downloads folder, in this example, file <code>chimera-1.14-linux_x86_64.bin</code>.</li>
+</ul>
+<div class=highlight><pre><span></span><code>     $ <span class=nb>cd</span> ~/Downloads
+     $ chmod +x chimera-1.14-linux_x86_64.bin
+     $ sudo ./chimera-1.14-linux_x86_64.bin
+</code></pre></div>
+
+
+<ul>
+<li>Follow the interactive install instructions:</li>
+</ul>
+<div class=highlight><pre><span></span><code>    Enter install location: /opt/UCSF/Chimera64-1.14 <span class=s1>'enter'</span>
+    Install desktop menu <span class=o>(</span>icon has to be <span class=k>done</span> by user<span class=o>)</span>? <span class=s1>'yes'</span>
+
+    Install symbolic link to chimera executable <span class=k>for</span> <span class=nb>command</span> line use in which directory?
+       <span class=m>0</span> -- no link
+       <span class=m>1</span> -- /usr/local/sbin
+       <span class=m>2</span> -- /usr/local/bin
+       <span class=m>3</span> -- /usr/sbin
+       <span class=m>4</span> -- /usr/bin
+       <span class=m>5</span> -- /sbin
+       <span class=m>6</span> -- /bin
+       <span class=m>7</span> -- /snap/bin
+    <span class=o>[</span>hit Enter <span class=k>for</span> default <span class=o>(</span><span class=m>0</span><span class=o>)]</span>: <span class=s1>'2'</span>
+
+    Create unversioned link to chimera executable in same directory? <span class=s1>'yes'</span>
+    <span class=o>(</span>now installing<span class=o>)</span>
+</code></pre></div>
+
+
+<ul>
+<li>To place Chimera icon on the user desktop, run the command below:</li>
+</ul>
+<div class=highlight><pre><span></span><code>To <span class=o>(</span>re<span class=o>)</span>install desktop menu and icon later, run:
+<span class=s1>'/opt/UCSF/Chimera64-1.14/bin/xdg-setup install'</span>
+</code></pre></div>
+
+
+<p>On my Linux Mint 19.1 Tessa (ed. MATE), the app was placed into Menu-&gt;Graphics</p>
+<ul>
+<li>From the terminal, check that Chimera was correctly installed by:</li>
+</ul>
+<div class=highlight><pre><span></span><code>$ chimera --version
+<span class=s1>'chimera production version 1.14 (build 42094) 2019-11-13 06:05:13 UTC'</span>
+
+$ which chimera
+<span class=s1>'/usr/local/bin/chimera'</span>
+</code></pre></div>
+
+
+<ul>
+<li>To make sure that Chimera can be called from anywhere on your system, add the following two lines to your <code>.bashrc</code> file:</li>
+</ul>
+<div class=highlight><pre><span></span><code><span class=c1># CHIMERA</span>
+<span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=nv>$PATH</span>:<span class=nv>$HOME</span>/usr/local/bin/chimera
+</code></pre></div>
+
+
+<p>Now, there should be the Chimera icon <img src="../images/chimera/chimera-icon.png" alt=chimera-icon style=width:50px;> on your system desktop. Double-click it to start the application. Alternatively, in your terminal, type:</p>
+<div class=highlight><pre><span></span><code> $ chimera
+</code></pre></div>
+
+
+<p>See the <a href="https://www.cgl.ucsf.edu/chimera/data/downloads/1.5.2/linux.html">more detailed</a> description of the Linux installation.</p>
+<p><a name=surf></a></p>
+<h3>More examples of surfaces</h3>
+<p>Besides the extensive <a href=#render>rendering capability</a> of proteins and DNA chains, options in the Volume menu allow for the generation of molecular surfaces, such as calculated electron density, mapping of electrostatic potential onto the electron density (<strong>Fig. 4</strong>), display of molecular orbitals or electron localization function (<strong>Fig. 5</strong>). The basis for such surface display is <code>cube</code> files generated by many quantum mechanics packages (in this case by the open-source package <a href="http://www.psicode.org/">PSI4</a> and <a href="https://www2.cpfs.mpg.de/~kohout/dgrid.html">Dgrid</a>).</p>
+<p><br>
+</p><div class=img-fluid style="max-width: 100%" markdown=1>
+<img alt="Electrostatic potential" src="../images/chimera/elst-surface.png" title="Fig 4.">
+</div><br>
+<p style="margin: 10px 0 30px 165px; width:60%"><em>Fig. 4. Molecule of chlorobenzene with a slice through the surface generated by mapping electrostatic potential onto electron density at 0.01 a.u.</em> </p><p></p>
+<div class=img-fluid style="max-width: 100%">
+<p><img alt="Electrostatic potential" src="../images/chimera/elf-surface.png" title="Fig 5."></p>
+</div>
+<p></p><p style="margin: 10px 0 30px 160px; width:65%"><em>Fig. 5. Electron localization surface (ELF) at η = 0.836 indicating the presence of <span class=math>\(\sigma\)</span>-hole at the chlorine atom in chlorobenzene.</em> </p><p></p>
+<p>The surface images were generated by the UCSF Chimera package and could be further rendered or improved by the <a href="http://www.povray.org/">POV-Ray</a> or <a href="http://www.meshlab.net/">MeshLab</a> programs.</p>
+<h3>Next</h3>
+<p>After the general overview, feature highlights, and several visual examples, the next blog article will focus on practical examples of using Menu options and commands. </p>
+<section id=bib><h2>Notes</h2>
+</section>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%&#64;#$&#64;#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%&#64;#$&#64;#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><ol class=simple-footnotes><li id=sf-chimera-intro-1>DeLano, W. L. (2002) The PyMOL Molecular Graphics System, DeLano Scientific LLC, San Carlos, CA  <a href=#sf-chimera-intro-1-back class=simple-footnote-back>↩</a></li><li id=sf-chimera-intro-2>The PyMOL Molecular Graphics System,  Schrödinger, LLC. <a href=#sf-chimera-intro-2-back class=simple-footnote-back>↩</a></li><li id=sf-chimera-intro-3>Humphrey, W., Dalke, A., and Schulten, K. (1996) VMD: visual molecular dynamics. J. Mol. Graph. 14, 33–38, 27–28) <a href=#sf-chimera-intro-3-back class=simple-footnote-back>↩</a></li><li id=sf-chimera-intro-4>Dassault Systèmes BIOVIA, ver. e.g. 2020, San Diego: Dassault Systèmes. <a href=#sf-chimera-intro-4-back class=simple-footnote-back>↩</a></li><li id=sf-chimera-intro-5>Jmol: an open-source Java viewer for chemical structures in 3D. http://www.jmol.org/ <a href=#sf-chimera-intro-5-back class=simple-footnote-back>↩</a></li></ol><hr>
+<h2>Bibliography</h2>
+<p id='altschul1990'>S.&nbsp;F. Altschul, W.&nbsp;Gish, W.&nbsp;Miller, E.&nbsp;W. Myers, and D.&nbsp;J. Lipman.
+Basic local alignment search tool.
+<em>J. Mol. Biol.</em>, 215(3):403–410, October 1990.
+<a href="https://doi.org/10.1016/S0022-2836(05)80360-2">doi:10.1016/S0022-2836(05)80360-2</a>. <a class="cite-backref" href="#ref-altschul1990-1" title="Jump back to reference 1">↩</a></p>
+<p id='dolinsky2007'>Todd&nbsp;J. Dolinsky, Paul Czodrowski, Hui Li, Jens&nbsp;E. Nielsen, Jan&nbsp;H. Jensen, Gerhard Klebe, and Nathan&nbsp;A. Baker.
+<span class="bibtex-protected"><span class="bibtex-protected">PDB2PQR</span></span>: expanding and upgrading automated preparation of biomolecular structures for molecular simulations.
+<em>Nucleic Acids Res.</em>, 35(Web Server issue):W522&ndash;525, July 2007.
+<a href="https://doi.org/10.1093/nar/gkm276">doi:10.1093/nar/gkm276</a>. <a class="cite-backref" href="#ref-dolinsky2007-1" title="Jump back to reference 1">↩</a></p>
+<p id='goddard2007'>Thomas&nbsp;D Goddard and Thomas&nbsp;E Ferrin.
+Visualization <span class="bibtex-protected"><span class="bibtex-protected">Software</span></span> for <span class="bibtex-protected"><span class="bibtex-protected">Molecular Assemblies</span></span>.
+<em>Curr Opin Struct Biol</em>, 17(5):587–595, October 2007.
+<a href="https://doi.org/10.1016/j.sbi.2007.06.008">doi:10.1016/j.sbi.2007.06.008</a>. <a class="cite-backref" href="#ref-goddard2007-1" title="Jump back to reference 1">↩</a></p>
+<p id='huang2014'>Conrad&nbsp;C. Huang, Elaine&nbsp;C. Meng, John&nbsp;H. Morris, Eric&nbsp;F. Pettersen, and Thomas&nbsp;E. Ferrin.
+Enhancing <span class="bibtex-protected"><span class="bibtex-protected">UCSF Chimera</span></span> through web services.
+<em>Nucleic Acids Res</em>, 42(W1):W478&ndash;W484, July 2014.
+<a href="https://doi.org/10.1093/nar/gku377">doi:10.1093/nar/gku377</a>. <a class="cite-backref" href="#ref-huang2014-1" title="Jump back to reference 1">↩</a></p>
+<p id='pettersen2004'>Eric&nbsp;F. Pettersen, Thomas&nbsp;D. Goddard, Conrad&nbsp;C. Huang, Gregory&nbsp;S. Couch, Daniel&nbsp;M. Greenblatt, Elaine&nbsp;C. Meng, and Thomas&nbsp;E. Ferrin.
+<span class="bibtex-protected"><span class="bibtex-protected">UCSF Chimera</span></span>–a visualization system for exploratory research and analysis.
+<em>J Comput Chem</em>, 25(13):1605–1612, October 2004.
+<a href="https://doi.org/10.1002/jcc.20084">doi:10.1002/jcc.20084</a>. <a class="cite-backref" href="#ref-pettersen2004-1" title="Jump back to reference 1">↩</a></p>
+<p id='trott2010'>Oleg Trott and Arthur&nbsp;J. Olson.
+<span class="bibtex-protected"><span class="bibtex-protected">AutoDock Vina</span></span>: improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading.
+<em>J Comput Chem</em>, 31(2):455–461, January 2010.
+<a href="https://doi.org/10.1002/jcc.21334">doi:10.1002/jcc.21334</a>. <a class="cite-backref" href="#ref-trott2010-1" title="Jump back to reference 1">↩</a></p>
+<p id='unni2011'>Samir Unni, Yong Huang, Robert&nbsp;M. Hanson, Malcolm Tobias, Sriram Krishnan, Wilfred&nbsp;W. Li, Jens&nbsp;E. Nielsen, and Nathan&nbsp;A. Baker.
+Web servers and services for electrostatics calculations with <span class="bibtex-protected"><span class="bibtex-protected">APBS</span></span> and <span class="bibtex-protected"><span class="bibtex-protected">PDB2PQR</span></span>.
+<em>J Comput Chem</em>, 32(7):1488–1491, May 2011.
+<a href="https://doi.org/10.1002/jcc.21720">doi:10.1002/jcc.21720</a>. <a class="cite-backref" href="#ref-unni2011-1" title="Jump back to reference 1">↩</a><a class="cite-backref" href="#ref-unni2011-1" title="Jump back to reference 1"> <sup>1</sup> </a><a class="cite-backref" href="#ref-unni2011-2" title="Jump back to reference 2"><sup>2</sup> </a></p>
+<p id='webb2016'>Benjamin Webb and Andrej Sali.
+Comparative <span class="bibtex-protected"><span class="bibtex-protected">Protein Structure Modeling Using MODELLER</span></span>.
+<em>Curr Protoc Bioinformatics</em>, 54:5.6.1&ndash;5.6.37, June 2016.
+<a href="https://doi.org/10.1002/cpbi.3">doi:10.1002/cpbi.3</a>. <a class="cite-backref" href="#ref-webb2016-1" title="Jump back to reference 1">↩</a></p>
+<p id='yang2012'>Zheng Yang, Keren Lasker, Dina <span class="bibtex-protected">Schneidman-Duhovny</span>, Ben Webb, Conrad&nbsp;C. Huang, Eric&nbsp;F. Pettersen, Thomas&nbsp;D. Goddard, Elaine&nbsp;C. Meng, Andrej Sali, and Thomas&nbsp;E. Ferrin.
+<span class="bibtex-protected"><span class="bibtex-protected">UCSF Chimera</span></span>, <span class="bibtex-protected"><span class="bibtex-protected">MODELLER</span></span>, and <span class="bibtex-protected"><span class="bibtex-protected">IMP</span></span>: <span class="bibtex-protected"><span class="bibtex-protected">An</span></span> integrated modeling system.
+<em>Journal of Structural Biology</em>, 179(3):269–278, September 2012.
+<a href="https://doi.org/10.1016/j.jsb.2011.09.006">doi:10.1016/j.jsb.2011.09.006</a>. <a class="cite-backref" href="#ref-yang2012-1" title="Jump back to reference 1">↩</a></p>
+<p id='schneidman-duhovny2010'>Dina <span class="bibtex-protected">Schneidman-Duhovny</span>, Michal Hammel, and Andrej Sali.
+<span class="bibtex-protected"><span class="bibtex-protected">FoXS</span></span>: a web server for rapid computation and fitting of <span class="bibtex-protected"><span class="bibtex-protected">SAXS</span></span> profiles.
+<em>Nucleic Acids Res.</em>, 38(Web Server issue):W540&ndash;544, July 2010.
+<a href="https://doi.org/10.1093/nar/gkq461">doi:10.1093/nar/gkq461</a>. <a class="cite-backref" href="#ref-schneidman-duhovny2010-1" title="Jump back to reference 1">↩</a></p>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ntlines'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2020-05-30-chimera-intro';
+                        this.page.url = 'https://marpat.github.io/chimera-intro.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+       <!-- instert line here -->		
+                <div id="photo">
+		</div>            
+                <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://twitter.com/mpatek_"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+    <li class="list-group-item"><a href="http://www.linkedin.com/in/marcelpatek"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/blogging.html"><i class="fa fa-folder-open fa-lg"></i>Blogging</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/jupyter.html"><i class="fa fa-folder-open fa-lg"></i>Jupyter</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/structure-visualization.html"><i class="fa fa-folder-open fa-lg"></i>Structure visualization</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://marpat.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/chimera.html">Chimera</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/jupyter-style.html">Jupyter-style</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/miniconda.html">miniconda</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/molecular-visualization.html">molecular visualization</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/pelican.html">Pelican</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://brightrockpath.com" target="_blank">BrightRockPath consulting</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://nbo.marcelpatek.com/" target="_blank">NBO</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://chemgplus.blogspot.com" target="_blank">OrgMedChem - NBO Blogger</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://script-orgmedchem.blogspot.com" target="_blank">OrgMedChem - scripts</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://github.com/marpat/" target="_blank">Github</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.youtube.com/user/orgmedchem" target="_blank">YouTube</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.marcelpatek.com/" target="_blank">Digital Photography</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Marcel Patek
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://marpat.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://marpat.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://marpat.github.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://marpat.github.io/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ntlines'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-66366688-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
