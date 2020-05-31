@@ -130,7 +130,7 @@
     </span>
           <span class="label label-default">Modified</span>
             <span class="modified">
-                <i class="fa fa-calendar"></i><time datetime="2020-05-30T10:50:00-06:00"> 2020-05-30</time>
+                <i class="fa fa-calendar"></i><time datetime="2020-05-31T11:50:00-06:00"> 2020-05-31</time>
             </span>
 
 
@@ -145,9 +145,9 @@
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h2>Molecular visualization</h2>
-<p>Molecular visualization and analysis of structural features are indispensable elements in the understanding 3D structure of proteins, peptides, and nucleotides. With proper and effective tools, the design of molecular complexes of the above biopolymers and small molecules or peptides (e.g., inhibitors) becomes significantly enabled. Such tools and methods thus form an essential part of structure-based drug design.</p>
-<p>While there are several excellent molecular visualization packages, this blog will focus on one such package called <code>UCSF Chimera</code> (<a href='#pettersen2004' id='ref-pettersen2004-1'>Pettersen et al. (2004)</a>; <a href='#goddard2007' id='ref-goddard2007-1'>Goddard and Ferrin (2007)</a>). </p>
-<p>However, in the interest of fairness, let's briefly mention other packages:</p>
+<p>Molecular visualization and analysis of structural features are essential elements in the understanding 3D structure of proteins, peptides, and nucleotides. The design of molecular complexes of the above biopolymers with small molecules or peptides (e.g., inhibitors) becomes significantly enabled with proper and helpful tools. Such tools and methods thus form an essential part of the structure-based drug design (SBDD).</p>
+<p>While there are several excellent molecular visualization packages, this blog will focus on one such package - <code>UCSF Chimera</code> (<a href='#pettersen2004' id='ref-pettersen2004-1'>Pettersen et al. (2004)</a>; <a href='#goddard2007' id='ref-goddard2007-1'>Goddard and Ferrin (2007)</a>). </p>
+<p>However, in the interest of fairness, I'll briefly mention other packages:</p>
 <ul>
 <li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymol-open-source">PyMOL</a> <sup id=sf-chimera-intro-1-back><a href=#sf-chimera-intro-1 class=simple-footnote title="DeLano, W. L. (2002) The PyMOL Molecular Graphics System, DeLano Scientific LLC, San Carlos, CA ">1</a></sup> and its <a href="https://github.com/schrodinger/pymol-open-source">maintained open-source version</a> <sup id=sf-chimera-intro-2-back><a href=#sf-chimera-intro-2 class=simple-footnote title="The PyMOL Molecular Graphics System,  Schrödinger, LLC.">2</a></sup> (*)</li>
 <li><a href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a> <sup id=sf-chimera-intro-3-back><a href=#sf-chimera-intro-3 class=simple-footnote title="Humphrey, W., Dalke, A., and Schulten, K. (1996) VMD: visual molecular dynamics. J. Mol. Graph. 14, 33–38, 27–28)">3</a></sup></li>
@@ -156,7 +156,7 @@
 </ul>
 <div class=note>
 <div class=notetip>
-<b>(*)</b> PyMOL is an open-source molecular visualization system built on an open-source foundation, which means that you get free access to 
+<b>(*)</b> PyMOL is an open-source molecular visualization system built on an open-source foundation, which means that one gets free access to 
 the source code. However, since the PyMOL 2.x, there is no binary installer available for Windows. <a href="https://www.schrodinger.com/pymol" target=_blank> Schrödinger</a> compiles and sells ready-to-run binaries for all major computer platforms (Windows, Linux, Mac). Still, you can download  (and compile) the open-source code from GitHub. To support the PyMOL community, Schrodinger provides access to some PyMOL legacy builds at no-cost.
 </div>
 </div>
@@ -174,7 +174,7 @@ the source code. However, since the PyMOL 2.x, there is no binary installer avai
 <div class=img-fluid style="max-width: 100%">
 <p><img alt="Chimera main interface" src="../images/chimera/main-window.png" title="Fig 1."></p>
 </div>
-<p></p><p style="margin: 10px 0 30px 160px; width:65%"><em>Fig. 1. An example of Chimera user interface. The image details the contact surface for an interaction between RBD of SARS-CoV2 and ACE2 (ribbon helices <span class=math>\(\alpha\)</span>1 and <span class=math>\(\alpha\)</span>2 in gold and blue, respectively.</em> </p><p></p>
+<p></p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 1. An example of Chimera user interface. The image details the contact surface for an interaction between RBD of SARS-CoV2 and ACE2 (ribbon helices <span class=math>\(\alpha\)</span>1 and <span class=math>\(\alpha\)</span>2 in gold and blue, respectively.</em> </p><p></p>
 <p><br></p>
 <p><font color=magenta><strong><em>Features</em></strong></font></p>
 <p>Many features of the Chimera, such as direct access to <a href="http://www.rcsb.org/">PDB</a>, <a href="http://www.emdatabank.org/">EMDB</a>, <a href="http://ndbserver.rutgers.edu/index.html">NBD</a>, <a href="https://pubchemdocs.ncbi.nlm.nih.gov/pubchem3d">PubChem3D</a>, and <a href="http://www.uniprot.org/">UniProt</a>, are enabled by internet-based services.
@@ -200,7 +200,7 @@ Examples of analytical services include <a href="https://www.rbvi.ucsf.edu/chime
 </p><div class=img-fluid style="max-width: 100%" markdown=1>
 <img alt="Chimera features" src="../images/chimera/volume-tools.png" title="Fig 2.">
 </div><br>
-<p style="margin: 10px 0 30px 150px; width:68%"><em>Fig. 2. An example  of feature-rich options and modules accessible from the main menu of the UCSF Chimera.</em> </p><p></p>
+<p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 2. An example  of feature-rich options and modules accessible from the main menu of the UCSF Chimera.</em> </p><p></p>
 <p>With extensive support for rendering molecular surfaces and volumes, bonds and atoms, structure minimization, analysis of molecular dynamics trajectories, and scripting capabilities, the <font color=orange>Chimera</font> is a tool of choice for structure-based protein and drug design. How does it compare with PyMOL Viewer? There certainly is a steep learning curve when mastering Chimera. But in the end, Chimera has a broader scope, has more built-in modules, and due to the GUI menus, feels more comprehensive. I also use PyMOL in my work and think that protein rendering might be slightly better in some cases. For obvious reasons, it is visually closer to rendering in the Schrödinger suite, particularly the Maestro module.</p>
 <p>Chimera's primary programming language is Python, namely Python 2. By software architecture, Chimera is divided into core and extensions. The core provides basic services and visualization capabilities. All higher-level functionality is provided through extensions (<a href="https://www.cgl.ucsf.edu/chimera/plugins/plugins.html">plugins</a>).</p>
 <p>In another example, the binding pocket of HEME ligand is shown interacting with a bound molecule of oxygen in complex with oxymyoglobin.</p>
@@ -208,7 +208,7 @@ Examples of analytical services include <a href="https://www.rbvi.ucsf.edu/chime
 </p><div class=img-fluid style="max-width: 100%" markdown=1>
 <img alt="Chimera main interface" src="../images/chimera/heme-pocket.png" title="Fig 3.">
 </div><br>
-<p style="margin: 10px 0 30px 190px; width:60%"><em>Fig. 3. Details of ligand (HEME) binding surface in the hydrophobic pocket of oxymyoglobin (PDB code 1MBO).</em> </p><p></p>
+<p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 3. Details of ligand (HEME) binding surface in the hydrophobic pocket of oxymyoglobin (PDB code 1MBO).</em> </p><p></p>
 <p><br>
 <font color=magenta><strong><em>Licensing</em></strong></font></p>
 <p>The UCSF Chimera is available from <a href="http://www.cgl.ucsf.edu/chimera/">http://www.cgl.ucsf.edu/chimera/</a>, and it can be downloaded free of charge for academic, government, non­profit, and personal use. It can be licensed by commercial institutions for a fee. Extensions to Chimera developed by outside researchers can be redistributed freely.</p>
@@ -304,11 +304,11 @@ $ which chimera
 </p><div class=img-fluid style="max-width: 100%" markdown=1>
 <img alt="Electrostatic potential" src="../images/chimera/elst-surface.png" title="Fig 4.">
 </div><br>
-<p style="margin: 10px 0 30px 165px; width:60%"><em>Fig. 4. Molecule of chlorobenzene with a slice through the surface generated by mapping electrostatic potential onto electron density at 0.01 a.u.</em> </p><p></p>
+<p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 4. Molecule of chlorobenzene with a slice through the surface generated by mapping electrostatic potential onto electron density at 0.01 a.u.</em> </p><p></p>
 <div class=img-fluid style="max-width: 100%">
 <p><img alt="Electrostatic potential" src="../images/chimera/elf-surface.png" title="Fig 5."></p>
 </div>
-<p></p><p style="margin: 10px 0 30px 160px; width:65%"><em>Fig. 5. Electron localization surface (ELF) at η = 0.836 indicating the presence of <span class=math>\(\sigma\)</span>-hole at the chlorine atom in chlorobenzene.</em> </p><p></p>
+<p></p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 5. Electron localization surface (ELF) at η = 0.836 indicating the presence of <span class=math>\(\sigma\)</span>-hole at the chlorine atom in chlorobenzene.</em> </p><p></p>
 <p>The surface images were generated by the UCSF Chimera package and could be further rendered or improved by the <a href="http://www.povray.org/">POV-Ray</a> or <a href="http://www.meshlab.net/">MeshLab</a> programs.</p>
 <h3>Next</h3>
 <p>After the general overview, feature highlights, and several visual examples, the next blog article will focus on practical examples of using Menu options and commands. </p>
