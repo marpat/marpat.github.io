@@ -221,7 +221,16 @@ Examples of analytical services include <a href="https://www.rbvi.ucsf.edu/chime
 <li>Download Chimera distribution file from <a href="https://www.cgl.ucsf.edu/chimera/download.html">here</a> to a place like the <code>Downloads</code> folder, in this example, file <code>chimera-1.14-win64.exe</code>.</li>
 <li>In the <code>Downloads</code> folder, double-click the downloaded binary and follow installation instructions.</li>
 <li>Keep or change the drive ("C:", "D:", "E:", ...). Chimera should then be installed in <code>drive:\Program Files\Chimera 1.14</code></li>
+<li>Add Chimera to the Path in the <code>User variable for {USER}</code> section, where {USER} will be your Windows account name. In the <code>Start</code> menu at the bottom field (<code>Search programs and files</code>) copy/paste the following command and press enter:</li>
 </ul>
+<div class=highlight><pre><span></span><code>&gt;rundll32.exe sysdm.cpl,EditEnvironmentVariables
+</code></pre></div>
+
+
+<p>Alternatively, use the Windows native shell (cmd.exe) and copy/paste into it the same commands.</p>
+<p>Locate the <code>Path</code> section and click <code>Edit</code>. Browse for the Chimera executable (\bin) folder or press <code>New</code> and type in the path.</p>
+<p><img alt="Chimera's path" src="../images/chimera/user-path.png" title="Chimera's path"></p>
+<p><br></p>
 <p><strong><em>Linux</em></strong>:</p>
 <ul>
 <li>Download Chimera distribution file from <a href="https://www.cgl.ucsf.edu/chimera/download.html">here</a> to a place like ~/Downloads folder, in this example, file <code>chimera-1.14-linux_x86_64.bin</code>.</li>
