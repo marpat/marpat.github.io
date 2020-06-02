@@ -212,7 +212,8 @@ Examples of analytical services include <a href="https://www.rbvi.ucsf.edu/chime
 <p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 3. Details of ligand (HEME) binding surface in the hydrophobic pocket of oxymyoglobin (PDB code 1MBO).</em> </p><p></p>
 <p><br>
 <font color=magenta><strong><em>Licensing</em></strong></font></p>
-<p>The UCSF Chimera is available from <a href="http://www.cgl.ucsf.edu/chimera/">http://www.cgl.ucsf.edu/chimera/</a>, and it can be downloaded free of charge for academic, government, non-profit, and personal use. It can be licensed by commercial institutions for a fee. Extensions to Chimera developed by outside researchers can be redistributed freely.</p>
+<p>The UCSF Chimera is available from <a href="http://www.cgl.ucsf.edu/chimera/">http://www.cgl.ucsf.edu/chimera/</a>. </p>
+<p>It can be downloaded free of charge for academic, government, non-profit, and personal use. It can be licensed by commercial institutions for a fee. Extensions to Chimera developed by outside researchers can be redistributed freely.</p>
 <p>If publishing results obtained with Chimera, include an appropriate citation as described at: <a href="http://www.cgl.ucsf.edu/chimera/docs/credits.html">http://www.cgl.ucsf.edu/chimera/docs/credits.html</a>.</p>
 <p><br></p>
 <p><font color=magenta><strong><em>Installation</em></strong></font></p>
@@ -222,7 +223,7 @@ Examples of analytical services include <a href="https://www.rbvi.ucsf.edu/chime
 <li>Download Chimera distribution file from <a href="https://www.cgl.ucsf.edu/chimera/download.html">here</a> to a place like the <code>Downloads</code> folder, in this example, file <code>chimera-1.14-win64.exe</code>.</li>
 <li>In the <code>Downloads</code> folder, double-click the downloaded binary and follow installation instructions.</li>
 <li>Keep or change the drive ("C:", "D:", "E:", ...). Chimera should then be installed in <code>drive:\Program Files\Chimera 1.14</code></li>
-<li>Add Chimera to the Path in the <code>User variable for {USER}</code> section, where {USER} will be your Windows account name. In the <code>Start</code> menu at the bottom field (<code>Search programs and files</code>) copy/paste the following command and press enter:</li>
+<li>Add Chimera to the Path in the <code>User variable for {USER}</code> section, where {USER} will be your Windows account name. In the <code>Start</code> menu at the bottom search field (<code>Search programs and files</code>) copy/paste the following command and press enter:</li>
 </ul>
 <div class=highlight><pre><span></span><code>&gt;rundll32.exe sysdm.cpl,EditEnvironmentVariables
 </code></pre></div>
@@ -236,22 +237,22 @@ Examples of analytical services include <a href="https://www.rbvi.ucsf.edu/chime
 <ul>
 <li>Download Chimera distribution file from <a href="https://www.cgl.ucsf.edu/chimera/download.html">here</a> to a place like ~/Downloads folder, in this example, file <code>chimera-1.14-linux_x86_64.bin</code>.</li>
 </ul>
-<div class=highlight><pre><span></span><code>     $ <span class=nb>cd</span> ~/Downloads
-     $ chmod +x chimera-1.14-linux_x86_64.bin
-     $ sudo ./chimera-1.14-linux_x86_64.bin
+<div class=highlight><pre><span></span><code>$ <span class=nb>cd</span> ~/Downloads
+$ chmod +x chimera-1.14-linux_x86_64.bin
+$ sudo ./chimera-1.14-linux_x86_64.bin
 
-     <span class=c1># in genreal (set attributes and run)</span>
-     $ chmod +x chimera-*.bin <span class=o>&amp;&amp;</span> ./chimera-*.bin
+<span class=c1># or in one line (set attributes and run)</span>
+$ chmod +x chimera-*.bin <span class=o>&amp;&amp;</span> ./chimera-*.bin
 </code></pre></div>
 
 
 <ul>
 <li>Follow the interactive install instructions:</li>
 </ul>
-<div class=highlight><pre><span></span><code>    Enter install location: /opt/UCSF/Chimera64-1.14 <span class=s1>'enter'</span>
-    Install desktop menu <span class=o>(</span>icon has to be <span class=k>done</span> by user<span class=o>)</span>? <span class=s1>'yes'</span>
+<div class=highlight><pre><span></span><code>Enter install location: /opt/UCSF/Chimera64-1.14 <span class=s1>'enter'</span>
+Install desktop menu <span class=o>(</span>icon has to be <span class=k>done</span> by user<span class=o>)</span>? <span class=s1>'yes'</span>
 
-    Install symbolic link to chimera executable <span class=k>for</span> <span class=nb>command</span> line use in which directory?
+Install symbolic link to chimera executable <span class=k>for</span> <span class=nb>command</span> line use in which directory?
        <span class=m>0</span> -- no link
        <span class=m>1</span> -- /usr/local/sbin
        <span class=m>2</span> -- /usr/local/bin
@@ -260,10 +261,10 @@ Examples of analytical services include <a href="https://www.rbvi.ucsf.edu/chime
        <span class=m>5</span> -- /sbin
        <span class=m>6</span> -- /bin
        <span class=m>7</span> -- /snap/bin
-    <span class=o>[</span>hit Enter <span class=k>for</span> default <span class=o>(</span><span class=m>0</span><span class=o>)]</span>: <span class=s1>'2'</span>
+<span class=o>[</span>hit Enter <span class=k>for</span> default <span class=o>(</span><span class=m>0</span><span class=o>)]</span>: <span class=s1>'2'</span>
 
-    Create unversioned link to chimera executable in same directory? <span class=s1>'yes'</span>
-    <span class=o>(</span>now installing<span class=o>)</span>
+Create unversioned link to chimera executable in same directory? <span class=s1>'yes'</span>
+<span class=o>(</span>now installing<span class=o>)</span>
 </code></pre></div>
 
 
@@ -296,7 +297,7 @@ $ which chimera
 
 
 <p>Now, there should be the Chimera icon <img src="../images/chimera/chimera-icon.png" alt=chimera-icon style=width:50px;> on your system desktop. Double-click it to start the application. Alternatively, in your terminal, type:</p>
-<div class=highlight><pre><span></span><code> $ chimera
+<div class=highlight><pre><span></span><code>$ chimera
 </code></pre></div>
 
 
