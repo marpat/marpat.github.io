@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Mastering Menu options and commands in UCSF Chimera - </title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://marpat.github.io/images/fav.png" rel="icon">
+
+<link rel="canonical" href="https://marpat.github.io/chimera-commands.html">
+
+        <meta name="author" content="Marcel Patek" />
+        <meta name="keywords" content="molecular visualization,Chimera" />
+        <meta name="description" content="How to navigate Menu options and in UCSF Chimera. Overview of Chimera&#39;s commands and scripts." />
+
+        <meta property="og:site_name" content="" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Mastering Menu options and commands in UCSF Chimera"/>
+        <meta property="og:url" content="https://marpat.github.io/chimera-commands.html"/>
+        <meta property="og:description" content="How to navigate Menu options and in UCSF Chimera. Overview of Chimera&#39;s commands and scripts."/>
+        <meta property="article:published_time" content="2020-06-04" />
+            <meta property="article:section" content="Structure visualization" />
+            <meta property="article:tag" content="molecular visualization" />
+            <meta property="article:tag" content="Chimera" />
+            <meta property="article:author" content="Marcel Patek" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://marpat.github.io/theme/css/bootstrap.cerulean.min.css" type="text/css"/>
+    <link href="https://marpat.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://marpat.github.io/theme/css/pygments/default.css" rel="stylesheet">
+    <link href="https://marpat.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://marpat.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://marpat.github.io/extras/custom.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://marpat.github.io/" class="navbar-brand">
+ Home
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="https://marpat.github.io/pages/about.html">About</a></li>
+                    <li><a href="https://marpat.github.io/pages/contact.html">Contact</a></li>
+                    <li><a href="https://marpat.github.io/archives.html">Archives</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<style>
+@media screen and (min-width: 1024px){
+  #banner{
+	    background-image:url("https://marpat.github.io/images/header_img.png");
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+        #banner {
+            background-image: url(../images/header_img_767.png);
+                }
+       }
+
+@media screen and (min-width: 415px) and (max-width: 767px) {
+        #banner {
+            background-image: url(../images/header_img_479.png);
+                 }
+       }
+@media screen and (max-width: 414px) {
+        #banner {
+            background-image: url(../images/header_img_412.png);
+                 }
+      }
+</style>
+
+    <!-- Custom header image (banner) -->
+    <div id="banner"></div><!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://marpat.github.io/chimera-commands.html"
+                       rel="bookmark"
+                       title="Permalink to Mastering Menu options and commands in UCSF Chimera">
+                        Mastering Menu options and commands in UCSF Chimera
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-06-04T10:40:00-06:00"> 2020-06-04</time>
+    </span>
+          <span class="label label-default">Modified</span>
+            <span class="modified">
+                <i class="fa fa-calendar"></i><time datetime="2020-06-05T11:50:00-06:00"> 2020-06-05</time>
+            </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://marpat.github.io/tag/molecular-visualization.html">molecular visualization</a>
+        /
+	<a href="https://marpat.github.io/tag/chimera.html">Chimera</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Introduction</h2>
+<p>The <a href="https://marpat.github.io/chimera-intro.html">previous</a> part of this series featured a general overview, installation,  and several visual examples of UCSF Chimera. Detailed instructions for installation on Windows 10 and Linux Mint were also provided. </p>
+<p>In this part, we will go through setup, customization of Tools and layout, and the first run of the Chimera application. We will also get into the writing and using scripts and keyboard shortcuts.</p>
+<h2>Launching Chimera</h2>
+<p>Before the first run, I recommend minor customization of options and paths such that Chimera will launch with some features and attributes already enabled and set.</p>
+<ul>
+<li>right-mouse click on the Chimera's Desktop icon and select <code>Properties</code> (at the bottom)</li>
+<li>append <code>--bgopacity</code> option to the <code>Target</code> field and ~/Desktop path to the <code>Start in:</code> field (see <strong>Figure 1</strong>)</li>
+<li>click OK</li>
+</ul>
+<p>What the above steps accomplished is that, first, any exported image (tiff or png) will have a transparent background (this is optional and can be changed later during image export). Second, the Chimera will now be looking for any custom (Python) script files (e.g., <code>style.py</code>) at your Desktop. An example of such a script file is <a href="#style">below</a>.</p>
+<p><div class="img-fluid" style="max-width: 100%" markdown='2'>
+  <img alt="Chimera icon properties" src="../images/chimera/icon-properties.png" title="Fig. 1.">
+  </div><br>
+  <p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 1. Customization of Chimera's launch options under "icon" Properties.</em> </p></p>
+<p>Now, when you double-click the Chimera icon on the Desktop (or type &gt;chimera in your terminal), the application will launch and present a window shown in <strong>Figure 2</strong>. If you do not see such a layout, click the "lightning-bolt" toggle icon in the bottom-right section. <img alt="lightning-bolt alt &gt;" src="../images/chimera/lb-icons.png"></p>
+<div class="img-fluid" style="max-width: 100%">
+<p><img alt="Chimera startup interface" src="../images/chimera/firstrun.png" title="Fig. 2."></p>
+</div>
+<p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 2. Chimera's GUI layout after the first launch.</em> </p></p>
+<p><a name="pka"></a></p>
+<div class="alert alert-success role="alert"">
+<b>CHECK YOUR SETUP:</b> just as an example, go to File → Fetch by ID... and enter `1ATP` into the PBD field. Assuming that your Internet connection is working, structure of PKA kinase will be loaded into the main space.<br>
+Go to File → Close Session to have the workspace back in the initial state.</div>
+
+<p>Let's continue with basic and custom settings that will persist for all Chimera sessions.</p>
+<h2>Chimera settings</h2>
+<p>Chimera is highly customizable, and having a toolbar of "preset" icons, buttons, and tools becomes a great convenience. Most settings are customized from the Menu item  <code>Favorites → Preferences</code> located at the top of the GUI. Below are the settings that I found useful in my work. Different settings panels are available from the pull-down menu next to <code>Category:</code></p>
+<ul>
+<li>Category: <strong>General</strong> → Initial window size: remember last</li>
+<li>Category: <strong>PDB</strong> - add the path to the folder of your .pdb files (optional)</li>
+<li>Category: <strong>Tools</strong> - I recommend starting with selections, as shown in <strong>Fig. 3</strong>. Also, in the <code>On Toolbar</code> column, I checked <code>2D Labels</code>, <code>PseudoBond Reader</code>, <code>FindHBond</code>, <code>Find Clashes/Contacts</code>, <code>Distances</code>, <code>ViewDock, Dock Prep, AutoDock Vina</code>, <code>AddH</code>, <code>Reply Log</code></li>
+</ul>
+<div class="img-fluid" style="max-width: 100%">
+<p><img alt="Chimera setting preferences" src="../images/chimera/preferences.png" title="Fig. 3."></p>
+</div>
+<p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 3. The main area for setting Chimera's Tools.</em> </p></p>
+<p>At this point, you should see new buttons (icons) in the toolbar. I keep it positioned on the left, although <strong>Figure 4</strong>. shows it horizontal.</p>
+<div class="img-fluid" style="max-width: 100%">
+<p><img alt="Chimera setting preferences" src="../images/chimera/toolbar.png" title="Fig. 4."></p>
+</div>
+<p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 4. Cutomized toolbar with shortcut buttons.</em> </p></p>
+<p>To change the order of buttons in the Toolbar, go to ~/.chimera folder (Win10: C:\Users\USERNAME\AppData\Roaming\.chimera, Linux: $HOME/.chimera), open the <code>preferences</code> file, and manually edit the (order) numbers next to each Tool in the <code>onToolbar</code> section.</p>
+<p>At the bottom of the <code>Preferences</code> window, there is an area for entering path to Chimera plugins (<strong>Fig. 3</strong>). Plugins can be downloaded from <a href="https://www.cgl.ucsf.edu/chimera/plugins/plugins.html">various sites</a> and are typically free to use. My favorite plugins are:</p>
+<ul>
+<li><a href="http://insilab.org/probis-plugin/">Probis Plugin</a> - Allows prediction of binding sites and their corresponding ligands for a given protein structure.  Conceptually, it is similar to <code>SiteMap</code> in the <a href="https://www.schrodinger.com/maestro">Maestro</a> module from <a href="https://www.schrodinger.com/pymol" target="_blank"> Schrödinger</a>.</li>
+<li><a href="https://github.com/josan82/Chimera_BILD">Chimera-BILD</a> - An extension allowing to draw arrows, spheres, boxes, etc. with customizable colors and transparency.</li>
+</ul>
+<p>Close and restart Chimera and make sure that the new Toolbar with buttons and Command line are visible.</p>
+<p><a name="style"></a></p>
+<p><br/></p>
+<h4><font color=magenta><strong><em>Advanced custom options - midasrc and style.py script</em></strong></font></h4>
+<p>I prefer including more advanced topics right into the basic description, because once you start mastering the subject, you can still review the basic material in one place.</p>
+<p>[<em>This whole section can be skipped if you find it too overwhelming</em>]</p>
+<p>For the initial settings, we will make use of <u>two files that store custom presets and actions</u>. The first one is <code>midasrc</code>, which has to be created first. On Windows, head to <code>C:/Users/USERNAME</code> and create a new folder <code>.chimera</code>. On the Linux system, head to <code>$HOME/.chimera</code> folder. Now, on either OS and in the folder <code>.chimera</code>, create a new text document. Save the empty document as <code>midarsrc</code>. Copy/paste the commands below and save the file again.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># config file: midasrc in ~./chimera</span>
+<span class="c1"># Accelerators - enable keybord shortcuts as per</span>
+<span class="c1"># https://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/accelerators/alist.html</span>
+<span class="n">ac</span>
+<span class="c1"># Define an alias and then call it from Command line as &gt;style</span>
+<span class="n">alias</span> <span class="n">style</span> <span class="n">run</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Public</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">py</span>   <span class="c1"># on Windows</span>
+<span class="c1"># alias style ~/Desktop/style.py  # on Linux</span>
+</code></pre></div>
+
+
+<p>Upon launching the Chimera, the file will be read first and options applied to our project.</p>
+<div class="notetip">
+Note that in the dialog Favorites → Preferences: Command Line, the preset path to file midasrc points to ~/.chimera, which on Windows expands to C:\Users\USER\.chimera. However, during the installation, Chimera creates the .chimera folder at C:\Users\Rubidium\AppData\Roaming\.chimera. That is why, we have to create one more folder `.chimera` and place the midasrc file into it.
+</div>
+
+<p>A handy feature of Chimera has now been activated - keyboard shortcuts (accelerators). The full list is maintained <a href="https://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/accelerators/alist.html">here</a>.</p>
+<p>To use those shortcuts, have a protein or model loaded in the main space, place the mouse cursor in the same area, and type the command on your keyboard as a sequence of two keystrokes. My favorite commands are:</p>
+<ul>
+<li><code>c2</code> (color by secondary structure)</li>
+<li><code>hs</code> or <code>sf</code> (hide or show surface)</li>
+<li><code>wb</code> (white background) and <code>bk</code> to get back to black background</li>
+<li><code>wr</code> (wire representation), <code>bs</code> (ball and stick representation) - works also for selections</li>
+</ul>
+<p>To further standardize and customize the initial visualization of proteins and molecules, I use the <code>style.py</code> script. The script is placed on my Desktop - <code>C:\Users\Public\Desktop</code> (notice the option Start in: in <strong>Fig. 1</strong>) and can be called from Chimera's Command line <strong>AFTER</strong> the protein/model is loaded like so:</p>
+<div class="highlight"><pre><span></span><code>&gt;style
+or
+&gt;run style.py
+</code></pre></div>
+
+
+<div class="note">
+<div class="notetip">
+Note that on Windows, the path to the desktop contains `Public` not your `USERNAME`. If you simply drag and drop the style.py on your Desktop, Chimera won't be able to read it. Use File Explorer to navigate to  C:\Users\Public\Desktop and paste the file there. It will appear on the Desktop as usual.
+</div>
+</div>
+
+<p>Copy the script below and paste it into a new text document. Save it to your ~\Public\Desktop folder as <code>style.py</code>. Your <code>midasrc</code> alias is already set to point to it. As your tasks progress, add more commands to the script.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">chimera</span> <span class="kn">import</span> <span class="n">runCommand</span> <span class="k">as</span> <span class="n">rc</span> <span class="c1"># Use &#39;rc&#39; as shorthand for runCommand</span>
+<span class="kn">from</span> <span class="nn">chimera</span> <span class="kn">import</span> <span class="n">replyobj</span> <span class="c1"># For emitting status messages</span>
+
+<span class="c1"># run as &gt;read style.py</span>
+
+<span class="c1"># Labels</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;labelopt resinfo %(1-letter code)s</span><span class="si">%(number)s</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;color hot pink,lr&quot;</span><span class="p">)</span>
+<span class="c1">#Set visualization</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;preset apply interactive 1&quot;</span><span class="p">)</span> <span class="c1"># change later by keyboard c2</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;~longbond&quot;</span><span class="p">)</span> <span class="c1"># remove dotted connectors of disconnected chains</span>
+<span class="c1"># Background</span>
+<span class="c1">#rc(&quot;set bg_color white&quot;)</span>
+<span class="c1"># Orientation</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;focus&quot;</span><span class="p">)</span>
+<span class="c1"># Rendering of ligands</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;represent wire&quot;</span><span class="p">)</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;color byelement&quot;</span><span class="p">)</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;setattr m stickScale 0.62&quot;</span><span class="p">)</span>
+<span class="n">rc</span><span class="p">(</span><span class="s2">&quot;setattr m ballScale 0.15&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Repeat re-running the PKA kinase as <a href="#pka">above</a> and type <code>style</code> to the Command line and press enter. Then type the key <code>c</code> , release, and press <code>2</code> while pointing to the main window.  Visualization should change and be similar to <strong>Figure 5</strong>.</p>
+<div class="img-fluid" style="max-width: 100%">
+<p><img alt="Chimera setting preferences" src="../images/chimera/pka.png" title="Fig. 5."></p>
+</div>
+<p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 5. Rendering of protein kinase A (1ATP.pdb) after loading the file and applying <code>style</code> and <code>c2</code> commands.</em> </p></p>
+<p>If the colors of <span class="math">\(\beta\)</span>-strands and <span class="math">\(\alpha\)</span>-helices look different from <strong>Figure 5</strong>, customize your preferred colors. Head to Tools → Depiction → Color Secondary Structure. You should now see the panel shown on the left in Figure 6. Double-click each color square, and a new dialog will open (Color Editor). My preferences are:</p>
+<p>Helix, green (0, 0.81, 0, 1) (RGBA)</p>
+<p>Strand, magenta (0.627, 0.125, 0.941, 1)</p>
+<p>Coil, gray (0.745, 0.745, 0.745, 1)</p>
+<div class="img-fluid" style="max-width: 100%">
+<p><img alt="Chimera color editor" src="../images/chimera/color-editor.png" title="Fig. 6."></p>
+</div>
+<p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 6. Setting the color preferences for secondary structures.</em> </p></p>
+<h2>Using the Chimera</h2>
+<p>Since many detailed tutorials and websites are demonstrating basic and advanced moves in Chimera, we will focus on steps and commands that are not intuitive or well described. First, the list of distinct tutorials, descriptions, and official Chimera pages:</p>
+<ul>
+<li><a href="https://www.ch.embnet.org/CoursEMBnet/Pages3D08/Exercises/day5/chimera-v03.pdf">3D Structure Visualization with Chimera - pdf - start here</a></li>
+<li><a href="https://www.cgl.ucsf.edu/chimera/tutorials.html">Computer graphics lab, UCSF tutorials</a></li>
+<li><a href="https://www.rbvi.ucsf.edu/chimera/docs/UsersGuide/frametut.html">Chimera User's Guide</a></li>
+<li><a href="https://static-bcrf.biochem.wisc.edu/tutorials/chimera/chimera_i_introduction.html">UCSF Chimera - I - Introduction</a></li>
+<li><a href="https://www.cgl.ucsf.edu/Outreach/Tutorials/GettingStarted.html">UCSF Chimera - Getting Started</a></li>
+<li><a href="[http://aidanbudd.github.io/course_EMBO_at_TGAC_PPI_Sep2015/trainingMaterial/scooterMorris/Molecular%20Visualization%20Tutorial.pdf](http://aidanbudd.github.io/course_EMBO_at_TGAC_PPI_Sep2015/trainingMaterial/scooterMorris/Molecular Visualization Tutorial.pdf)">RBVI Molecular Visualization - pdf</a></li>
+</ul>
+<p>The more you get familiar with Chimera's "logic", the more you will want to use the <code>Command line</code> and <code>Keyboard accelerators</code>. <strong>Figure 7</strong> shows the essential Menu items and places where commands can be issued. The green dotted lines outline menu items that are used most of the time, while the menu expands in the blue rectangle are used very frequently for structure selection and rendering.</p>
+<div class="img-fluid" style="max-width: 100%">
+<p><img alt="Chimera main layout" src="../images/chimera/basic-layout.png" title="Fig. 7."></p>
+</div>
+<p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 7. Chimera's workspace highlighting the main means of navigation and visualization (Menus, Command line, Keyboard accelerators).</em> </p></p>
+<p>Let's start with basic steps. Since we have already defined <code>alias</code> <font color="orange"><b>style</b></font>, we will use it from the Command line to complete visualizations . </p>
+<div class="alert alert-info role="alert"">
+As an example, I'll use a dimer of Collapsin Response Mediator Protein 2 (CRMP2) that you can download from the RCSB site under the code <a href="https://www.rcsb.org/structure/5lxx" target="_blank">5LXX.pdb</a> (<a href='#myllykoski2017' id='ref-myllykoski2017-1'>Myllykoski et al. (2017)</a>). cc
+<a href='#dustrude2013' id='ref-dustrude2013-1'>Dustrude et al. (2013)</a>, <a href='#dustrude2017' id='ref-dustrude2017-1'>Dustrude et al. (2017)</a>, <a href='#francois-moutal2018a' id='ref-francois-moutal2018a-1'>FranccoisMoutal et al. (2018)</a>, <a href='#francois-moutal2018' id='ref-francois-moutal2018-1'>FranccoisMoutal et al. (2018)</a>.</div>
+
+<p>The sequence of actions in the table below follows a typical workflow of protein visualization including the file opening, getting the protein monomer, coloring by secondary structure, removing solvent and salts to saving the session and making an image. </p>
+<blockquote>Run either in Menu, Command line, or by Accelerator keys to get identical or similar results.</blockquote>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Action</th>
+      <th scope="col">Menu Item</th>
+      <th scope="col">Command</th>
+      <th scope="col">Accelerator keys (type ad to list)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">OPEN FILE</th>
+      <td>File → Open... (5lxx.pdb) or File → Fetch by ID... (from the Web, 5lxx)</td>
+        <td><i>open <font color="blue">/path/to/5lxx.pdb</font></i></td>
+      <td><b>op</b> or <b>ff</b> (fetch)</td>
+    </tr>
+    <tr>
+      <th scope="row">DELETE chain B</th>
+      <td>Select → Chain → B; Action → Atoms/Bonds → delete</td>
+        <td><i>del :.B-F</i> (delete all but A chains)</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th scope="row">style it</th>
+      <td>Actions → Focus; Tools → Depiction → Color Secondary<br> Structure; Actions → Atoms/Bonds → wire; Actions → Color → by element;<br>Select → Structure → protein; Action → Atoms/Bonds → hide</td>
+        <td><i>style</i>   OR<br><i>run style.py</i><br><i>~display protein</i> (hide side chains)</td>
+        <td><b>fo</b> (focus on center of protein)<br><b>c2</b> or <b></b>rc</b> (color by secondary structures)<br><b>wr</b> (wireframe representation)<br><b>ce</b> (color by atom-type)<br><b>bb</b> (show backbone only)</td>
+    </tr>
+    <tr>
+      <th scope="row">orient</th>
+        <td><font color="magenta"><i>use left/right mouse to orient</i></font></td>
+        <td><i>focus<br>turn x 90<br>turn z 90</i></td>
+        <td><b>x9, z9</b> (rotate by <br>90 deg about x, z axes) - run one key pair <br>after another (no commas)</td>
+    </tr>
+    <tr>
+      <th scope="row">clean it</th>
+      <td>Select → Residue → SO4<br>Action → Atoms/Bonds → delete</td>
+        <td><i>del :SO4<br>del solvent</i></td>
+      <td><b>-</b></td>
+    </tr>
+    <tr>
+      <th scope="row">save it</th>
+      <td>File → Save Image (as .png, rendering: Chimera, supersample 3x3)<br>File → Save Session as</td>
+        <td><i>copy file <font color="blue">~/Desktop/test.png</font> png dpi 300 supersample 3</i> (change the path in blue)<br><i>save</i> (save session as)</td>
+      <td><b>si</b> (save image)<br><b>ss</b> (save session as)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Commands are a compelling option in structure/model manipulation. The semicolon separator (;) concatenates the sequence of commands. Only copy/paste the command below the note lines (#...:)</p>
+<div class="highlight"><pre><span></span><code><span class="x"># DELETE ALL chains, keep only the first one:</span>
+<span class="x">split; sel#0.1; sel invert; del sel; style</span>
+
+<span class="x"># Rename sub-model 0.1 to model #0 and name it &#39;protein&#39;:</span>
+<span class="x">combine #0.1 model 0 name protein; close #0.1</span>
+</code></pre></div>
+
+
+<h3>Next</h3>
+<p>After the general overview, feature highlights, and several visual examples, the next blog article will focus on practical examples of using Menu options and commands. </p>
+<section id="bib"><h2>Notes</h2>
+</section>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%&#64;#$&#64;#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%&#64;#$&#64;#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><hr>
+<h2>Bibliography</h2>
+<p id='dustrude2013'>Erik&nbsp;T. Dustrude, Sarah&nbsp;M. Wilson, Weina Ju, Yucheng Xiao, and Rajesh Khanna.
+<span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> protein <span class="bibtex-protected"><span class="bibtex-protected">SUMOylation</span></span> modulates <span class="bibtex-protected"><span class="bibtex-protected">NaV1</span></span>.7 channel trafficking.
+<em>J. Biol. Chem.</em>, 288(34):24316–24331, August 2013.
+<a href="https://doi.org/10.1074/jbc.M113.474924">doi:10.1074/jbc.M113.474924</a>. <a class="cite-backref" href="#ref-dustrude2013-1" title="Jump back to reference 1">↩</a></p>
+<p id='dustrude2017'>Erik&nbsp;Thomas Dustrude, Samantha <span class="bibtex-protected">Perez-Miller</span>, Liberty <span class="bibtex-protected">Fran<span class="bibtex-protected">ç</span>ois-Moutal</span>, Aubin Moutal, May Khanna, and Rajesh Khanna.
+A single structurally conserved <span class="bibtex-protected"><span class="bibtex-protected">SUMOylation</span></span> site in <span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> controls <span class="bibtex-protected"><span class="bibtex-protected">NaV1</span></span>.7 function.
+<em>Channels (Austin)</em>, 11(4):316–328, July 2017.
+<a href="https://doi.org/10.1080/19336950.2017.1299838">doi:10.1080/19336950.2017.1299838</a>. <a class="cite-backref" href="#ref-dustrude2017-1" title="Jump back to reference 1">↩</a></p>
+<p id='myllykoski2017'>Matti Myllykoski, Anne Baumann, Kenneth Hensley, and Petri Kursula.
+Collapsin response mediator protein 2: high-resolution crystal structure sheds light on small-molecule binding, post-translational modifications, and conformational flexibility.
+<em>Amino Acids</em>, 49(4):747–759, April 2017.
+<a href="https://doi.org/10.1007/s00726-016-2376-z">doi:10.1007/s00726-016-2376-z</a>. <a class="cite-backref" href="#ref-myllykoski2017-1" title="Jump back to reference 1">↩</a></p>
+<p id='francois-moutal2018'>Liberty <span class="bibtex-protected">Fran<span class="bibtex-protected">ç</span>ois-Moutal</span>, Erik&nbsp;T. Dustrude, Yue Wang, Tatiana Brustovetsky, Angie Dorame, Weina Ju, Aubin Moutal, Samantha <span class="bibtex-protected">Perez-Miller</span>, Nickolay Brustovetsky, Vijay Gokhale, May Khanna, and Rajesh Khanna.
+Inhibition of the <span class="bibtex-protected"><span class="bibtex-protected">Ubc9 E2 SUMO</span></span>-conjugating enzyme-<span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> interaction decreases <span class="bibtex-protected"><span class="bibtex-protected">NaV1</span></span>.7 currents and reverses experimental neuropathic pain.
+<em>Pain</em>, 159(10):2115–2127, October 2018.
+<a href="https://doi.org/10.1097/j.pain.0000000000001294">doi:10.1097/j.pain.0000000000001294</a>. <a class="cite-backref" href="#ref-francois-moutal2018-1" title="Jump back to reference 1">↩</a></p>
+<p id='francois-moutal2018a'>Liberty <span class="bibtex-protected">Fran<span class="bibtex-protected">ç</span>ois-Moutal</span>, David&nbsp;Donald Scott, Samantha <span class="bibtex-protected">Perez-Miller</span>, Vijay Gokhale, May Khanna, and Rajesh Khanna.
+Chemical shift perturbation mapping of the <span class="bibtex-protected"><span class="bibtex-protected">Ubc9</span></span>-<span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> interface identifies a pocket in <span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> amenable for allosteric modulation of <span class="bibtex-protected"><span class="bibtex-protected">Nav1</span></span>.7 channels.
+<em>Channels (Austin)</em>, 12(1):219–227, 2018.
+<a href="https://doi.org/10.1080/19336950.2018.1491244">doi:10.1080/19336950.2018.1491244</a>. <a class="cite-backref" href="#ref-francois-moutal2018a-1" title="Jump back to reference 1">↩</a></p>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ntlines'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2020-06-04-chimera-commands';
+                        this.page.url = 'https://marpat.github.io/chimera-commands.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+       <!-- instert line here -->		
+                <div id="photo">
+		</div>            
+                <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://twitter.com/mpatek_"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+    <li class="list-group-item"><a href="http://www.linkedin.com/in/marcelpatek"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/blogging.html"><i class="fa fa-folder-open fa-lg"></i>Blogging</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/jupyter.html"><i class="fa fa-folder-open fa-lg"></i>Jupyter</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/structure-visualization.html"><i class="fa fa-folder-open fa-lg"></i>Structure visualization</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://marpat.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/chimera.html">Chimera</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/jupyter-style.html">Jupyter-style</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/miniconda.html">miniconda</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://marpat.github.io/tag/molecular-visualization.html">molecular visualization</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/pelican.html">Pelican</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://marpat.github.io/tag/ucsf-chimera.html">UCSF Chimera</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://brightrockpath.com" target="_blank">BrightRockPath consulting</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://nbo.marcelpatek.com/" target="_blank">NBO</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://chemgplus.blogspot.com" target="_blank">OrgMedChem - NBO Blogger</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://script-orgmedchem.blogspot.com" target="_blank">OrgMedChem - scripts</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://github.com/marpat/" target="_blank">Github</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.youtube.com/user/orgmedchem" target="_blank">YouTube</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.marcelpatek.com/" target="_blank">Digital Photography</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Marcel Patek
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://marpat.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://marpat.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://marpat.github.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://marpat.github.io/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ntlines'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-168064558-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>

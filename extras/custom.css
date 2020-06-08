@@ -231,6 +231,13 @@ img {
 	display: block !important;
 	margin: 0 auto !important;
 	}
+
+img[alt$=">"] {
+  float: right;
+  display: inline-block !important;
+
+}
+
 .frameimg {
         border: 1px solid #ddd !important
         }
