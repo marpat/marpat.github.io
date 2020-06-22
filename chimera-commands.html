@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Mastering Menu options and commands in UCSF Chimera - Part 3 - </title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://marpat.github.io/images/fav.png" rel="icon">
+
+<link rel="canonical" href="https://marpat.github.io/chimera-commands.html">
+
+        <meta name="author" content="Marcel Patek" />
+        <meta name="keywords" content="UCSF Chimera,CRMP2" />
+        <meta name="description" content="How to navigate Menu options in UCSF Chimera. Using basic and more advanced commands and key shortcut accelerators." />
+
+        <meta property="og:site_name" content="" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Mastering Menu options and commands in UCSF Chimera - Part 3"/>
+        <meta property="og:url" content="https://marpat.github.io/chimera-commands.html"/>
+        <meta property="og:description" content="How to navigate Menu options in UCSF Chimera. Using basic and more advanced commands and key shortcut accelerators."/>
+        <meta property="article:published_time" content="2020-06-22" />
+            <meta property="article:section" content="Structure visualization" />
+            <meta property="article:tag" content="UCSF Chimera" />
+            <meta property="article:tag" content="CRMP2" />
+            <meta property="article:author" content="Marcel Patek" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://marpat.github.io/theme/css/bootstrap.cerulean.min.css" type="text/css"/>
+    <link href="https://marpat.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://marpat.github.io/theme/css/pygments/default.css" rel="stylesheet">
+    <link href="https://marpat.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://marpat.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://marpat.github.io/extras/custom.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://marpat.github.io/" class="navbar-brand">
+ Home
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="https://marpat.github.io/pages/about.html">About</a></li>
+                    <li><a href="https://marpat.github.io/pages/contact.html">Contact</a></li>
+                    <li><a href="https://marpat.github.io/archives.html">Archives</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<style>
+@media screen and (min-width: 1024px){
+  #banner{
+	    background-image:url("https://marpat.github.io/images/header_img.png");
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+        #banner {
+            background-image: url(../images/header_img_767.png);
+                }
+       }
+
+@media screen and (min-width: 415px) and (max-width: 767px) {
+        #banner {
+            background-image: url(../images/header_img_479.png);
+                 }
+       }
+@media screen and (max-width: 414px) {
+        #banner {
+            background-image: url(../images/header_img_412.png);
+                 }
+      }
+</style>
+
+    <!-- Custom header image (banner) -->
+    <div id="banner"></div><!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://marpat.github.io/chimera-commands.html"
+                       rel="bookmark"
+                       title="Permalink to Mastering Menu options and commands in UCSF Chimera - Part 3">
+                        Mastering Menu options and commands in UCSF Chimera - Part 3
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-06-22T12:15:00-06:00"> 2020-06-22</time>
+    </span>
+          <span class="label label-default">Modified</span>
+            <span class="modified">
+                <i class="fa fa-calendar"></i><time datetime="2020-06-22T13:00:00-06:00"> 2020-06-22</time>
+            </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://marpat.github.io/tag/ucsf-chimera.html">UCSF Chimera</a>
+        /
+	<a href="https://marpat.github.io/tag/crmp2.html">CRMP2</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Introduction</h2>
+<p>In the <a href="https://marpat.github.io/chimera-settings.html">previous</a> section of this series, we went through the setup, customization of Tools and layout, and the first run of the Chimera application. We also employed simple scripts and introduced keyboard shortcuts. </p>
+<p>Part-3 features details on using the navigation Menu options, command functions, and accelerator keys. Both simple and more advanced steps will be demonstrated on the <strong>C</strong>ollapsin <strong>R</strong>esponse <strong>M</strong>ediator <strong>P</strong>rotein <strong>2</strong> (CRMP2) - protein of rising pharmaceutical relevance.</p>
+<h2>Using the Chimera</h2>
+<p>Since many detailed tutorials and websites demonstrate both basic and advanced moves in Chimera, we will focus on steps and commands that were not entirely intuitive to me or were not sufficiently documented. <a href="http://plato.cgl.ucsf.edu/pipermail/chimera-users/">Chimera users discussion mailing list</a> is an exceptional source of information, tips, and tweaks. The list topics are best searched using Google.</p>
+<p>First, the list of excellent tutorials, descriptions, and official Chimera pages:</p>
+<h4><span class="badge badge-secondary">Recommended</span></h4>
+
+<ul>
+<li><a href="https://www.ch.embnet.org/CoursEMBnet/Pages3D08/Exercises/day5/chimera-v03.pdf">3D Structure Visualization with Chimera - pdf - start here</a></li>
+<li><a href="https://www.cgl.ucsf.edu/chimera/tutorials.html">Computer graphics lab, UCSF tutorials</a></li>
+<li><a href="https://www.rbvi.ucsf.edu/chimera/docs/UsersGuide/frametut.html">Chimera User's Guide</a></li>
+<li><a href="http://mcb.berkeley.edu/labs/krantz/pdf/chimera_quick_reference.pdf">QUICK <em>REFERENCE</em> GUIDE</a></li>
+<li><a href="https://static-bcrf.biochem.wisc.edu/tutorials/chimera/chimera_i_introduction.html">UCSF Chimera - I - Introduction</a></li>
+<li><a href="https://www.cgl.ucsf.edu/Outreach/Tutorials/GettingStarted.html">UCSF Chimera - Getting Started</a></li>
+<li><a href="[http://aidanbudd.github.io/course_EMBO_at_TGAC_PPI_Sep2015/trainingMaterial/scooterMorris/Molecular%20Visualization%20Tutorial.pdf](http://aidanbudd.github.io/course_EMBO_at_TGAC_PPI_Sep2015/trainingMaterial/scooterMorris/Molecular Visualization Tutorial.pdf)">RBVI Molecular Visualization - pdf</a></li>
+</ul>
+<p><strong>Figure 1</strong> shows the essential Menu items and places where commands can be issued. The green dotted rectangles outline menu items that are used at the beginning of each session. The menu expands in the solid blue rectangle are used very frequently for selections and rendering. While the Menu items are a powerful feature, the more one gets familiar with the Chimera's "logic", the more one appreciates the use of <code>Command line</code> and <code>Keyboard accelerators</code>.</p>
+<div class="img-fluid" style="max-width: 100%">
+<p><img alt="Chimera main layout" src="../images/chimera/basic-layout.png" title="Fig. 1."></p>
+</div>
+<p><p style="margin: 10px 0 30px 10px; width:100%"><em>Figure 1. Chimera's workspace highlighting the main places for navigation and visualization (Menu expands, Command line, Keyboard accelerators).</em> </p></p>
+<p>Let's start with steps, such as Opening/Loading <code>pdb</code> file, selecting one-two atoms, the whole amino acid residue or one of the chains. Next, we will remove water molecules, solvents, counter ions, and ligand in the active site.</p>
+<div class="alert alert-info" role="alert">
+    As an example, I'll use a crystal dimer of <font color="crimson"><b>Collapsin Response Mediator Protein 2 (CRMP2)</b></font>. CRMP2 is a neuronal protein that participates in cytoskeletal dynamics and balances the neurite outgrowth and collapse. Besides the post-translational phosphorylation by several kinases, CRMP2 interacts with tubulin, calmodulin, PLP D2, and several other proteins. Moreover, SUMOylation of CRMP2 was identified as a critical regulatory step in the interaction and trafficking of voltage-gated sodium channels, Cav2.2 and Nav1.7 [<a href='#brittain2009' id='ref-brittain2009-1'>Brittain et al. (2009)</a>, <a href='#chi2009' id='ref-chi2009-1'>Chi et al. (2009)</a>, <a href='#khanna2012' id='ref-khanna2012-1'>Khanna et al. (2012)</a>, <a href='#dustrude2013' id='ref-dustrude2013-1'>Dustrude et al. (2013)</a>, <a href='#dustrude2017' id='ref-dustrude2017-1'>Dustrude et al. (2017)</a>, <a href='#francois-moutal2018a' id='ref-francois-moutal2018a-1'>FranccoisMoutal et al. (2018)</a>, <a href='#francois-moutal2018' id='ref-francois-moutal2018-1'>FranccoisMoutal et al. (2018)</a>]. You can download from the RCSB site under the code <a href="https://www.rcsb.org/structure/5lxx" target="_blank">5LXX.pdb</a> (<a href='#myllykoski2017' id='ref-myllykoski2017-1'>Myllykoski et al. (2017)</a>).<br/>
+    Most significantly, the trafficking and activity of <b>Nav1.7</b> are attenuated by SUMOylation of K374 that is located in the CRMP2 monomer at the loop flanked by helix residues 360-371 and 376-392. Considering the genetic validation of Nav1.7 as a pain target, small molecule inhibitors of K374 SUMOylation by Ubc9 E2 SUMO-conjugating enzyme may offer a novel approach to non-opioid pain therapeutics. Indeed, indirect and a dose-dependent modulation of conductivity and trafficking of sodium channel Nav1.7 has been shown to reverse <b>neuropatic pain</b> in rats.<br/>
+    Drug discovery program targeting such interaction is currently progressing at the <a href="https://regulonix.com" target="_blank">Regulonix</a>, and indirect small molecule modulators of Nav1.7 are being developed by the team headed by <a href="https://www.linkedin.com/in/rajesh-khanna-50b126183" target="_blank">Dr. Rajesh Khanna.</a> 
+</div>
+
+<p>Let's start with selections. I chose a not so trivial example, which includes multiple protein chains and residue conformers (quite a typical situation). Since we have already defined <code>alias</code> <font color="orange"><b>style</b></font> in <a href="https://marpat.github.io/chimera-settings.html">Part 2</a>, we will use it from the Command line to improve the visual appearance of CRMP2 monomer. </p>
+<p><font color="indigo"><b>Preparation:</b></font></p>
+<ol>
+<li>start the Chimera application</li>
+<li>using the Menu items or Command line <strong>(Fig. 1</strong>), execute the first five rows in the <strong>Table 1</strong> below</li>
+<li>Next, type <code>focus :374</code> into the Command line, press enter followed by <code>display :374</code> with enter. This will show two side-chains of Lys 374 (example) and center the view at them. Type <code>~display HC</code> to hide nonpolar hydrogens.</li>
+<li>type <code>~display :374&#64;*.B</code> to hide the other (calculated) conformer (B) of Lys 374</li>
+<li>optionally, point the mouse cursor somewhere  to the blank workspace and press <code>bs</code> on the keyboard (the side-chain should be rendered as <code>ball and stick</code>)</li>
+<li>use left mouse button to orient residues of Lys 374 to resemble images in <strong>Figure 2</strong></li>
+<li>use the mouse wheel (forward/backward) OR the right mouse button to zoom in/out</li>
+<li>use the mouse wheel (press it) to move the molecule in X-Y direction</li>
+<li>type <code>clip off</code> reset the plane clipping to <code>auto</code> (or move the clipping plane by mouse  by starting the Clipping plane panel - icons on the left)</li>
+</ol>
+<p>The corresponding Chimera <code>session file</code> that runs through the Preparation above can be downloaded <a href="../download/P2_crmp2-practice1.zip" title="P2_practice1">here</a>. To load the session file, unzip the file and use the File → Restore session menu item in <strong>Figure 1</strong>.</p>
+<p><br/></p>
+<p><font color="indigo"><b>Selections:</b></font></p>
+<ol>
+<li>to select one atom, point the mouse cursor at it and press Ctrl + left mouse button (<strong>Fig. 2</strong>, left)</li>
+<li>to select (and add) another atom, press Ctrl + Shift keys and left-mouse click it (<strong>Fig. 2</strong>, middle)</li>
+<li>to expand selection to the whole residue, press  the <code>up key</code> on your keyboard (<strong>Fig. 2</strong>, right)</li>
+<li>to deselect one or more selected objects, point the mouse cursor to the blank workspace, press Ctrl key and left-click by mouse, or press once the <code>up</code> and several times the  <code>down</code> key on the keyboard, or type <code>cs</code> (clear selection)</li>
+</ol>
+<div class="img-fluid" style="max-width: 100%">
+<p><img alt="Selecting in Chimera" src="../images/chimera/select123.png" title="Figure 2."></p>
+</div>
+<p><p style="margin: 10px 0 30px 10px; width:100%"><em>Fig. 2. Simple atom and residue selections using Ctrl and Shift keys with the left mouse click.</em> </p></p>
+<p>The sequence of actions in the table below follows a typical workflow of protein visualization, including the file opening, getting the protein monomer, coloring by secondary structure, removing solvent, and salts to saving the session and making an image.</p>
+<blockquote>Run the options in Table 1, either from the Menu, Command line, or by Accelerator keys to get identical or similar results. The options can be combined.</blockquote>
+
+<p><strong>Table 1. </strong></p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Action</th>
+      <th scope="col">Menu Item</th>
+      <th scope="col">Command</th>
+      <th scope="col">Accelerator keys (type `ad` to list)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">OPEN FILE</th>
+      <td>File → Open... (5lxx.pdb) or File → Fetch by ID... (from the Web, 5lxx)</td>
+        <td><i>open <font color="blue">/path/to/5lxx.pdb</font></i></td>
+      <td><b>op</b> or <b>ff</b> (fetch)</td>
+    </tr>
+    <tr>
+      <th scope="row">DELETE chain B</th>
+      <td>Select → Chain → B; Action → Atoms/Bonds → delete</td>
+        <td><i>del :.B-F</i> (delete all but A chains)</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th scope="row">style it</th>
+      <td>Actions → Focus; Tools → Depiction → Color Secondary<br> Structure; Actions → Atoms/Bonds → wire; Actions → Color → by element;<br>Select → Structure → protein; Action → Atoms/Bonds → hide</td>
+        <td><i>style</i>   OR<br><i>run style.py</i><br><i>~display protein</i> (hide side chains)</td>
+        <td><b>fo</b> (focus on center of protein)<br><b>c2</b> or <b></b>rc</b> (color by secondary structures)<br><b>wr</b> (wireframe representation)<br><b>ce</b> (color by atom-type)<br><b>bb</b> (show backbone only)</td>
+    </tr>
+    <tr>
+      <th scope="row">orient</th>
+        <td><font color="magenta"><i>use left mouse + middle wheel (press) to orient</i></font></td>
+        <td><i>focus<br>turn x 90<br>turn z 90</i></td>
+        <td><b>x9, z9</b> (rotate by <br>90 deg about x, z axes) - run one key pair <br>after another (no commas)</td>
+    </tr>
+    <tr>
+      <th scope="row">clean it</th>
+      <td>Select → Residue → SO4<br>Action → Atoms/Bonds → delete</td>
+        <td><i>del :SO4<br>del solvent</i></td>
+      <td><b>-</b></td>
+    </tr>
+    <tr>
+      <th scope="row">save it</th>
+      <td>File → Save Image (as .png, rendering: Chimera, supersample 3x3)<br>File → Save Session as</td>
+        <td><i>copy file <font color="blue">~/Desktop/test.png</font> png dpi 300 supersample 3</i> (change the path in blue)<br><i>save</i> (save session as)</td>
+      <td><b>si</b> (save image)<br><b>ss</b> (save session as)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-success" role="alert">
+<b>Basic selections - summary</b><br/>
+There are three ways to select objects [atom(s), residue(s), chain(s), model(s)] in Chimera.  
+<ul class="list-group">
+  <li class="list-group-item">A.   by left mouse click with Ctrl key pressed simultaneously; and adding to this selection by holding Shift + Ctrl key followed by the left mouse click</li>
+  <li class="list-group-item">B.   selecting from the menu expand `Select` at the top of the GUI</li>
+  <li class="list-group-item">C.   using Command line syntax</li>
+</ul>
+</br>Deselect by left mouse clicking a blank workspace area, by clicking the blank workspace area and typying `cs`, or by using `up` arrow followed by 2x `down` arrow.
+</div>
+
+<p><br/></p>
+<h3>Selecting by Commands</h3>
+<p>Commands are a powerful and compelling option in structure/model manipulation. Examples of the most typical selectors follow:</p>
+<p>type <code>select</code> (or <code>sel</code>) into the Command line followed by space, like so:</p>
+<div class="highlight"><pre><span></span><code><span class="x">sel #0   selects object 0 (typically the protein; all atoms)</span>
+<span class="x">sel #0.1   selects submodel 0.1 (usually after splitting the model with command `split`)</span>
+<span class="x">sel :374   selects amino acid residue number 374</span>
+<span class="x">sel :cys   selects all Cys residues</span>
+<span class="x">sel :SO4   selects sulfate anions</span>
+<span class="x">sel solvent   select solvent molecules (typically water)</span>
+<span class="x">sel :.A   selects chain A</span>
+<span class="x">sel :374 &amp; &#64;NZ  select Lys374 and its nitrogen atom (hover mouse cursor over nitrogen to identify its ID; if charged in the pdb file, use :374 &amp; N3+)</span>
+<span class="x">sel :374&#64;*.A   select Lys374 and all atoms (*) in conformer A</span>
+<span class="x">sel :374-376,378   select residues 374 to 376 and residue 378 (hover mouse cursor over amino acid to identify its ID)</span>
+<span class="x">sel :ile/isHelix    select all Ile residues in helices (capital H is required)</span>
+<span class="x">sel :ile,tyr/isStrand   select all Ile and Tyr residues in beta-strands</span>
+</code></pre></div>
+
+
+<p>To reverse the function (command), use <code>~</code> followed by the command (no space), like so: </p>
+<div class="highlight"><pre><span></span><code><span class="o">~</span><span class="n">sel</span> <span class="p">:</span><span class="mi">374</span>  <span class="c1"># deselect Lys374</span>
+<span class="o">~</span><span class="n">display</span> <span class="n">protein</span>  <span class="c1"># hide amino acids in the protein</span>
+<span class="o">~</span><span class="n">disp</span> <span class="n">element</span><span class="o">.</span><span class="n">H</span>  <span class="c1"># hide all hydrogens</span>
+<span class="o">~</span><span class="n">rlabel</span>  <span class="c1"># remove residue labels</span>
+<span class="o">~</span><span class="n">ribbon</span>  <span class="c1"># hide the ribbon representation of protein</span>
+</code></pre></div>
+
+
+<p>Examples of other commands that I use frequently are shown below with descriptive comments:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Show only polar hydrogens (2-step procedure)</span>
+<span class="n">display</span> <span class="n">element</span><span class="o">.</span><span class="n">H</span>  <span class="c1"># show all hydrogens</span>
+<span class="o">~</span><span class="n">disp</span> <span class="n">HC</span>  <span class="c1"># hide non-polar hydrogens</span>
+
+<span class="c1"># Render surface of the ligand cavity</span>
+<span class="c1"># continue after executing the top five rows in Table 1</span>
+<span class="n">sel</span> <span class="p">:</span><span class="n">BTB</span>   <span class="c1"># select ligand - hover mouse cursor over the ligand to get its ID-name</span>
+<span class="n">represent</span> <span class="n">bs</span> <span class="n">sel</span>  <span class="c1"># represent the selection (ligand) as ball-and-stick </span>
+<span class="o">~</span><span class="n">disp</span> <span class="n">HC</span>
+<span class="n">zone</span> <span class="n">sel</span> <span class="mi">5</span>  <span class="c1"># select atoms around the ligand (sel) within 5 Å</span>
+<span class="n">sel</span> <span class="n">up</span>  <span class="c1"># select whole amino acid residues</span>
+<span class="n">disp</span> <span class="n">sel</span>  <span class="c1"># display selected objects</span>
+<span class="o">~</span><span class="n">disp</span> <span class="n">solvent</span>
+<span class="n">surface</span> <span class="n">sel</span>  <span class="c1"># generate cavity surface - including selected residues</span>
+<span class="c1"># color the surface by hydrophobicity of residues - magenta polar, tan hydrophobic</span>
+<span class="n">rangecolor</span> <span class="n">kdHydrophobicity</span> <span class="nb">min</span> <span class="n">medium</span> <span class="n">purple</span> <span class="mi">0</span> <span class="n">white</span> <span class="nb">max</span> <span class="n">tan</span> <span class="n">sel</span>
+<span class="o">~</span><span class="n">ribbon</span>  <span class="c1"># hide ribbon rendering</span>
+<span class="n">rlabel</span> <span class="n">sel</span>  <span class="c1"># label selected residues</span>
+<span class="o">~</span><span class="n">sel</span> <span class="c1">#  deselect all</span>
+</code></pre></div>
+
+
+<p>The semicolon separator (;) concatenates the sequence of commands. To execute functions in one line, copy/paste the command below.</p>
+<div class="highlight"><pre><span></span><code><span class="x"># DELETE ALL chains, keep only the first one:</span>
+<span class="x">split; sel#0.1; sel invert; del sel; style; ~disp protein</span>
+
+<span class="x"># Rename sub-model 0.1 to model #0 and name it &#39;prot&#39;:</span>
+<span class="x">combine #0.1 model 0 name prot; close #0.1</span>
+</code></pre></div>
+
+
+<p><br/></p>
+<h3>Keyboard Accelerator</h3>
+<p>Several keyboard shortcuts were already described in <strong>Table</strong> 1. To activate the keyboard shortcuts, type <code>ac</code>  followed by <code>enter</code> in the Command line. Recall that the startup script <code>midasrc</code> (Part 2) made the keys <a href="https://marpat.github.io/chimera-settings.html#style">available</a>.</p>
+<p>Access the  complete list of <a href="https://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/accelerators/alist.html">Chimera keyboard shortcuts here</a>. Alternatively, to display a list of the keys, type <code>ad</code>.</p>
+<div class="alert alert-warning" role="alert">
+    Remember that in order to use keyboard accelerators (shortcuts), workspace area must be left mouse-clicked first.
+</div>
+
+<p>The keys that I found most handy are listed next.</p>
+<div class="highlight"><pre><span></span><code><span class="n">c2</span>   <span class="c1"># color by secondary structure</span>
+<span class="n">wb</span>   <span class="c1"># set white background; `bk` to get back to black background</span>
+<span class="n">wr</span>   <span class="c1"># wire representation (also applies to selected object)</span>
+<span class="n">bs</span>   <span class="c1"># ball-and-stick representation (also applies to selected object)</span>
+<span class="n">hs</span>   <span class="c1"># hide or show surface; `sf` show surface</span>
+<span class="n">cs</span>   <span class="c1"># clear selection</span>
+<span class="ow">is</span>   <span class="c1"># invert selection (for selected Model)</span>
+<span class="n">iS</span>   <span class="c1"># invert selection (all Models)</span>
+<span class="n">rl</span>   <span class="c1"># open reply log (for important messages)</span>
+<span class="n">ce</span>   <span class="c1"># color by element</span>
+<span class="n">fo</span>   <span class="c1"># focus (also applies to selected object)</span>
+<span class="n">ct</span>   <span class="c1"># show chain trace (ribbon) only (~disp protein)</span>
+<span class="n">c5</span>   <span class="c1"># select and show 5 Å contacts between selected and unselected atoms</span>
+<span class="n">zd</span>   <span class="c1"># show zone dialog</span>
+<span class="n">mC</span>   <span class="c1"># place marker at center of selected atoms (mark center of phenyl ring)</span>
+</code></pre></div>
+
+
+<p><br/></p>
+<h3>Next</h3>
+<p>After the introduction of Menu items, Command line functions, key shortcuts (accelerators), and after a few practical exercises, the next blog article will explore the use of custom scripts that make visualizations in UCSF Chimera faster and reproducible. </p><hr>
+<h2>Bibliography</h2>
+<p id='brittain2009'>Joel&nbsp;M. Brittain, Andrew&nbsp;D. Piekarz, Yuying Wang, Takako Kondo, Theodore&nbsp;R. Cummins, and Rajesh Khanna.
+An atypical role for collapsin response mediator protein 2 (<span class="bibtex-protected"><span class="bibtex-protected">CRMP</span></span>-2) in neurotransmitter release via interaction with presynaptic voltage-gated calcium channels.
+<em>J. Biol. Chem.</em>, 284(45):31375–31390, November 2009.
+<a href="https://doi.org/10.1074/jbc.M109.009951">doi:10.1074/jbc.M109.009951</a>. <a class="cite-backref" href="#ref-brittain2009-1" title="Jump back to reference 1">↩</a></p>
+<p id='chi2009'>Xian&nbsp;Xuan Chi, Brian&nbsp;S. Schmutzler, Joel&nbsp;M. Brittain, Yuying Wang, Cynthia&nbsp;M. Hingtgen, Grant&nbsp;D. Nicol, and Rajesh Khanna.
+Regulation of <span class="bibtex-protected"><span class="bibtex-protected">N</span></span>-type voltage-gated calcium channels (<span class="bibtex-protected"><span class="bibtex-protected">Cav2</span></span>.2) and transmitter release by collapsin response mediator protein-2 (<span class="bibtex-protected"><span class="bibtex-protected">CRMP</span></span>-2) in sensory neurons.
+<em>J. Cell. Sci.</em>, 122(Pt 23):4351–4362, December 2009.
+<a href="https://doi.org/10.1242/jcs.053280">doi:10.1242/jcs.053280</a>. <a class="cite-backref" href="#ref-chi2009-1" title="Jump back to reference 1">↩</a></p>
+<p id='dustrude2013'>Erik&nbsp;T. Dustrude, Sarah&nbsp;M. Wilson, Weina Ju, Yucheng Xiao, and Rajesh Khanna.
+<span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> protein <span class="bibtex-protected"><span class="bibtex-protected">SUMOylation</span></span> modulates <span class="bibtex-protected"><span class="bibtex-protected">NaV1</span></span>.7 channel trafficking.
+<em>J. Biol. Chem.</em>, 288(34):24316–24331, August 2013.
+<a href="https://doi.org/10.1074/jbc.M113.474924">doi:10.1074/jbc.M113.474924</a>. <a class="cite-backref" href="#ref-dustrude2013-1" title="Jump back to reference 1">↩</a></p>
+<p id='dustrude2017'>Erik&nbsp;Thomas Dustrude, Samantha <span class="bibtex-protected">Perez-Miller</span>, Liberty <span class="bibtex-protected">Fran<span class="bibtex-protected">ç</span>ois-Moutal</span>, Aubin Moutal, May Khanna, and Rajesh Khanna.
+A single structurally conserved <span class="bibtex-protected"><span class="bibtex-protected">SUMOylation</span></span> site in <span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> controls <span class="bibtex-protected"><span class="bibtex-protected">NaV1</span></span>.7 function.
+<em>Channels (Austin)</em>, 11(4):316–328, July 2017.
+<a href="https://doi.org/10.1080/19336950.2017.1299838">doi:10.1080/19336950.2017.1299838</a>. <a class="cite-backref" href="#ref-dustrude2017-1" title="Jump back to reference 1">↩</a></p>
+<p id='khanna2012'>Rajesh Khanna, Sarah&nbsp;M. Wilson, Joel&nbsp;M. Brittain, Jill Weimer, Rukhsana Sultana, Allan Butterfield, and Kenneth Hensley.
+Opening <span class="bibtex-protected"><span class="bibtex-protected">Pandora</span></span>'s jar: a primer on the putative roles of <span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> in a panoply of neurodegenerative, sensory and motor neuron, and central disorders.
+<em>Future Neurol</em>, 7(6):749–771, November 2012.
+<a href="https://doi.org/10.2217/FNL.12.68">doi:10.2217/FNL.12.68</a>. <a class="cite-backref" href="#ref-khanna2012-1" title="Jump back to reference 1">↩</a></p>
+<p id='myllykoski2017'>Matti Myllykoski, Anne Baumann, Kenneth Hensley, and Petri Kursula.
+Collapsin response mediator protein 2: high-resolution crystal structure sheds light on small-molecule binding, post-translational modifications, and conformational flexibility.
+<em>Amino Acids</em>, 49(4):747–759, April 2017.
+<a href="https://doi.org/10.1007/s00726-016-2376-z">doi:10.1007/s00726-016-2376-z</a>. <a class="cite-backref" href="#ref-myllykoski2017-1" title="Jump back to reference 1">↩</a></p>
+<p id='francois-moutal2018'>Liberty <span class="bibtex-protected">Fran<span class="bibtex-protected">ç</span>ois-Moutal</span>, Erik&nbsp;T. Dustrude, Yue Wang, Tatiana Brustovetsky, Angie Dorame, Weina Ju, Aubin Moutal, Samantha <span class="bibtex-protected">Perez-Miller</span>, Nickolay Brustovetsky, Vijay Gokhale, May Khanna, and Rajesh Khanna.
+Inhibition of the <span class="bibtex-protected"><span class="bibtex-protected">Ubc9 E2 SUMO</span></span>-conjugating enzyme-<span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> interaction decreases <span class="bibtex-protected"><span class="bibtex-protected">NaV1</span></span>.7 currents and reverses experimental neuropathic pain.
+<em>Pain</em>, 159(10):2115–2127, October 2018.
+<a href="https://doi.org/10.1097/j.pain.0000000000001294">doi:10.1097/j.pain.0000000000001294</a>. <a class="cite-backref" href="#ref-francois-moutal2018-1" title="Jump back to reference 1">↩</a></p>
+<p id='francois-moutal2018a'>Liberty <span class="bibtex-protected">Fran<span class="bibtex-protected">ç</span>ois-Moutal</span>, David&nbsp;Donald Scott, Samantha <span class="bibtex-protected">Perez-Miller</span>, Vijay Gokhale, May Khanna, and Rajesh Khanna.
+Chemical shift perturbation mapping of the <span class="bibtex-protected"><span class="bibtex-protected">Ubc9</span></span>-<span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> interface identifies a pocket in <span class="bibtex-protected"><span class="bibtex-protected">CRMP2</span></span> amenable for allosteric modulation of <span class="bibtex-protected"><span class="bibtex-protected">Nav1</span></span>.7 channels.
+<em>Channels (Austin)</em>, 12(1):219–227, 2018.
+<a href="https://doi.org/10.1080/19336950.2018.1491244">doi:10.1080/19336950.2018.1491244</a>. <a class="cite-backref" href="#ref-francois-moutal2018a-1" title="Jump back to reference 1">↩</a></p>
+
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Part 3 of the Mastering UCSF Chimera series</h4>
+       <h5>Previous articles</h5>
+       <ul>
+           <li><a href="https://marpat.github.io/chimera-intro.html">Introduction to UCSF Chimera - Part 1</a></li>
+           <li><a href="https://marpat.github.io/chimera-settings.html">Setting-up and customizing UCSF Chimera - Part 2</a></li>
+       </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ntlines'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.identifier = '2020-06-22-chimera-commands';
+                        this.page.url = 'https://marpat.github.io/chimera-commands.html';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+       <!-- instert line here -->		
+                <div id="photo">
+		</div>            
+                <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://twitter.com/mpatek_"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+    <li class="list-group-item"><a href="http://www.linkedin.com/in/marcelpatek"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/blogging.html"><i class="fa fa-folder-open fa-lg"></i>Blogging</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/jupyter.html"><i class="fa fa-folder-open fa-lg"></i>Jupyter</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://marpat.github.io/category/structure-visualization.html"><i class="fa fa-folder-open fa-lg"></i>Structure visualization</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://marpat.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/crmp2.html">CRMP2</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/jupyter-style.html">Jupyter-style</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/miniconda.html">miniconda</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://marpat.github.io/tag/molecular-visualization.html">molecular visualization</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://marpat.github.io/tag/pelican.html">Pelican</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://marpat.github.io/tag/ucsf-chimera.html">UCSF Chimera</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://brightrockpath.com" target="_blank">BrightRockPath consulting</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://nbo.marcelpatek.com/" target="_blank">NBO</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://chemgplus.blogspot.com" target="_blank">OrgMedChem - NBO Blogger</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://script-orgmedchem.blogspot.com" target="_blank">OrgMedChem - scripts</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://github.com/marpat/" target="_blank">Github</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.youtube.com/user/orgmedchem" target="_blank">YouTube</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.marcelpatek.com/" target="_blank">Digital Photography</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Marcel Patek
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://marpat.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://marpat.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://marpat.github.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://marpat.github.io/theme/js/bodypadding.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ntlines'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-168064558-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
